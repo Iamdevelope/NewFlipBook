@@ -8,18 +8,19 @@ public class BookDummyGeneratePage : MonoBehaviour {
     private Material m_Material;
     float startX, endX;
     private GameObject currentPageObj;
-    public bool isRight;
     private float t;
     private bool isDown;
+    private bool dic;
     private BookDummy generatePage;
     void Start()
     {
         generatePage = GameCore.Instance.BookDummy;
-        m_Material = GetComponent<MeshRenderer>().material;
+
         currentPageObj = this.gameObject;
     }
-    public void OnMouseDown()
+    public void MouseStartDown(bool dic)
     {
+        this.dic = dic;
         BookDummyFlipBook.Instance.index++;
         //当正在翻页时，禁止翻页
         if (BookDummyFlipBook.Instance.isFlip) return;
@@ -42,23 +43,17 @@ public class BookDummyGeneratePage : MonoBehaviour {
             }
         }
     }
-    private void OnMouseDrag()
+    public void MouseStartDrag()
     {
         if (BookDummyFlipBook.Instance.index > 1) return;
         if (BookDummyFlipBook.Instance.isFlip) return;
         endX = Input.mousePosition.x;
-        if (!isRight)
-        {
-            if (endX - startX > 0)
-                Turning((endX - startX) * 0.5f);
-        }
-        else
-        {
-            if (endX - startX < 0)
-                Turning(Mathf.Abs(endX - startX) * 0.5f);
-        }
+        if (endX - startX > 0)
+            Turning((endX - startX) * 0.5f);
+        if (endX - startX < 0)
+            Turning(Mathf.Abs(endX - startX) * 0.5f);
     }
-    private void OnMouseUp()
+    public void MouseEndDrag()
     {
         isDown = false;
         //松开鼠标时，判断是否需要进行页面材质的切换

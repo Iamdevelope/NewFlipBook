@@ -9,13 +9,17 @@ namespace PJW.Book
     /// </summary>
     public class SoundManager : MonoBehaviour
     {
+        public const string CLICK_01 = "click01";
+        public const string CLICK_02 = "click02";
+        public const string CLICKDRAG = "ClickDrag";
+        public const string INSCENE = "InScene";
         [HideInInspector]
         public AudioSource source;
         public Stack<AudioClip> clipStack = new Stack<AudioClip>();
         private AudioClip currentClip;
         public void Init()
         {
-            GameCore.Instance.SoundManager = this;
+
             source = GetComponent<AudioSource>();
         }
         public void PlayAudioClip()
@@ -44,7 +48,14 @@ namespace PJW.Book
             source.clip = currentClip;
             source.Play();
         }
-
+        /// <summary>
+        /// 设置声音大小
+        /// </summary>
+        /// <param name="volume"></param>
+        public void SetSoundSize(float volume)
+        {
+            source.volume = volume;
+        }
         public void Reset()
         {
             source.clip = null;

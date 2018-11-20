@@ -23,14 +23,10 @@ namespace PJW.Book{
         private Dictionary<int, List<GameObject>> uiBtnSpriteMap = new Dictionary<int, List<GameObject>>();
         //书中的所有视频文件
         private Dictionary<int, List<VideoClip>> bookVideoClip = new Dictionary<int, List<VideoClip>>();
-        [HideInInspector]
         //书中所有的音频文件
         public List<AudioClip> bookSoundClip = new List<AudioClip>();
-        [HideInInspector]
         public List<GameObject> showObject = new List<GameObject>();
-        [HideInInspector]
         public List<GameObject> uiBtnSprites = new List<GameObject>();
-        [HideInInspector]
         public List<GameObject> spriteObject = new List<GameObject>();
         //[Tooltip("默认本地文件XML文件")]
         //public string localXMLFile;
@@ -84,7 +80,7 @@ namespace PJW.Book{
                 player.Stop();
                 player.GetComponent<RectTransform>().DOScale(0, 0);
             }
-            if (GameCore.Instance.GeneratePage != null)
+            if (notGenerateSoundManager)
             {
                 GameCore.Instance.GeneratePage.player.SetTargetAudioSource(0, GameCore.Instance.SoundManager.source);
             }
@@ -102,6 +98,7 @@ namespace PJW.Book{
                 audioSource.playOnAwake = false;
                 player.SetTargetAudioSource(0, audioSource);
                 soundManager = audioSource.gameObject.AddComponent<SoundManager>();
+                soundManager.Init();
             }
             
             #region Resources加载
@@ -129,7 +126,7 @@ namespace PJW.Book{
                             temp = temp.Split('.')[0];
 
                             //GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Books/Prefabs/Books/" + root3.Attributes["bookName"].Value + "/Object/" + temp);
-                            GameObject go = Resources.Load<GameObject>("Prefabs/Books/" + bookName + "/Object/" + temp);
+                            GameObject go = Resources.Load<GameObject>("Books/" + bookName + "/Object/" + temp);
                             GameObject tempGo = Instantiate(go);
                             if (tempGo.GetComponent<InterableObject>())
                                 tempGo.GetComponent<InterableObject>().GenerateEvent();
@@ -151,7 +148,7 @@ namespace PJW.Book{
                             string temp = xmlNode.Attribute("spriteName").Value;
                             temp = temp.Split('.')[0];
                             //GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Books/Prefabs/Books/" + root3.Attributes["bookName"].Value + "/Sprites/" + temp);
-                            GameObject go = Resources.Load<GameObject>("Prefabs/Books/" + bookName + "/Sprites/" + temp);
+                            GameObject go = Resources.Load<GameObject>("Books/" + bookName + "/Sprites/" + temp);
                             GameObject tempGo = Instantiate(go, SpriteParent.transform);
                             if (tempGo.GetComponent<InterableObject>())
                                 tempGo.GetComponent<InterableObject>().GenerateEvent(bookName);
@@ -164,7 +161,7 @@ namespace PJW.Book{
                 //记录下该本书中的所有声音
                 if (!string.IsNullOrEmpty(item.Attribute("sound").Value))
                 {
-                    AudioClip clip = Resources.Load<AudioClip>("Prefabs/Books/" + bookName + "/Sound/" + item.Attribute("sound").Value);
+                    AudioClip clip = Resources.Load<AudioClip>("Books/" + bookName + "/Sound/" + item.Attribute("sound").Value);
                     clip.name = item.Attribute("sound").Value;
                     bookSoundClip.Add(clip);
                 }
@@ -179,7 +176,7 @@ namespace PJW.Book{
                             string temp = xmlNode.Attribute("videoName").Value;
                             temp = temp.Split('.')[0];
 
-                            VideoClip videoClip = Resources.Load<VideoClip>("Prefabs/Books/" + bookName + "/Video/" + temp);
+                            VideoClip videoClip = Resources.Load<VideoClip>("Books/" + bookName + "/Video/" + temp);
                             bookVideoClip[int.Parse(item.Attribute("videoCount").Value)].Add(videoClip);
                         }
                     }
@@ -196,7 +193,7 @@ namespace PJW.Book{
                             temp = temp.Split('.')[0];
 
                             //GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Books/Prefabs/Books/" + root3.Attributes["bookName"].Value + "/Object/" + temp);
-                            GameObject go = Resources.Load<GameObject>("Prefabs/Books/" + bookName + "/UIButtonSprite/" + temp);
+                            GameObject go = Resources.Load<GameObject>("Books/" + bookName + "/UIButtonSprite/" + temp);
                             GameObject tempGo = Instantiate(go);
                             tempGo.name = temp;
                             if (tempGo.GetComponent<InterableObject>())
@@ -207,7 +204,7 @@ namespace PJW.Book{
                         }
                     }
                 }
-                Texture t = Resources.Load<Texture>("Prefabs/Books/" + bookName + "/Textures/" + item.Attribute("pageName").Value);
+                Texture t = Resources.Load<Texture>("Books/" + bookName + "/Textures/" + item.Attribute("pageName").Value);
                 pagestextures[pagesnumber] = t;
                 pagesnumber++;
             }
@@ -293,8 +290,7 @@ namespace PJW.Book{
             #endregion
 
             CanvasController.Instance.ShowAllPage(pagesnumber - 2);
-            if (notGenerateSoundManager)
-                GameCore.Instance.OpenLoadingPanel(Vector3.zero);
+            GameCore.Instance.OpenLoadingPanel(Vector3.zero);
             ResourcesAllPages();
             //等资源加载结束了，再进行视野进行切换
             StartAnimation.Instance.Init();
@@ -312,6 +308,7 @@ namespace PJW.Book{
                 audioSource.playOnAwake = false;
                 player.SetTargetAudioSource(0, audioSource);
                 soundManager = audioSource.gameObject.AddComponent<SoundManager>();
+                soundManager.Init();
             }
             //在进行资源加载之前将所有AssetBundle资源卸载，以防止资源重复加载出错
             AssetBundle.UnloadAllAssetBundles(true);

@@ -9,7 +9,6 @@
 
 using UnityEngine;
 using System.Collections;
-using System.Text;
 
 /*
  * Animator
@@ -45,12 +44,11 @@ public class CameraPathBezierAnimator : MonoBehaviour
     public float editorTime = 0;
     //the time the path animation should last for
     public float pathTime = 10;
-    [HideInInspector]
-    public float _percentage = 0;
+    private float _percentage = 0;
     private float usePercentage;
     public int atPointNumber = 0;
+
     [HideInInspector]
-    //the animation used time
     public float usedAnimationTime;
 
     //the sensitivity of the mouse in mouselook
@@ -404,11 +402,9 @@ public class CameraPathBezierAnimator : MonoBehaviour
 
             if (AnimationPointReached != null) AnimationPointReached();
             if (!isReversed)
-            {
                 if (AnimationPointReachedWithNumber != null) AnimationPointReachedWithNumber(currentPointNumber);
-            }
             else
-                 if (AnimationPointReachedWithNumber != null) AnimationPointReachedWithNumber(atPointNumber);
+                    if (AnimationPointReachedWithNumber != null) AnimationPointReachedWithNumber(atPointNumber);
 
             switch (atPoint.delayMode)
             {
@@ -514,8 +510,6 @@ public class CameraPathBezierAnimator : MonoBehaviour
         }
         _percentage = Mathf.Clamp01(_percentage);
         usePercentage = normalised ? RecalculatePercentage(_percentage) : _percentage;//this is the percentage used by everything but the rotation
-
-        
     }
 
     private Quaternion GetMouseLook()

@@ -28,12 +28,12 @@ namespace PJW.Common
                 bookInfos.Clear();
             string path = bookFile.Split('.')[0];
             string bookName = path;
-            object[] textures = Resources.LoadAll("Prefabs/Books/" + bookName + "/Textures/");
-            object[] sprites = Resources.LoadAll("Prefabs/Books/" + bookName + "/Sprites/");
-            object[] sounds = Resources.LoadAll("Prefabs/Books/" + bookName + "/Sound/");
-            object[] objects = Resources.LoadAll("Prefabs/Books/" + bookName + "/Object/");
-            object[] videos = Resources.LoadAll("Prefabs/Books/" + bookName + "/Video/");
-            object[] uiSprites = Resources.LoadAll("Prefabs/Books/" + bookName + "/UIButtonSprite/");
+            object[] textures = Resources.LoadAll("Books/" + bookName + "/Textures/");
+            object[] sprites = Resources.LoadAll("Books/" + bookName + "/Sprites/");
+            object[] sounds = Resources.LoadAll("Books/" + bookName + "/Sound/");
+            object[] objects = Resources.LoadAll("Books/" + bookName + "/Object/");
+            object[] videos = Resources.LoadAll("Books/" + bookName + "/Video/");
+            object[] uiSprites = Resources.LoadAll("Books/" + bookName + "/UIButtonSprite/");
             //对书页的页面贴图进行排序
             textures = textures.OrderBy(s => int.Parse(Regex.Match(s.ToString(), @"\d+").Value)).ToArray();
             sprites = sprites.OrderBy(s => int.Parse(Regex.Match(s.ToString(), @"\d+").Value)).ToArray();

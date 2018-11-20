@@ -34,6 +34,7 @@ namespace PJW.Book.UI
 
             exitBtn.onClick.AddListener(ExitButtonHandle);
             loginBtn.onClick.AddListener(LoginButtonHandle);
+            EnterClickedEvent += LoginButtonHandle;
             registerBtn.onClick.RemoveAllListeners();
             registerBtn.onClick.AddListener(RegisterButtonHandle);
             //QQBtn.onClick.AddListener(QQButtonHandle);
@@ -76,7 +77,8 @@ namespace PJW.Book.UI
             {
                 PlayerPrefs.SetString("username", username);
                 msg = "登录成功！";
-                GameCore.Instance.isSuccessLogin = true;
+                //GameCore.Instance.isSuccessLogin = true;
+                GameCore.Instance.OpenNextUIPanel(FindObjectOfType<CharacterSelectPanel>().gameObject);
                 Reset(Vector3.zero, 0.6f);
             }
             else
@@ -86,7 +88,7 @@ namespace PJW.Book.UI
             if (!string.IsNullOrEmpty(msg))
             {
                 GameCore.Instance.SendMessageToMessagePanel(msg);
-                return;
+                //return;
             }
             //进行数据库数据对比
             //登录成功切换场景
@@ -145,7 +147,11 @@ namespace PJW.Book.UI
         }
         public override void Reset(Vector3 scale, float t,string msg="")
         {
-            transform.DOScale(scale, t);
+            if (scale == Vector3.one)
+                EnterClickedEvent += LoginButtonHandle;
+            else
+                EnterClickedEvent -= LoginButtonHandle;
+            base.Reset(scale, t, msg);
         }
     }
 }

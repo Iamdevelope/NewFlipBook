@@ -3,20 +3,37 @@ using DG.Tweening;
 using Mono.Data.Sqlite;
 using System.IO;
 using System.Collections;
+using System;
 
 namespace PJW.Book.UI
 {
     public class BasePanel : MonoBehaviour
     {
+        public delegate void ButtonClickedEvent(string name);
+        public event ButtonClickedEvent ClassTypeButtonHandle;
+        public event ButtonClickedEvent ClassButtonHandle;
+        public event Action EnterClickedEvent;
+        public virtual void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+            {
+                if (EnterClickedEvent != null)
+                    EnterClickedEvent();
+            }
+        }
         public virtual void Init() { }
         public virtual void Reset(Vector3 scale,float t,string msg="")
         {
-
+            transform.DOScale(scale, t);
         }
         public void PlayClickSound()
         {
             GameCore.Instance.PlaySoundBySoundName();
         }
+        public virtual void StartAnim() { }
+        public virtual void OverAnim() { }
+        public virtual void OverAnim(string nextName) { }
+        
         
         protected DbAccess db;// 数据库操作类
         private string dbName = "flipBook.db"; // 数据库名称

@@ -12,7 +12,7 @@ public class BookDummyStartPageFlip : InterableObject {
     //是否已经翻页结束
     public bool isRotate;
     [HideInInspector]
-    public bool canFlip;
+    public bool canFlip = true;
     public void Turning(float angle)
     {
         if (angle <= 0) return;
@@ -52,7 +52,7 @@ public class BookDummyStartPageFlip : InterableObject {
                 if (endX - startX > 0 && isRotate)
                     Turning(-180 + (endX - startX) * 0.5f);
                 else if (!isRotate)
-                    Turning((Mathf.Abs(endX - startX)) * 0.5f);
+                    Turning((endX - startX) * 0.5f);
             }
         }
         else
@@ -97,7 +97,7 @@ public class BookDummyStartPageFlip : InterableObject {
                 transform.rotation.eulerAngles.z <= 240)
             {
                 //transform.DORotate(new Vector3(0, 0, -180), 1f);
-                ObjectRotate(new Vector3(0, 0, 180), 1);
+                ObjectRotate(new Vector3(0, 0, -180), 1);
                 isRotate = true;
                 if (isStartPage)
                 {
@@ -110,7 +110,7 @@ public class BookDummyStartPageFlip : InterableObject {
             }
             else
             {
-                ObjectRotate(new Vector3(0, 0, 180), 0);
+                ObjectRotate(new Vector3(0, 0, -180), 0);
                 isRotate = true;
                 if (isStartPage)
                 {
@@ -135,7 +135,7 @@ public class BookDummyStartPageFlip : InterableObject {
                 transform.rotation.eulerAngles.z <= 300)
             {
                 //transform.DORotate(new Vector3(0, 0, -180), 1f);
-                ObjectRotate(new Vector3(0, 0, 180), 1);
+                ObjectRotate(new Vector3(0, 0, -180), 1);
                 isRotate = true;
                 if (isStartPage)
                 {
@@ -148,7 +148,7 @@ public class BookDummyStartPageFlip : InterableObject {
             }
             else
             {
-                ObjectRotate(new Vector3(0, 0, 180), 1);
+                ObjectRotate(new Vector3(0, 0, -180), 1);
                 isRotate = true;
                 if (isStartPage)
                 {

@@ -13,7 +13,9 @@ namespace PJW.Book
     {
         public void MoveToTarget(Vector3 targetPoint)
         {
-            transform.DOLocalMove(targetPoint, 1f).OnComplete(() => StartCoroutine(ChangeScene()));
+            Vector3 temp = new Vector3(targetPoint.x, targetPoint.y, targetPoint.z + 1);
+            GameCore.Instance.PlaySoundBySoundName(SoundManager.INSCENE);
+            transform.DOLocalMove(temp, 1f);
         }
 
         private IEnumerator ChangeScene()

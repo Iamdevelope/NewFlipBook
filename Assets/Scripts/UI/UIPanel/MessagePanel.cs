@@ -28,6 +28,7 @@ namespace PJW.Book.UI
         /// </summary>
         private void CloseButtonHandle()
         {
+            base.PlayClickSound();
             Reset(Vector3.zero, 0.3f);
         }
         /// <summary>
@@ -47,7 +48,7 @@ namespace PJW.Book.UI
         /// <param name="t"></param>
         public override void Reset(Vector3 scale, float t,string msg="")
         {
-            transform.DOScale(scale, t);
+            base.Reset(scale, t, msg);
         }
         /// <summary>
         /// 关闭自身
@@ -55,7 +56,7 @@ namespace PJW.Book.UI
         /// <returns></returns>
         private IEnumerator CloseSelfWaitTime()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1.5f);
             CloseButtonHandle();
         }
     }

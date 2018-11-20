@@ -16,13 +16,6 @@ namespace PJW.Book
         public string CurrentTargerPointName { get; set; }
         public bool IsTarget { get; set; }
     }
-    [SerializeField]
-    public struct UserData {
-        public string Name;
-        public int Level;
-        public float Exp;
-        public float Money;
-    }
     /// <summary>
     /// 游戏初始化
     /// </summary>
@@ -32,15 +25,12 @@ namespace PJW.Book
         {
             if (GameCore.GameData == null) return;
             Debug.Log(GameCore.GameData.CameraPosition + "\n" + GameCore.GameData.CurrentTargerPointName + "\n" + GameCore.GameData.IsTarget);
-            Camera.main.transform.position = GameCore.GameData.CameraPosition;
-            Camera.main.transform.rotation = GameCore.GameData.CameraRotation;
-            FindObjectOfType<StartAnim>().isArrived = GameCore.GameData.IsTarget;
-            
+            //Camera.main.transform.position = GameCore.GameData.CameraPosition;
+            //Camera.main.transform.rotation = GameCore.GameData.CameraRotation;
+            //FindObjectOfType<StartAnim>().isArrived = GameCore.GameData.IsTarget;
 
-            FindObjectOfType<StartAnim>().ToTargetPoint(GameCore.GameData.CurrentTargerPointName);
-            Debug.Log(FindObjectOfType<StartAnim>().currentTargetPointName.bezier.controlPoints.Length);
-            FindObjectOfType<StartAnim>().currentTargetPointName._percentage = 1;
-            FindObjectOfType<StartAnim>().currentTargetPointName.atPointNumber = FindObjectOfType<StartAnim>().currentTargetPointName.bezier.controlPoints.Length - 1;
+            //FindObjectOfType<StartAnim>().ToTargetPoint(GameCore.GameData.CurrentTargerPointName);
+            //FindObjectOfType<StartAnim>().currentTargetPointName.atPointNumber = FindObjectOfType<StartAnim>().currentTargetPointName.bezier.controlPoints.Length - 1;
         }
         public void SaveSceneData()
         {

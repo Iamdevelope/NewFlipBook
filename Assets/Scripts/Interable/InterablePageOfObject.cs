@@ -17,7 +17,7 @@ namespace PJW.Book
         /// </summary>
         public override void OnMouseUp()
         {
-            GameCore.Instance.PlaySoundBySoundName("click02");
+            GameCore.Instance.PlaySoundBySoundName(SoundManager.CLICK_02);
             if (!notMove)
             {
 

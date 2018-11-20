@@ -60,6 +60,8 @@ namespace PJW.Book
         public SoundManager soundManager;
         public bool notGenerateSoundManager;
 
+        public Dictionary<int, GameObject> rightPage = new Dictionary<int, GameObject>();
+        public Dictionary<int, GameObject> leftPage = new Dictionary<int, GameObject>();
         private void Awake()
         {
 
@@ -330,9 +332,10 @@ namespace PJW.Book
                 rightGo.GetComponentInChildren<MeshRenderer>().material.SetTexture("_SecTex", pagestextures[i]);
                 //rightGo.transform.parent = PageParent;
                 rightGo.name = "rightPage" + i;
-                rightGo.transform.localPosition = new Vector3(0.49f, 0.024f - 0.003f * i, 0);
+                rightGo.transform.localPosition = new Vector3(1.351f, 0.04f - 0.01f * i, 0);
                 Pages[i - 2] = rightGo;
-
+                
+                
             }
         }
         /// <summary>

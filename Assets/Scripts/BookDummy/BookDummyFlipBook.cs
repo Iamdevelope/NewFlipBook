@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MyCommon;
 
-public class BookDummyFlipBook : MonoSingleton<BookDummyFlipBook> {
+public class BookDummyFlipBook : MonoBehaviour {
     //是否是封面
     private bool isTitlePage;
     public bool isFlip;
@@ -16,6 +16,12 @@ public class BookDummyFlipBook : MonoSingleton<BookDummyFlipBook> {
     public int rightIndex;
     [HideInInspector]
     public int leftIndex;
+    public static BookDummyFlipBook Instance;
+    public void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
     private void Update()
     {
         if ((GameCore.Instance.BookDummy.currentpage <= 1 && !isTitlePage))

@@ -2,13 +2,57 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UserData {
-
-    public string ID { get; set; }
-    public string Username { get; set; }
-    public string Password { get; set; }
-    public override string ToString()
+namespace PJW.Book
+{
+    [SerializeField]
+    public class UserData
     {
-        return string.Format("用户名：{0},密码：{1}", Username, Password);
+        private string id;
+        private string username;
+        private string password;
+
+        public string Id
+        {
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Username
+        {
+            get
+            {
+                return username;
+            }
+
+            set
+            {
+                username = value;
+            }
+        }
+
+        public string Password
+        {
+            get
+            {
+                return password;
+            }
+
+            set
+            {
+                password = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("用户名：{0},密码：{1}", username, password);
+        }
     }
 }

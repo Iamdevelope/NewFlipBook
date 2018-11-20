@@ -1,23 +1,17 @@
 fileFormatVersion: 2
-guid: f140f3a587f28104a80fec38c7ddcd13
-timeCreated: 1541918706
+guid: ab9352acdbffeb546a836a9668ceccbe
+timeCreated: 1504591364
 licenseType: Pro
 PluginImporter:
-  externalObjects: {}
-  serializedVersion: 2
+  serializedVersion: 1
   iconMap: {}
   executionOrder: {}
   isPreloaded: 0
-  isOverridable: 0
   platformData:
-  - first:
-      Any: 
-    second:
+    Any:
       enabled: 1
       settings: {}
-  - first:
-      Editor: Editor
-    second:
+    Editor:
       enabled: 0
       settings:
         DefaultValueInitialized: true

@@ -12,13 +12,12 @@ namespace PJW.Book
 
         public const string JIANKANG_JINGLINGWU = "jiankang_jinglingwu";
         public const string KEXUE_KEJICHENG = "kexue_kejicheng";
-        public const string YISHU_HAITAN = "yishu_haitan";
+        public const string YISHU_HAITAN = "yishu_haidaochuan";
         public const string YUYAN_MOGUBAO = "yuyan_mogubao";
         public const string SHEHUI_CUNZHUANG = "shehui_cunzhuang";
         public const string HOME = "home";
 
         public bool isArrived;
-        public bool isGoHome;
         private CameraPathBezierAnimator jiankang_jinglingwu;
         private CameraPathBezierAnimator kexue_kejicheng;
         private CameraPathBezierAnimator yishu_haitan;
@@ -68,7 +67,7 @@ namespace PJW.Book
                 return;
             }
             GameCore.Instance.OpenNextUIPanel(FindObjectOfType<WecomePanel>().gameObject, currentTargetName);
-            currentTargetPointName.usedAnimationTime = 0;
+
             isArrived = true;
         }
         /// <summary>
@@ -127,11 +126,10 @@ namespace PJW.Book
         {
 
             GameCore.Instance.CloseCurrentUIPanel();
-            if (currentTargetPointName == null||isGoHome) return;
+            if (currentTargetPointName == null) return;
             currentTargetPointName.mode = CameraPathBezierAnimator.modes.reverse;
             currentTargetPointName.bezier.mode = CameraPathBezier.viewmodes.reverseFollowpath;
             currentTargetPointName.Play();
-            isGoHome = true;
             StartCoroutine(WaitTimeArrivedHome(isArrived ? currentTargetPointName.pathTime : currentTargetPointName.usedAnimationTime));
             isArrived = false;
         }
@@ -139,7 +137,6 @@ namespace PJW.Book
         private IEnumerator WaitTimeArrivedHome(float pathTime)
         {
             yield return new WaitForSeconds(pathTime);
-            isGoHome = false;
             isArrived = true;
         }
 

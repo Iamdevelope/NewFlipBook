@@ -59,7 +59,7 @@ namespace PJW.Book
         public void BackClickHandle()
         {
             GameCore.Instance.PlaySoundBySoundName();
-            GameCore.Instance.SoundManager.Reset();
+            GameCore.Instance.SoundManager.source.clip = null;
             if (GameCore.Instance.asset != null)
             {
                 //卸载所有AssetBundle资源

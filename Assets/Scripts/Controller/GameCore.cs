@@ -13,11 +13,10 @@ namespace PJW.Book
     /// 核心类
     /// </summary>
     public class GameCore : MonoSingleton<GameCore> {
-
-        private string dbName = "flipBook.db"; // 数据库名称
-        private string dbPath; // 数据库路径
         public static List<string> allBooksName = new List<string>();
         public static GameData GameData;
+        public static GameObject CurrentObject;
+        public static GameObject CharacterCamera;
         [HideInInspector]
         public float effectPositionZ = 1;
         [HideInInspector]
@@ -36,7 +35,6 @@ namespace PJW.Book
         private int m_FrameCount = 0;
         private float m_FPS = 0.0f;
 
-        public bool isSuccessLogin { get; set; }
         public string SavePath
         {
             get
@@ -78,15 +76,24 @@ namespace PJW.Book
         public SoundManager SoundManager
         {
             get { return soundManager; }
-            set { if (soundManager == null) soundManager = value; }
+            private set { if (soundManager == null) soundManager = value; }
+        }
+        public bool isSuccessLogin { get; set; }
+        //test
+        private NewGenerateBookstore generateBookstore;
+        public NewGenerateBookstore NewGenerateBookstore {
+            get { return generateBookstore; }
+            set { generateBookstore = value; }
         }
 
-        
+        private string dbName = "flipBook.db"; // 数据库名称
+        private string dbPath; // 数据库路径
         /// <summary>
         /// 游戏初始化
         /// </summary>
         public void Init()
         {
+            
 
             if (Application.platform == RuntimePlatform.WindowsPlayer
                 || Application.platform == RuntimePlatform.WindowsEditor)
@@ -99,10 +106,13 @@ namespace PJW.Book
                     StartCoroutine(CopyDB());
             }
 
+            CharacterCamera = FindObjectOfType<CharacterCamera>().gameObject;
+            if (CharacterCamera != null)
+                CharacterCamera.SetActive(false);
             TouchEffect = Resources.Load<GameObject>("Effect/TouchEffect");
 
             uiManager = FindObjectOfType<UIManager>();
-            soundManager = FindObjectOfType<SoundManager>();
+            soundManager = GetComponent<SoundManager>();
 
 
             uiManager.Init();
@@ -135,7 +145,7 @@ namespace PJW.Book
                 m_FrameCount = 0;
             }
         }
-        private void Update()
+        private void FixedUpdate()
         {
 
             if (Input.GetMouseButton(0))
@@ -144,9 +154,11 @@ namespace PJW.Book
                 {
                     Vector3 temp = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, effectPositionZ));
                     GameObject go = GameObjectPool.Instance.CreateObject("Effect", TouchEffect, temp, Quaternion.identity);
+                    PlaySoundBySoundName(SoundManager.CLICKDRAG);
                     GameObjectPool.Instance.CollectObject(go, 0.4f);
                     //Instantiate(TouchEffect, temp, Quaternion.identity);
                 }
+
             }
 
             if (Input.GetKey(KeyCode.Escape))
@@ -202,7 +214,19 @@ namespace PJW.Book
             soundManager.clipStack.Push(audio);
             soundManager.PlayAudioClip();
         }
-        public void PlaySoundBySoundName(string name="click01")
+        /// <summary>
+        /// 设置声音大小
+        /// </summary>
+        /// <param name="volume"></param>
+        public void SetSoundSize(float volume)
+        {
+            soundManager.SetSoundSize(volume);
+        }
+        /// <summary>
+        /// 按钮点击时的声音
+        /// </summary>
+        /// <param name="name">需要播放的声音的名字</param>
+        public void PlaySoundBySoundName(string name=SoundManager.CLICK_01)
         {
             soundManager.PlayAudioClip(name);
         }

@@ -33,6 +33,10 @@ namespace PJW.HotUpdate
                 Directory.CreateDirectory(GameCore.Instance.SavePath);
             if (isLoadAssetByAsset)
                 OnClickUpdate();
+            else
+            {
+
+            }
         }
 
         private void Update()

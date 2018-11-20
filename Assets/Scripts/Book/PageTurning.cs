@@ -64,12 +64,12 @@ namespace PJW.Book
             if (!isRight)
             {
                 if (endX - startX > 0)
-                    Turning((endX - startX) * 0.5f);
+                    Turning(1,(endX - startX) * 0.5f);
             }
             else
             {
                 if(endX-startX<0)
-                    Turning(Mathf.Abs(endX - startX) * 0.5f);
+                    Turning(0,Mathf.Abs(endX - startX) * 0.5f);
             }
         }
         private void OnMouseUp()
@@ -112,11 +112,11 @@ namespace PJW.Book
         /// 时刻改变材质的值，达到旋转效果
         /// </summary>
         /// <param name="angle">旋转的角度</param>
-        public void Turning(float angle)
+        public void Turning(int dic,float angle)
         {
             if (angle > 180) return;
             if (m_Material.GetFloat("_Angle") < 0 || m_Material.GetFloat("_Angle") > 181) return;
-            MaterialOfAngleRotate(0, angle, 0, false, false);
+            MaterialOfAngleRotate(dic, angle, 0, false, false);
 
         }
         /// <summary>
@@ -224,6 +224,7 @@ namespace PJW.Book
                 CanvasController.Instance.UpdatePageNum(generatePage.currentpage);
                 if (!generatePage.notGenerateSoundManager)
                 {
+                    Debug.Log("播放下一页的声音");
                     generatePage.soundManager.clipStack.Push(GetAudioClip());
                     generatePage.soundManager.PlayAudioClip();
                 }

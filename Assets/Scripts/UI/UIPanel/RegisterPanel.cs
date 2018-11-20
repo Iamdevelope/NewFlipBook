@@ -90,7 +90,12 @@ namespace PJW.Book.UI
             userName.text = "";
             passWord.text = "";
             rePassWord.text = "";
-            transform.DOScale(scale, t);
+            if (scale == Vector3.one)
+                EnterClickedEvent += RegisterButtonHandle;
+            else
+                EnterClickedEvent -= RegisterButtonHandle;
+            //transform.DOScale(scale, t);
+            base.Reset(scale, t, msg);
         }
     }
 }
