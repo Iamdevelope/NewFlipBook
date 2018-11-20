@@ -1,0 +1,243 @@
+fileFormatVersion: 2
+guid: 99469029283f6c245a4e6bfbe7b28ce2
+timeCreated: 1538123308
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: chengbao_1_00
+    100002: chengbao_2_00
+    100004: chengbao_3_00
+    100006: chengbao_4_00
+    100008: chengbao_5_00
+    100010: chengbao_6_00
+    100012: //RootNode
+    100014: chengbao_shiyan01
+    100016: chengbao_shiyan02
+    100018: chengbao_shiyan03
+    100020: chengbao_shiyan04
+    100022: chengbao_shiyan05
+    100024: chengbao_shiyan07
+    100026: chengbao_shiyan10
+    100028: chengbao_shiyan11
+    100030: chengbao_shiyan12
+    100032: chengbao_shiyan13
+    100034: chengbao_shiyan18
+    100036: chengbao_shiyan20
+    100038: chengbao_shiyan21
+    100040: chengbao_shiyan22
+    100042: chengbao_shiyan23
+    100044: chengbao_shiyan25
+    100046: chengbao_chengpin00
+    100048: chengbao_chengpin01
+    100050: chengbao_chengpin02
+    100052: chengbao_chengpin03
+    100054: chengbao_chengpin04
+    100056: chengbao_chengpin05
+    100058: chengbao_chengpin06
+    100060: chengbao_chengpin07
+    100062: chengbao_chengpin08
+    100064: chengbao_chengpin09
+    100066: chengbao_chengpin10
+    100068: chengbao_chengpin11
+    100070: chengbao_chengpin12
+    100072: chengbao_chengpin13
+    100074: chengbao_chengpin14
+    100076: chengbao_chengpin15
+    100078: chengbao_chengpin16
+    100080: chengbao_chengpin17
+    100082: chengbao_chengpin18
+    400000: chengbao_1_00
+    400002: chengbao_2_00
+    400004: chengbao_3_00
+    400006: chengbao_4_00
+    400008: chengbao_5_00
+    400010: chengbao_6_00
+    400012: //RootNode
+    400014: chengbao_shiyan01
+    400016: chengbao_shiyan02
+    400018: chengbao_shiyan03
+    400020: chengbao_shiyan04
+    400022: chengbao_shiyan05
+    400024: chengbao_shiyan07
+    400026: chengbao_shiyan10
+    400028: chengbao_shiyan11
+    400030: chengbao_shiyan12
+    400032: chengbao_shiyan13
+    400034: chengbao_shiyan18
+    400036: chengbao_shiyan20
+    400038: chengbao_shiyan21
+    400040: chengbao_shiyan22
+    400042: chengbao_shiyan23
+    400044: chengbao_shiyan25
+    400046: chengbao_chengpin00
+    400048: chengbao_chengpin01
+    400050: chengbao_chengpin02
+    400052: chengbao_chengpin03
+    400054: chengbao_chengpin04
+    400056: chengbao_chengpin05
+    400058: chengbao_chengpin06
+    400060: chengbao_chengpin07
+    400062: chengbao_chengpin08
+    400064: chengbao_chengpin09
+    400066: chengbao_chengpin10
+    400068: chengbao_chengpin11
+    400070: chengbao_chengpin12
+    400072: chengbao_chengpin13
+    400074: chengbao_chengpin14
+    400076: chengbao_chengpin15
+    400078: chengbao_chengpin16
+    400080: chengbao_chengpin17
+    400082: chengbao_chengpin18
+    2100000: 01 - Default
+    2100002: 03 - Default
+    2100004: 'Material #61'
+    2300000: chengbao_1_00
+    2300002: chengbao_2_00
+    2300004: chengbao_3_00
+    2300006: chengbao_4_00
+    2300008: chengbao_5_00
+    2300010: chengbao_6_00
+    2300012: chengbao_shiyan07
+    2300014: chengbao_shiyan12
+    2300016: chengbao_shiyan13
+    2300018: chengbao_shiyan18
+    2300020: chengbao_shiyan20
+    2300022: chengbao_shiyan25
+    2300024: chengbao_chengpin05
+    2300026: chengbao_chengpin08
+    2300028: chengbao_chengpin09
+    2300030: chengbao_chengpin10
+    2300032: chengbao_chengpin11
+    2300034: chengbao_chengpin12
+    2300036: chengbao_chengpin13
+    2300038: chengbao_chengpin15
+    2300040: chengbao_chengpin16
+    2300042: chengbao_chengpin17
+    2300044: chengbao_chengpin18
+    3300000: chengbao_1_00
+    3300002: chengbao_2_00
+    3300004: chengbao_3_00
+    3300006: chengbao_4_00
+    3300008: chengbao_5_00
+    3300010: chengbao_6_00
+    3300012: chengbao_shiyan07
+    3300014: chengbao_shiyan12
+    3300016: chengbao_shiyan13
+    3300018: chengbao_shiyan18
+    3300020: chengbao_shiyan20
+    3300022: chengbao_shiyan25
+    3300024: chengbao_chengpin05
+    3300026: chengbao_chengpin08
+    3300028: chengbao_chengpin09
+    3300030: chengbao_chengpin10
+    3300032: chengbao_chengpin11
+    3300034: chengbao_chengpin12
+    3300036: chengbao_chengpin13
+    3300038: chengbao_chengpin15
+    3300040: chengbao_chengpin16
+    3300042: chengbao_chengpin17
+    3300044: chengbao_chengpin18
+    4300000: chengbao_6_00
+    4300002: chengbao_5_00
+    4300004: chengbao_shiyan12
+    4300006: chengbao_shiyan13
+    4300008: chengbao_1_00
+    4300010: chengbao_2_00
+    4300012: chengbao_3_00
+    4300014: chengbao_shiyan20
+    4300016: chengbao_shiyan18
+    4300018: chengbao_4_00
+    4300020: chengbao_shiyan07
+    4300022: chengbao_shiyan25
+    4300024: chengbao_chengpin05
+    4300026: chengbao_chengpin08
+    4300028: chengbao_chengpin09
+    4300030: chengbao_chengpin10
+    4300032: chengbao_chengpin11
+    4300034: chengbao_chengpin12
+    4300036: chengbao_chengpin13
+    4300038: chengbao_chengpin15
+    4300040: chengbao_chengpin16
+    4300042: chengbao_chengpin17
+    4300044: chengbao_chengpin18
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

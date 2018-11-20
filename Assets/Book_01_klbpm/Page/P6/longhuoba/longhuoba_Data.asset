@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a64e5b0e436d4bed9780211ae245f7b, type: 3}
+  m_Name: longhuoba_Data
+  m_EditorClassIdentifier: 
+  dataName: longhuoba
+  dragonBonesJSON: {fileID: 4900000, guid: a3692bd0e5c53e24888bd56886e60bde, type: 3}
+  textureAtlas:
+  - textureAtlasJSON: {fileID: 4900000, guid: 2d7d67a2f8dcba04b86943a25c91dfd1, type: 3}
+    texture: {fileID: 2800000, guid: 1a4d6d4847aab8c48ac35d5a9c8cbc0f, type: 3}
+    material: {fileID: 0}
+    uiMaterial: {fileID: 2100000, guid: cc30d81e96f359141be311deee141e50, type: 2}

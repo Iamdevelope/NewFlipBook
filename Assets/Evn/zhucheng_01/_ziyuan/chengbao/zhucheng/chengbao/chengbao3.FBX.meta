@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 35d6e6d00721a674297e7d5b0de62848
+timeCreated: 1534906782
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: 1
+    100002: 1_MeshPart0
+    100004: 1_MeshPart1
+    100006: 1_MeshPart2
+    100008: 1_MeshPart3
+    100010: 2
+    100012: 3
+    100014: 4
+    100016: 5
+    100018: 6
+    100020: 7
+    100022: 8
+    100024: //RootNode
+    100026: Cylinder011
+    100028: "\u5BF9\u8C61341"
+    100030: "\u5BF9\u8C61357"
+    100032: "\u5BF9\u8C61358"
+    100034: "\u5BF9\u8C61388"
+    100036: "\u5BF9\u8C61431"
+    100038: "\u5BF9\u8C61433"
+    100040: "\u5BF9\u8C61438"
+    100042: "\u5BF9\u8C61439"
+    100044: "\u5BF9\u8C61440"
+    100046: "\u5BF9\u8C61441"
+    100048: "\u5BF9\u8C61442"
+    100050: "\u5BF9\u8C61443"
+    100052: "\u5BF9\u8C61444"
+    100054: "\u5BF9\u8C61445"
+    100056: "\u5BF9\u8C61446"
+    100058: "\u5BF9\u8C61447"
+    100060: "\u5BF9\u8C61448"
+    100062: "\u5BF9\u8C61449"
+    100064: "\u5BF9\u8C61450"
+    100066: "\u5BF9\u8C61451"
+    100068: "\u5BF9\u8C61452"
+    100070: "\u5BF9\u8C61453"
+    100072: "\u5BF9\u8C61454"
+    100074: "\u5BF9\u8C61455"
+    100076: "\u5BF9\u8C61456"
+    100078: "\u5BF9\u8C61457"
+    100080: "\u5BF9\u8C61458"
+    100082: "\u5BF9\u8C61459"
+    100084: "\u5BF9\u8C61460"
+    100086: "\u5BF9\u8C61461"
+    100088: "\u5BF9\u8C61462"
+    100090: "\u5BF9\u8C61463"
+    100092: "\u5BF9\u8C61464"
+    100094: "\u5BF9\u8C61465"
+    100096: "\u5BF9\u8C61466"
+    100098: "\u5BF9\u8C61467"
+    100100: "\u5BF9\u8C61468"
+    100102: "\u5BF9\u8C61473"
+    100104: "\u5BF9\u8C61474"
+    100106: "\u5BF9\u8C61475"
+    100108: "\u5BF9\u8C61476"
+    100110: "\u5BF9\u8C61477"
+    100112: "\u5BF9\u8C61478"
+    100114: "\u5BF9\u8C61479"
+    100116: "\u5BF9\u8C61480"
+    400000: 1
+    400002: 1_MeshPart0
+    400004: 1_MeshPart1
+    400006: 1_MeshPart2
+    400008: 1_MeshPart3
+    400010: 2
+    400012: 3
+    400014: 4
+    400016: 5
+    400018: 6
+    400020: 7
+    400022: 8
+    400024: //RootNode
+    400026: Cylinder011
+    400028: "\u5BF9\u8C61341"
+    400030: "\u5BF9\u8C61357"
+    400032: "\u5BF9\u8C61358"
+    400034: "\u5BF9\u8C61388"
+    400036: "\u5BF9\u8C61431"
+    400038: "\u5BF9\u8C61433"
+    400040: "\u5BF9\u8C61438"
+    400042: "\u5BF9\u8C61439"
+    400044: "\u5BF9\u8C61440"
+    400046: "\u5BF9\u8C61441"
+    400048: "\u5BF9\u8C61442"
+    400050: "\u5BF9\u8C61443"
+    400052: "\u5BF9\u8C61444"
+    400054: "\u5BF9\u8C61445"
+    400056: "\u5BF9\u8C61446"
+    400058: "\u5BF9\u8C61447"
+    400060: "\u5BF9\u8C61448"
+    400062: "\u5BF9\u8C61449"
+    400064: "\u5BF9\u8C61450"
+    400066: "\u5BF9\u8C61451"
+    400068: "\u5BF9\u8C61452"
+    400070: "\u5BF9\u8C61453"
+    400072: "\u5BF9\u8C61454"
+    400074: "\u5BF9\u8C61455"
+    400076: "\u5BF9\u8C61456"
+    400078: "\u5BF9\u8C61457"
+    400080: "\u5BF9\u8C61458"
+    400082: "\u5BF9\u8C61459"
+    400084: "\u5BF9\u8C61460"
+    400086: "\u5BF9\u8C61461"
+    400088: "\u5BF9\u8C61462"
+    400090: "\u5BF9\u8C61463"
+    400092: "\u5BF9\u8C61464"
+    400094: "\u5BF9\u8C61465"
+    400096: "\u5BF9\u8C61466"
+    400098: "\u5BF9\u8C61467"
+    400100: "\u5BF9\u8C61468"
+    400102: "\u5BF9\u8C61473"
+    400104: "\u5BF9\u8C61474"
+    400106: "\u5BF9\u8C61475"
+    400108: "\u5BF9\u8C61476"
+    400110: "\u5BF9\u8C61477"
+    400112: "\u5BF9\u8C61478"
+    400114: "\u5BF9\u8C61479"
+    400116: "\u5BF9\u8C61480"
+    2300000: 1_MeshPart0
+    2300002: 1_MeshPart1
+    2300004: 1_MeshPart2
+    2300006: 1_MeshPart3
+    2300008: 3
+    2300010: 4
+    2300012: 6
+    2300014: 7
+    2300016: 8
+    2300018: Cylinder011
+    2300020: "\u5BF9\u8C61433"
+    2300022: "\u5BF9\u8C61438"
+    2300024: "\u5BF9\u8C61439"
+    2300026: "\u5BF9\u8C61440"
+    2300028: "\u5BF9\u8C61441"
+    2300030: "\u5BF9\u8C61442"
+    2300032: "\u5BF9\u8C61443"
+    2300034: "\u5BF9\u8C61444"
+    2300036: "\u5BF9\u8C61445"
+    2300038: "\u5BF9\u8C61446"
+    2300040: "\u5BF9\u8C61447"
+    2300042: "\u5BF9\u8C61448"
+    2300044: "\u5BF9\u8C61449"
+    2300046: "\u5BF9\u8C61450"
+    2300048: "\u5BF9\u8C61451"
+    2300050: "\u5BF9\u8C61452"
+    2300052: "\u5BF9\u8C61453"
+    2300054: "\u5BF9\u8C61454"
+    2300056: "\u5BF9\u8C61455"
+    2300058: "\u5BF9\u8C61456"
+    2300060: "\u5BF9\u8C61457"
+    2300062: "\u5BF9\u8C61458"
+    2300064: "\u5BF9\u8C61459"
+    2300066: "\u5BF9\u8C61460"
+    2300068: "\u5BF9\u8C61461"
+    2300070: "\u5BF9\u8C61465"
+    2300072: "\u5BF9\u8C61466"
+    2300074: "\u5BF9\u8C61467"
+    2300076: "\u5BF9\u8C61468"
+    2300078: "\u5BF9\u8C61473"
+    2300080: "\u5BF9\u8C61474"
+    2300082: "\u5BF9\u8C61475"
+    2300084: "\u5BF9\u8C61476"
+    2300086: "\u5BF9\u8C61477"
+    2300088: "\u5BF9\u8C61478"
+    2300090: "\u5BF9\u8C61479"
+    2300092: "\u5BF9\u8C61480"
+    2300094: 1
+    3300000: 1_MeshPart0
+    3300002: 1_MeshPart1
+    3300004: 1_MeshPart2
+    3300006: 1_MeshPart3
+    3300008: 3
+    3300010: 4
+    3300012: 6
+    3300014: 7
+    3300016: 8
+    3300018: Cylinder011
+    3300020: "\u5BF9\u8C61433"
+    3300022: "\u5BF9\u8C61438"
+    3300024: "\u5BF9\u8C61439"
+    3300026: "\u5BF9\u8C61440"
+    3300028: "\u5BF9\u8C61441"
+    3300030: "\u5BF9\u8C61442"
+    3300032: "\u5BF9\u8C61443"
+    3300034: "\u5BF9\u8C61444"
+    3300036: "\u5BF9\u8C61445"
+    3300038: "\u5BF9\u8C61446"
+    3300040: "\u5BF9\u8C61447"
+    3300042: "\u5BF9\u8C61448"
+    3300044: "\u5BF9\u8C61449"
+    3300046: "\u5BF9\u8C61450"
+    3300048: "\u5BF9\u8C61451"
+    3300050: "\u5BF9\u8C61452"
+    3300052: "\u5BF9\u8C61453"
+    3300054: "\u5BF9\u8C61454"
+    3300056: "\u5BF9\u8C61455"
+    3300058: "\u5BF9\u8C61456"
+    3300060: "\u5BF9\u8C61457"
+    3300062: "\u5BF9\u8C61458"
+    3300064: "\u5BF9\u8C61459"
+    3300066: "\u5BF9\u8C61460"
+    3300068: "\u5BF9\u8C61461"
+    3300070: "\u5BF9\u8C61465"
+    3300072: "\u5BF9\u8C61466"
+    3300074: "\u5BF9\u8C61467"
+    3300076: "\u5BF9\u8C61468"
+    3300078: "\u5BF9\u8C61473"
+    3300080: "\u5BF9\u8C61474"
+    3300082: "\u5BF9\u8C61475"
+    3300084: "\u5BF9\u8C61476"
+    3300086: "\u5BF9\u8C61477"
+    3300088: "\u5BF9\u8C61478"
+    3300090: "\u5BF9\u8C61479"
+    3300092: "\u5BF9\u8C61480"
+    3300094: 1
+    4300000: 4
+    4300002: 1_MeshPart0
+    4300004: 1_MeshPart1
+    4300006: 1_MeshPart2
+    4300008: 1_MeshPart3
+    4300010: 3
+    4300012: 7
+    4300014: 6
+    4300016: 8
+    4300018: Cylinder011
+    4300020: "\u5BF9\u8C61433"
+    4300022: "\u5BF9\u8C61438"
+    4300024: "\u5BF9\u8C61439"
+    4300026: "\u5BF9\u8C61440"
+    4300028: "\u5BF9\u8C61441"
+    4300030: "\u5BF9\u8C61442"
+    4300032: "\u5BF9\u8C61443"
+    4300034: "\u5BF9\u8C61444"
+    4300036: "\u5BF9\u8C61445"
+    4300038: "\u5BF9\u8C61446"
+    4300040: "\u5BF9\u8C61447"
+    4300042: "\u5BF9\u8C61448"
+    4300044: "\u5BF9\u8C61449"
+    4300046: "\u5BF9\u8C61450"
+    4300048: "\u5BF9\u8C61451"
+    4300050: "\u5BF9\u8C61452"
+    4300052: "\u5BF9\u8C61453"
+    4300054: "\u5BF9\u8C61454"
+    4300056: "\u5BF9\u8C61455"
+    4300058: "\u5BF9\u8C61456"
+    4300060: "\u5BF9\u8C61457"
+    4300062: "\u5BF9\u8C61458"
+    4300064: "\u5BF9\u8C61459"
+    4300066: "\u5BF9\u8C61460"
+    4300068: "\u5BF9\u8C61461"
+    4300070: "\u5BF9\u8C61465"
+    4300072: "\u5BF9\u8C61466"
+    4300074: "\u5BF9\u8C61467"
+    4300076: "\u5BF9\u8C61468"
+    4300078: "\u5BF9\u8C61473"
+    4300080: "\u5BF9\u8C61474"
+    4300082: "\u5BF9\u8C61475"
+    4300084: "\u5BF9\u8C61476"
+    4300086: "\u5BF9\u8C61477"
+    4300088: "\u5BF9\u8C61478"
+    4300090: "\u5BF9\u8C61479"
+    4300092: "\u5BF9\u8C61480"
+    4300094: 1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01___Default
+    second: {fileID: 2100000, guid: a62d1a7bc9cdcc0499d39184432682aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02___Default
+    second: {fileID: 2100000, guid: 9eb196627a235b54babba217254311f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 8m
+    second: {fileID: 2100000, guid: 06c1d39649af2d042bcf34ceef529b96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #112'
+    second: {fileID: 2100000, guid: cb522a51e7e895148978179614c24e8c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #113'
+    second: {fileID: 2100000, guid: fa14e98c8bd6c0f48abb708b617069d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #128'
+    second: {fileID: 2100000, guid: 47b902b0663f5184694720c39432c10c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #129'
+    second: {fileID: 2100000, guid: 0808bd6d3d5e39140afc195f795e32de, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #130'
+    second: {fileID: 2100000, guid: 14f6009946dd93f4ba0c78c595357118, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #131'
+    second: {fileID: 2100000, guid: 49e3c7e0b7c4f6e44950e196e2405003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #61'
+    second: {fileID: 2100000, guid: 172fc6b96bcaed947986dc26b12fc551, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #62'
+    second: {fileID: 2100000, guid: bfcf24c7c87c5df4782e2ab9f5a57815, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #63'
+    second: {fileID: 2100000, guid: d9e76c37c8cf0644b99b6878032f1da7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #64'
+    second: {fileID: 2100000, guid: e43f4c0b8915ed344a49897dec89df85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #65'
+    second: {fileID: 2100000, guid: 42bf86e3a550388479c3c6980064a5d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #66'
+    second: {fileID: 2100000, guid: 1e0a1c982b05cf24ea8288fe93fda922, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #67'
+    second: {fileID: 2100000, guid: ca3aaec2ba9e4c942bba0dd206b24070, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: 5c84ad09ef200af43a9f5f7a3ccb14ce
+labels:
+- boundary
+- boundaries
+- collider
+- editor
+- extension
+- collision
+- bounds
+- colliders
+- trigger
+- zone
+- design
+- level
+- gameplay
+- events
+- triggers
+- event
+- management
+- pooling
+- tool
+- cache
+- pool
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
