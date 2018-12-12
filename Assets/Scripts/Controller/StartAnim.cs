@@ -1,9 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using PJW.Book;
 using PJW.Book.UI;
-using System;
 
 namespace PJW.Book
 {

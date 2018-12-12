@@ -14,8 +14,10 @@ namespace PJW.Book.UI
         private RectTransform children;
         private Image classTypeSprite;
         private float startPos;
+        private Dictionary<string, Sprite> titleMap;
         public override void Init()
         {
+            titleMap = new Dictionary<string, Sprite>();
             children = transform.Find("BG").GetComponent<RectTransform>();
             classTypeSprite = children.Find("ClassTypeName").GetComponent<Image>();
             startPos = children.localPosition.y;
@@ -27,9 +29,10 @@ namespace PJW.Book.UI
         public void ChangeTitleSprite(string titleName)
         {
             if (classTypeSprite == null) return;
-            string path = "UISprites/Bookstore/Title/biaoti_" + titleName;
-            Sprite sprite = Resources.Load<Sprite>(path);
-            classTypeSprite.sprite = sprite;
+            if(!titleMap.ContainsKey(titleName))
+                titleMap[titleName]= Resources.Load<Sprite>("UISprites/Bookstore/Title/biaoti_" + titleName);
+
+            classTypeSprite.sprite = titleMap[titleName];
             StartAnim();
         }
         public override void StartAnim()

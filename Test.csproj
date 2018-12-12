@@ -12,7 +12,7 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectGenerator>VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
@@ -28,7 +28,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Debug\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_1;UNITY_2017_3;UNITY_2017;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_1;UNITY_2017_3;UNITY_2017;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;FTP;HTTP;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -38,7 +38,7 @@
     <IntermediateOutputPath>Temp\UnityVS_obj\Release\</IntermediateOutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_1;UNITY_2017_3;UNITY_2017;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
+    <DefineConstants>TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_3_1;UNITY_2017_3;UNITY_2017;UNITY_ANALYTICS;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;ENABLE_LOCALIZATION;PLATFORM_ANDROID;UNITY_ANDROID;UNITY_ANDROID_API;ENABLE_SUBSTANCE;ENABLE_EGL;ENABLE_NETWORK;ENABLE_RUNTIME_GI;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_EVENT_QUEUE;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_NATIVE_CRASH_REPORTING;PLATFORM_SUPPORTS_ADS_ID;UNITY_CAN_SHOW_SPLASH_SCREEN;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_UNITYADS_RUNTIME;UNITY_UNITYADS_API;ENABLE_MONO;NET_2_0;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;ENABLE_VSTU;UNITY_PRO_LICENSE;FTP;HTTP;UNITY_HAS_GOOGLEVR;UNITY_HAS_TANGO</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
@@ -314,11 +314,17 @@
     <Reference Include="Packets">
       <HintPath>Assets/Evn/Import/xiaoyouyou/unity_scene_200/Lib/Packets.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="LitJson">
       <HintPath>Assets/Plugins/LitJson.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Data.Sqlite">
       <HintPath>Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Assets/Plugins/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Data">
       <HintPath>Assets/Plugins/System.Data.dll</HintPath>
@@ -344,18 +350,18 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/User/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="ChannelPurchase">
-      <HintPath>C:/Users/User/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.xiaomi@1.0.0/UnityChannel/ChannelPurchase.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityStore">
-      <HintPath>C:/Users/User/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.xiaomi@1.0.0/UnityChannel/UnityStore.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/iOSSupport\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Test.Plugins.csproj">
+      <Project>{3259965F-0940-4142-FD72-0349595FD329}</Project>
+      <Name>Test.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
@@ -640,11 +646,6 @@
     <Compile Include="Assets\Scripts\Book\GeneratePage.cs" />
     <Compile Include="Assets\Scripts\Book\LoadAllBookXML.cs" />
     <Compile Include="Assets\Scripts\Book\PageTurning.cs" />
-    <Compile Include="Assets\Scripts\BookDummy\BookDummy.cs" />
-    <Compile Include="Assets\Scripts\BookDummy\BookDummyFlipBook.cs" />
-    <Compile Include="Assets\Scripts\BookDummy\BookDummyGeneratePage.cs" />
-    <Compile Include="Assets\Scripts\BookDummy\BookDummyLoadAllBookXML.cs" />
-    <Compile Include="Assets\Scripts\BookDummy\BookDummyStartPageFlip.cs" />
     <Compile Include="Assets\Scripts\Character\AnimalMove.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterCamera.cs" />
     <Compile Include="Assets\Scripts\Character\CharacterControllerByETC.cs" />
@@ -652,6 +653,7 @@
     <Compile Include="Assets\Scripts\Common\GameObjectPool.cs" />
     <Compile Include="Assets\Scripts\Common\MonoSingleton.cs" />
     <Compile Include="Assets\Scripts\Common\XmlSerializeHelper.cs" />
+    <Compile Include="Assets\Scripts\Controller\AsyncLoadScene.cs" />
     <Compile Include="Assets\Scripts\Controller\CameraMove.cs" />
     <Compile Include="Assets\Scripts\Controller\CanvasController.cs" />
     <Compile Include="Assets\Scripts\Controller\ContentController.cs" />
@@ -673,10 +675,13 @@
     <Compile Include="Assets\Scripts\HotUpdate\DownLoad\HTTPLoad.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\DownLoad\WWWLoad.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\GenerateAssetBundlePath.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\GetMD5FromFile.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\LoadAssetByAssetBundle.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\Models\ClientVersionInfoBase.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\Models\ConfigFileElement.cs" />
     <Compile Include="Assets\Scripts\HotUpdate\Models\ResourceInfoBase.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\ResourcesSaveToConfig.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\ResourcesUpdate.cs" />
+    <Compile Include="Assets\Scripts\HotUpdate\ResUpdate.cs" />
     <Compile Include="Assets\Scripts\Interable\DragObjectMove.cs" />
     <Compile Include="Assets\Scripts\Interable\DragonContent.cs" />
     <Compile Include="Assets\Scripts\Interable\InterableAnimal.cs" />
@@ -693,23 +698,48 @@
     <Compile Include="Assets\Scripts\JSON\GenerateAllBookJSONFile.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
-    <Compile Include="Assets\Scripts\Models\LanguageData.cs" />
-    <Compile Include="Assets\Scripts\Models\UserData.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Core\Facade.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Core\Model.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Core\NotificationCenter.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Core\View.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IFacade.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IMediator.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IModel.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\INotifier.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IObserver.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IProxy.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IView.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Mediator.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Notification.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Proxy.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\ApplicationFacade.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMediator.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMonoBehaviour.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BasePanel.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseProxy.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\LanguageData.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\UserData.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\UserProxy.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Views\UserMediator.cs" />
     <Compile Include="Assets\Scripts\SQLite\DbAccess.cs" />
     <Compile Include="Assets\Scripts\SQLite\SQLiteHelper.cs" />
     <Compile Include="Assets\Scripts\Test\AnimationCursoTest.cs" />
+    <Compile Include="Assets\Scripts\Test\HttpDownTest.cs" />
     <Compile Include="Assets\Scripts\Test\MouseDrag.cs" />
     <Compile Include="Assets\Scripts\Test\ScriptTableTest.cs" />
+    <Compile Include="Assets\Scripts\Test\SkillInfo.cs" />
+    <Compile Include="Assets\Scripts\Tool\DictionaryHelp.cs" />
     <Compile Include="Assets\Scripts\Tool\GenerateAllBookXML.cs" />
     <Compile Include="Assets\Scripts\Tool\GenerateAllBookXMLHelper.cs" />
     <Compile Include="Assets\Scripts\Tool\GenerateXML.cs" />
     <Compile Include="Assets\Scripts\Tool\GenerateXMLHelper.cs" />
     <Compile Include="Assets\Scripts\Tool\StartLoadBookXML.cs" />
+    <Compile Include="Assets\Scripts\Tool\ZipHelper.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonAnim\Left.cs" />
     <Compile Include="Assets\Scripts\UI\ButtonAnim\Right.cs" />
     <Compile Include="Assets\Scripts\UI\DragUIMove.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\BasePanel.cs" />
     <Compile Include="Assets\Scripts\UI\UIPanel\CharacterSelectPanel.cs" />
+    <Compile Include="Assets\Scripts\UI\UIPanel\ChildrenClassPanel.cs" />
     <Compile Include="Assets\Scripts\UI\UIPanel\ClassPanel.cs" />
     <Compile Include="Assets\Scripts\UI\UIPanel\ClassTypePanel.cs" />
     <Compile Include="Assets\Scripts\UI\UIPanel\DownLoadPanel.cs" />
@@ -724,10 +754,8 @@
     <Compile Include="Assets\Scripts\Video\UIPlayer.cs" />
     <Compile Include="Assets\Scripts\XML\NewGenerateAllbookXMLFile.cs" />
     <Compile Include="Assets\Scripts\XML\NewGenerateBookstore.cs" />
-    <Compile Include="Packages\com.unity.xiaomi\UnityChannel\XiaomiSupport\AppStoreSettings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Book-Page Curl\allBooks.xml" />
     <None Include="Assets\Demigiant\DOTween\DOTween.XML" />
     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
@@ -741,9 +769,6 @@
     <None Include="Assets\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
     <None Include="Assets\Evn\Import\xiaoyouyou\Shader\MyMobile Particle ParticleAdd.shader" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\oScenes\shader\MyMobile Particle ParticleAdd.shader" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\oScenes\shader\MyMobile Particle ParticleBlend.shader" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\oScenes\shader\MyMobile UV Sine_Add.shader" />
     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\Bright.shader" />
     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\GaussianBlur.shader" />
     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
@@ -815,9 +840,32 @@
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\Plugins\Android\ShareSDK\AndroidManifest.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\drawable\ssdk_oks_classic_platform_cell_back.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\drawable\ssdk_oks_classic_progressbar.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\drawable\ssdk_weibo_retry_btn_default.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\drawable\ssdk_weibo_retry_btn_press.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\drawable\ssdk_weibo_retry_btn_selector.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\values-en\ssdk_country_arrays.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\values-en\ssdk_oks_strings.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\values-en\ssdk_strings.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\values\ssdk_country_arrays.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\values\ssdk_instapaper_strings.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\values\ssdk_oks_color_drawables.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\values\ssdk_oks_strings.xml" />
+    <None Include="Assets\Plugins\Android\ShareSDK\res\values\ssdk_strings.xml" />
+    <None Include="Assets\Plugins\iOS\ShareSDK\Editor\SDK\ShareSDK\Support\Optional\ShareSDKConfigFile.bundle\ShareContent.xml" />
+    <None Include="Assets\Plugins\iOS\ShareSDK\Editor\SDK\ShareSDK\Support\Optional\ShareSDKConfigFile.bundle\ShareSDK.xml" />
+    <None Include="Assets\Plugins\iOS\ShareSDK\Editor\SDK\ShareSDK\Support\PlatformSDK\WeChatSDK\README.txt" />
     <None Include="Assets\Shader\FlipBookShader.shader" />
+    <None Include="Assets\Shader\MyMobile Particle ParticleAdd.shader" />
+    <None Include="Assets\Shader\MyMobile Particle ParticleBlend.shader" />
+    <None Include="Assets\Shader\MyMobile UV Sine_Add.shader" />
     <None Include="Assets\Shader\PageLeft.shader" />
     <None Include="Assets\Shader\PageTurning.shader" />
+    <None Include="Assets\Shader\ShaderForLight.shader" />
+    <None Include="Assets\Shader\ShaderForLight1.shader" />
+    <None Include="Assets\StreamingAssets\Books\XMLContent\allBooks.xml" />
     <None Include="Assets\StreamingAssets\path.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

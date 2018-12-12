@@ -20,7 +20,6 @@ namespace PJW.Book.UI
         private Dictionary<string, GameObject> objects;
         private Dictionary<string, GameObject> allCharacterButton;
         private Button enterBtn;
-        private CharacterController characterController;
         public override void Init()
         {
             allCharacterButton = new Dictionary<string, GameObject>();
@@ -74,22 +73,12 @@ namespace PJW.Book.UI
                 GameObject temp = Resources.Load<GameObject>("CharacterPrefabs/" + name);
                 if (temp == null) return;
                 objects[name] = Instantiate(temp);
-                //characterController = objects[name].AddComponent<CharacterController>();
-                //characterController.center = new Vector3(0, 0.08f, 0);
-                //characterController.radius = 0.05f;
-                //characterController.height = 0.3f;
                 objects[name].tag = "Player";
                 objects[name].transform.GetChild(0).gameObject.AddComponent<InterableAnimal>();
                 objects[name].name = temp.name;
             }
             currentObject = objects[name];
             currentObject.SetActive(true);
-
-        }
-
-        public override void Reset(Vector3 scale, float t, string msg = "")
-        {
-            base.Reset(scale, t, msg);
         }
     }
 }

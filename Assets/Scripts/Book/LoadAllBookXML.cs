@@ -13,7 +13,8 @@ public class LoadAllBookXML : MonoBehaviour {
     [Tooltip("资源是否采用Resources进行加载")]
     public bool loadAssetIsResources;
     [Tooltip("AssetBundle资源名")]
-    public string assetBundleFile;
+    private string assetBundleFile;
+    public bool isXML;
     /// <summary>
     /// 根据书籍类型生成XML
     /// </summary>
@@ -21,27 +22,49 @@ public class LoadAllBookXML : MonoBehaviour {
     /// <param name="classType">书籍所属班级类型属性</param>
     public void GenerateAllBook(string name,string classType)
     {
+        //在每次进行书本的生成时，将书本数量清空
         GameCore.Instance.NewGenerateBookstore.bookNum = 0;
         if (loadAssetIsResources)
         {
-            //path = GameCore.Instance.LocalXMLPath + name + "/" + classType + "/" + name + classType + ".xml";
-            path = GameCore.Instance.LocalXMLPath + "allBooks.xml";
-
-            //path = GameCore.Instance.LocalXMLPath + "books.json";
-            //if (!File.Exists(GameCore.Instance.LocalXMLPath + "books.json"))
-            //    GenerateAllBookJSONFile.GetBookContentByFile(GameCore.Instance.LocalXMLPath + "books.json", () => GameCore.Instance.NewGenerateBookstore.LoadAllBookByJSON(path, name, classType));
-            //else
-            //    GameCore.Instance.NewGenerateBookstore.LoadAllBookByJSON(path, name, classType);
-            ////如果需要创建的书本的xml文件不存在，则对其进行创建
-            //if (!File.Exists(path))
-            //    GenerateAllBookXML.GetBookContentByFile(path, name, classType, () => GameCore.Instance.GenerateBookStore.LoadAllBookByXML(path));
-            //else
-            //    GameCore.Instance.GenerateBookStore.LoadAllBookByXML(path);
-            //如果需要创建的书本的xml文件不存在，则对其进行创建
-            if (!File.Exists(path))
-                NewGenerateAllbookXMLFile.GetBookContentByFile(path, () => GameCore.Instance.NewGenerateBookstore.LoadAllBookByXML(path, name, classType));
-            else
-                GameCore.Instance.NewGenerateBookstore.LoadAllBookByXML(path, name, classType);
+            if (Application.platform == RuntimePlatform.WindowsPlayer
+                || Application.platform == RuntimePlatform.WindowsEditor)
+            {
+                if (isXML)
+                {
+                    path = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + "allBooks.xml";
+                    if (!File.Exists(path))
+                        NewGenerateAllbookXMLFile.GetBookContentByFile(path, () => StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByXML(path, name, classType)));
+                    else
+                        StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByXML(path, name, classType));
+                }
+                else
+                {
+                    path = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + "books.json";
+                    if (!File.Exists(path))
+                        GenerateAllBookJSONFile.GetBookContentByFile(path, () => StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByJSON(path, name, classType)));
+                    else
+                        StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByJSON(path, name, classType));
+                }
+            }
+            else if (Application.platform == RuntimePlatform.Android)
+            {
+                if (isXML)
+                {
+                    path = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + "allBooks.xml";
+                    if (!File.Exists(path))
+                        NewGenerateAllbookXMLFile.GetBookContentByFile(path, () => StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByXML(path, name, classType)));
+                    else
+                        StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByXML(path, name, classType));
+                }
+                else
+                {
+                    path = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + "books.json";
+                    if (!File.Exists(path))
+                        GenerateAllBookJSONFile.GetBookContentByFile(path, () => StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByJSON(path, name, classType)));
+                    else
+                        StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByJSON(path, name, classType));
+                }
+            }
         }
         //否则采用AssetBundle进行资源加载
         else
@@ -54,20 +77,21 @@ public class LoadAllBookXML : MonoBehaviour {
                 if (item.Equals("allbookimage.allbookimage"))
                 {
                     assetBundleFile = item;
-                    DownLoadMainfest(path);
+                    DownLoadMainfest(path,name,classType);
                 }
             }
         }
     }
 
-    private void DownLoadMainfest( string savePath)
+    private void DownLoadMainfest( string savePath,string bookType,string classType)
     {
         string path = savePath + assetBundleFile;
         if (File.Exists(path))
         {
             //在进行资源加载之前将所有AssetBundle资源卸载，以防止资源重复加载出错
-            AssetBundle.UnloadAllAssetBundles(true);
-            GameCore.Instance.GenerateBookStore.LoadAllBookByAssetBundle(path);
+            //AssetBundle.UnloadAllAssetBundles(true);
+            //GameCore.Instance.GenerateBookStore.LoadAllBookByAssetBundle(path);
+            GameCore.Instance.NewGenerateBookstore.LoadAllBookByAssetBundle(path,bookType,classType);
         }
     }
 

@@ -72,7 +72,8 @@ namespace PJW.Book
                 GameCore.Instance.SoundManager.Reset();
             else
                 GameCore.Instance.GeneratePage.soundManager.Reset();
-            SceneManager.LoadScene("Bookstore");
+            Globe.nextSceneName = "Bookstore";
+            SceneManager.LoadScene("Loading");
         }
     }
 }

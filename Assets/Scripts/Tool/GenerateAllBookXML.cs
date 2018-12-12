@@ -38,7 +38,7 @@ namespace PJW.Common
                     books.Add(book);
                 }
             }
-            string savePath = GameCore.Instance.LocalXMLPath + bookType + "/" + classType + "/";
+            string savePath = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + bookType + "/" + classType + "/";
             Debug.Log(savePath);
             if (!Directory.Exists(savePath))
                 Directory.CreateDirectory(savePath);

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-YouDao-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="ac9464d9783768aba2d94119c222e04e2e31f0d5">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-YouDao-3.2.1_8d247ce48dfe313cb898403d0b805ed13cca211c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Youtube-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="aad34ecf58bd000beefc9ac2d29729017a47afaa">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Youtube-3.2.1_9d5736221adf580f02993161b1deeba4f672bb2a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Instagram-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="16bee871aade6f5aa9c7042a930e43a173f274ba">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Instagram-3.2.1_043f193160d99602bd075acae323e4785092a049.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-VKontakte-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="9447401b14fc312b5cb25d6ee1f618d31b9a20ff">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-VKontakte-3.2.1_403e21c31f2325991a06b11bb08dd95c15500174.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Core-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="1eabee41a5b4f5d4a9a8e42cf812f9d9fcfe9315">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Core-3.2.1_fbf5fb4ade268fec2d68a7e4b29f2c308ffc5bdb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-ShortMessage-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="865108c2cc788da4885ed5c4f45f59722336d7ed">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-ShortMessage-3.2.1_f78a253cda8afa0ad226ee646efdd588519dc7b8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-SinaWeibo-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="3fc376f6072c268452b10f66ae022aaece8ee450">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-SinaWeibo-3.2.1_6b99a58893a3515bc6cacc29a9b8311b57a6763d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="9a4faffb792d55afb59594468ae86633f8ef6c26">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\classes_88f2a39b76f84039a05da9e3c46ed9b75c813ef3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Wechat-Moments-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="2a01ae39310eddc288b5da763adf2988347b5ae0">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Wechat-Moments-3.2.1_53488d3f6ccc156e897fa0c9cdf40e41c0690205.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Instapaper-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="3904e4747737f372634a2ec03951747de9a171e0">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Instapaper-3.2.1_d2248e33ae8aad22178889f248d34de9ae23b0aa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Kakao-Core-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="e6d2c5be040e2b3d76449189828e1183e9ff0c61">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Kakao-Core-3.2.1_98c75e13a07da1c3c739eba9b6bbbabbc29dc942.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-KakaoStory-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="dc1b4bb89b90384cebd2677ef44980e8b959889e">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-KakaoStory-3.2.1_78fd7ebf53cac9bea3d4eeb47fcc413ce62d0de1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\SSDKU3D.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="2cbb188c76ed583e4a40361b5789b6c9f4fef88b">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\SSDKU3D_7ea2c231239385cf3584a369e58f27fe568ad05f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Flickr-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="19ec891559e2c74cdbdeebb9efe26eab97368389">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Flickr-3.2.1_cfcea2becb3ed872573956fb56cbba164efea513.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Wechat-Core-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="04ec4b1b7af0809489129f7effd83ff9c980f735">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Wechat-Core-3.2.1_efc1de188ccdab488f76a7b22edf3e78570633fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Douban-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="aed886e151cfb141cd79eb6ae33d1f3b05b1e12b">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Douban-3.2.1_d17f28d0bc886b406e047410b28a73fbd408e727.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Foursquare-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="f29f81295b21a5131d7650e14aeace588493d117">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Foursquare-3.2.1_e0b26323caf6efc9633e26965681a816c7d1b41d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Linkedin-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="1adacafe948126afa3d04f988089e3d0c4fcc608">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Linkedin-3.2.1_4f48676d1218003758debc6c12ab56af0d364e98.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Evernote-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="ac7249a5d18508da49152c84bb548304524f1631">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Evernote-3.2.1_1aaf1d1eee5e19eee8e32396ba2a587749ea5f27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Pocket-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="3e29fcacbf8854ecd114cc9fd87b47bb646f9b2a">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Pocket-3.2.1_f9021d62022dc2fc3e7440163778e206f2d32a34.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Twitter-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="14691a226c5ec86201de715089d7b54d25519570">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Twitter-3.2.1_5896a73f154a5fc323dea302c0341d3136e7cdba.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\DemoCallback.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="a188e53439f888f0505b9b14544bca9b89e28db8">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\DemoCallback_d61bb2d5a2dc3b33279a947a6e9ab8d28ca32870.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-QQ-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="848e6d061c85086a1f650722c339095b4c6d148a">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-QQ-3.2.1_3478b4f110e1108f1d3519a1363f1972f12fda00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Wechat-Favorite-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="32882912836b9ca10bd2b6fb2a97ff9d886a8bd7">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Wechat-Favorite-3.2.1_30502664c5656b596eca3c744fe18e70ec2f6f53.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Mingdao-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="bf0ae8cb62038fa0216e54bee42978808e1bc8f2">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Mingdao-3.2.1_d2615b92fb960e1ada42c1ef84c38f1b48e6e0c2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Renren-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="a3f1ff0cd3189e22ef5ff6c5ebc3b9f96d269c99">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Renren-3.2.1_dacbea70d783cd6c79bd10cb8e129c4c12e1f9f6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Yixin-Core-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="ba0496f34dfeec8d8e888f472fb6b913c1d5ab4b">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Yixin-Core-3.2.1_a430bb2da21371e63588ca2a4fb6943ed8a20865.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Yixin-Moments-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="a128eb3742d77c6cd610ebfbffd10ce8a152d397">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Yixin-Moments-3.2.1_5b27d21461a13e07540c5eac70e809a7c89b689d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Pinterest-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="98799e95ac3580ad5e1dcd6a36a99a52261d72be">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Pinterest-3.2.1_e28cab343a5e0cf23c3e297311f9479be323d995.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-QZone-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="7a3bcaeefcd431fe71aaed16d9d9c1283a7a6584">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-QZone-3.2.1_d70217be0a1cb5cd2f075e6d6bcc034f1ec23fa1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Cmcc-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="2d1ffc43b677e4fe342a44e299086befd56ad533">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Cmcc-3.2.1_d892b1f91fba27674b4de4ffb771fe43d581373c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-KakaoTalk-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="6b0774cdb6a96fa745d10fc829928316e4ed9da3">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-KakaoTalk-3.2.1_645ef710a6079977b6ada90415d73ad73893c399.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-TencentWeibo-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="4aee69390adff964d359b3b6a3fc9ee51299d08f">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-TencentWeibo-3.2.1_5b705e9169d79bf8e53cda04c2735424a1c596c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\MobCommons-2018.0704.1311.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="75e037b951855345bd047887a1202294533e01e3">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\MobCommons-2018.0704.1311_c0b3620345daaa07d1e5be4951edffc40645a9b2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Dropbox-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="ee46a03edea63d11c85e6d5dceb9bea28acbf3b4">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Dropbox-3.2.1_55afed83ce458dc374325f347d47ccd30a78915a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-WhatsApp-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="291e69dd6e48b1df76ebe7f9d87d415744b5103d">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-WhatsApp-3.2.1_d4f069db5568bcfff19c8f29142896b5acbb99b9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\libs\unity-classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="2d302418aa3482b8db770278260340aed47dd37a">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\unity-classes_54656d41caea88e3d20e54ecd08f53ddb812d779.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Yixin-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="5afe045b007e85c3b18c2923d774ddc9efe9fda9">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Yixin-3.2.1_e049b83b8453800ee2bdc48232b1d26f134d0100.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-FacebookMessenger-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="e8ecc516d6c9fe773d2ffe525776739a774305e8">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-FacebookMessenger-3.2.1_2fab8a118147e12a4026ad743150526399f8a18d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Alipay-Core-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="11c17b246eb6d61e9111a639f2338b2d48fa2d94">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Alipay-Core-3.2.1_b149c0a6c2232498b84a49626b81baa63cb9803b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Tumblr-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="003bcfc0747ccd27b18b080c6a396f72fb9c8a58">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Tumblr-3.2.1_6d3cebdf115e64f3c4d7b9ad6e680ec44dfb969b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Wechat-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="09b3e3a98ce248b0ecb7d34edecf9d188a7002ff">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Wechat-3.2.1_321c1bcafe633fb68f0c9c91e3d7d4fee3b3a459.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Facebook-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="c7b28e9369ac6f0728ca2d0ed1dc48b756305e62">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Facebook-3.2.1_a2a547d13ad58fffbe6a3f9ce2d92cd02eca3287.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Email-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="4f67d9699c8a516c525a4652ece6be4ce28b1322">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Email-3.2.1_43f1efffdb888d45e7873f8d7ec69953f6220cdc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Dingding-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="957254f5f790e08499e82c014c79b1f2fb863c55">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Dingding-3.2.1_f12fde82c9e2bf1f8534b779bac86362ef79c2eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Line-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="6137e691edbb23f3f4536b8fb051f4cb8cb58492">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Line-3.2.1_6d858bb3f46b17d1502885daa6aa93b462a5f9bc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Alipay-Moments-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="65fbd40978b1762c86cc1ba7b03844a67646b0bd">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Alipay-Moments-3.2.1_dc71b6863b07da2d99045cf8e6a1a42a468daf97.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-KaiXin-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="0c65887b3442df29aeb94f029dae4597915b1a3d">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-KaiXin-3.2.1_769a22899a7262baa75d3a50f07b44e7e29768ea.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\MobTools-2018.0704.1157.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="a0fa95b37a4ac1c27847e33cf113dda274ee9010">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\MobTools-2018.0704.1157_7ead0d3a578d2be8dc6e0a9ad0c4a8ff3cafdb41.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-GooglePlus-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="8a3af4d384c9a9ef15905a5cdbb25adf945e7868">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-GooglePlus-3.2.1_a9e70a02c07f7c3e68524dd99cd24266195ef1f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Alipay-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="e22012c38af0498b46826fe30948d971faff6447">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Alipay-3.2.1_8210f0f33d811d2e0216d58d104a8ac1dbbe0955.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\ShareSDK-Meipai-3.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="14c4d35deb8bf2e415a38f0d0692f0f7b75fe007">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\ShareSDK-Meipai-3.2.1_fb5a917c7a7d2ccee7a859d0f3d01b1663c4c723.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\UnityProject\Test\Temp\gradleOut\ShareSDK\build\intermediates\bundles\default\libs\OneKeyShare.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="28.0.3"
+        sha1="2652aed3c2fdfa05e5bfe241357c0a9860682d39">
+        <dex dex="D:\UnityProject\Test\Temp\gradleOut\build\intermediates\pre-dexed\release\OneKeyShare_841db0785d5514dfafc63e73c1a450f58d9ef108.jar" />
+    </item>
+
+</items>

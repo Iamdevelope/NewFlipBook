@@ -9,6 +9,10 @@ namespace PJW.Book.UI
     /// </summary>
     public class UIManager : MonoBehaviour
     {
+        public const string MESSAGETIPPANEL = "MessageTipPanel";
+        public const string LOADINGPANEL = "LoadingPanel";
+        public const string LOGINPANEL = "LoginPanel";
+        public const string REGISTERPANEL = "RegisterPanel";
 
         private MessagePanel messagePanel;
         private LoadingPanel loadingPanel;
@@ -22,11 +26,11 @@ namespace PJW.Book.UI
                 for (int i = 0; i < basePanels.Length; i++)
                 {
                     basePanels[i].Init();
-                    if (basePanels[i].gameObject.name.Equals("MessageTipPanel"))
+                    if (basePanels[i].gameObject.name.Equals(MESSAGETIPPANEL))
                         messagePanel = basePanels[i].GetComponent<MessagePanel>();
-                    if (basePanels[i].gameObject.name.Equals("LoadingPanel"))
+                    if (basePanels[i].gameObject.name.Equals(LOADINGPANEL))
                         loadingPanel = basePanels[i].GetComponent<LoadingPanel>();
-                    if (basePanels[i].gameObject.name != "LoginPanel")
+                    if (basePanels[i].gameObject.name != LOGINPANEL)
                         basePanels[i].Reset(Vector3.zero, 0);
                     else
                         uiPanel.Push(basePanels[i].gameObject);
@@ -37,9 +41,9 @@ namespace PJW.Book.UI
                 for (int i = 0; i < basePanels.Length; i++)
                 {
                     basePanels[i].Init();
-                    if (basePanels[i].gameObject.name.Equals("MessageTipPanel"))
+                    if (basePanels[i].gameObject.name.Equals(MESSAGETIPPANEL))
                         messagePanel = basePanels[i].GetComponent<MessagePanel>();
-                    if (basePanels[i].gameObject.name.Equals("LoadingPanel"))
+                    if (basePanels[i].gameObject.name.Equals(LOADINGPANEL))
                         loadingPanel = basePanels[i].GetComponent<LoadingPanel>();
                     basePanels[i].Reset(Vector3.zero, 0);
                 }
@@ -90,11 +94,11 @@ namespace PJW.Book.UI
             GameObject temp = Instantiate(go, transform);
             temp.name = go.name;
             temp.GetComponent<BasePanel>().Init();
-            if (temp.name != "LoginPanel")
+            if (temp.name != LOGINPANEL)
                 temp.GetComponent<BasePanel>().Reset(Vector3.zero, 0);
             else
                 uiPanel.Push(temp);
-            if (temp.name.Equals("MessageTipPanel"))
+            if (temp.name.Equals(MESSAGETIPPANEL))
                 messagePanel = temp.GetComponent<BasePanel>() as MessagePanel;
             if (!allUIPanel.Contains(temp))
                 allUIPanel.Add(temp);

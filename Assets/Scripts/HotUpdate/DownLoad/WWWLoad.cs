@@ -11,10 +11,11 @@ namespace PJW.HotUpdate
     /// </summary>
     public class WWWLoad
     {
-        private WWW www;
+        private static WWW www;
         static Stopwatch stopwatch = new Stopwatch();
+        
 
-        public IEnumerator DownFile(string url, string savePath, Action<WWW> callBack)
+        public static IEnumerator DownFile(string url, string savePath, Action<WWW> callBack = null, Action action = null, string fileName = null)
         {
             FileInfo fi = new FileInfo(savePath);
             stopwatch.Start();
@@ -22,7 +23,7 @@ namespace PJW.HotUpdate
             www = new WWW(url);
             while (!www.isDone)
             {
-                yield return 0;
+                yield return null;
                 if (callBack != null)
                     callBack(www);
             }
@@ -30,7 +31,10 @@ namespace PJW.HotUpdate
             if (www.isDone)
             {
                 byte[] bytes = www.bytes;
-                CreateFile(savePath, bytes);
+                if (fileName == null)
+                    CreateFile(savePath, bytes, action);
+                else
+                    CreateFile(savePath, www, fileName, action);
             }
         }
         /// <summary>
@@ -38,7 +42,7 @@ namespace PJW.HotUpdate
         /// </summary>
         /// <param name="savePath"></param>
         /// <param name="bytes"></param>
-        private void CreateFile(string savePath, byte[] bytes)
+        private static void CreateFile(string savePath, byte[] bytes,Action action)
         {
             FileStream fs = new FileStream(savePath, FileMode.Append);
             fs.Write(bytes, 0, bytes.Length);
@@ -50,9 +54,39 @@ namespace PJW.HotUpdate
             fs.Dispose();
             //释放www
             www.Dispose();
+            www = null;
             stopwatch.Stop();
             UnityEngine.Debug.Log("downover,used time " + stopwatch.ElapsedMilliseconds);
             UnityEngine.Debug.Log("end time is " + Time.realtimeSinceStartup);
+            if (action != null)
+                action();
+        }
+        /// <summary>
+        /// 将下载的资源进行写入
+        /// </summary>
+        /// <param name="filePath">文件路径</param>
+        /// <param name="www">下载的WWW</param>
+        /// <param name="fileName">文件名</param>
+        /// <param name="callBack">回调函数</param>
+        private static void CreateFile(string filePath, WWW www, string fileName, Action callBack)
+        {
+            //Debug.Log(filePath + " ******** " + fileName);
+            FileStream stream = null;
+            if (!File.Exists(filePath))
+            {
+                stream = File.Create(filePath);
+                Texture2D texture = new Texture2D(www.texture.width, www.texture.height);
+                www.LoadImageIntoTexture(texture);
+                texture.name = fileName;
+                byte[] bytes = texture.EncodeToJPG();
+                stream.Write(bytes, 0, bytes.Length);
+                stream.Close();
+                stream.Dispose();
+                www.Dispose();
+                www = null;
+                if (callBack != null)
+                    callBack();
+            }
         }
     }
 }

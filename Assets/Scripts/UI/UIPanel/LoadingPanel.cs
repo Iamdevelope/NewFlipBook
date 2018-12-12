@@ -25,10 +25,5 @@ namespace PJW.Book.UI
             child.Rotate(Vector3.forward, -Time.deltaTime * 100);
             StartCoroutine(ObjectRorate());
         }
-        public override void Reset(Vector3 scale, float t,string msg="")
-        {
-            //transform.DOScale(scale, t);
-            base.Reset(scale, t, msg);
-        }
     }
 }

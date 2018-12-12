@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 using MyCommon;
 using PJW.Book.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using System.IO;
+using PJW.HotUpdate;
+using cn.sharesdk.unity3d;
 
 namespace PJW.Book
 {
@@ -18,6 +18,8 @@ namespace PJW.Book
         public static GameObject CurrentObject;
         public static GameObject CharacterCamera;
         [HideInInspector]
+        public ShareSDK ssdk;
+        [HideInInspector]
         public float effectPositionZ = 1;
         [HideInInspector]
         public GameObject TouchEffect;
@@ -26,10 +28,11 @@ namespace PJW.Book
         [HideInInspector]
         private SoundManager soundManager;
         private GeneratePage generatePage;
-        private BookDummy bookDummy;
         private GenerateBookStore generateBookStore;
         [HideInInspector]
         public AssetBundle asset;
+        [HideInInspector]
+        public WWW www;
         public float fpsMeasuringDelta = 0.1f;
         private float timePassed;
         private int m_FrameCount = 0;
@@ -39,24 +42,20 @@ namespace PJW.Book
         {
             get
             {
-                return Application.streamingAssetsPath + "/ABFiles/";
+                return Application.persistentDataPath + "/AssetBundles/";
+                //Application.streamingAssetsPath + "/ABFiles/";
             }
         }
-        public string LocalXMLPath
+        public string LocalConfigPath
         {
-            get { return Application.persistentDataPath + "/Books/XMLContent/";  }
+            get { return Application.persistentDataPath + "/Books"; }
         }
         public string URL
         {
             get
             {
-                return @"C:\Users\User\AppData\LocalLow\YG\FlipBook\AssetBundle\";
+                return @"ftp://192.168.1.110:66" + "/ABFiles/";
             }
-        }
-        public BookDummy BookDummy
-        {
-            get { return bookDummy; }
-            set { if (bookDummy == null) bookDummy = value; }
         }
         public GeneratePage GeneratePage { get
             {
@@ -79,33 +78,17 @@ namespace PJW.Book
             private set { if (soundManager == null) soundManager = value; }
         }
         public bool isSuccessLogin { get; set; }
-        //test
-        private NewGenerateBookstore generateBookstore;
-        public NewGenerateBookstore NewGenerateBookstore {
-            get { return generateBookstore; }
-            set { generateBookstore = value; }
-        }
+        public NewGenerateBookstore NewGenerateBookstore { get; set; }
 
-        private string dbName = "flipBook.db"; // 数据库名称
-        private string dbPath; // 数据库路径
+
         /// <summary>
         /// 游戏初始化
         /// </summary>
         public void Init()
         {
-            
-
-            if (Application.platform == RuntimePlatform.WindowsPlayer
-                || Application.platform == RuntimePlatform.WindowsEditor)
-                dbPath = Application.streamingAssetsPath + "/" + dbName;
-            else if (Application.platform == RuntimePlatform.Android)
-            {
-                dbPath = Application.persistentDataPath + "/" + dbName;
-                Debug.Log(File.Exists(dbPath) + " " + dbPath);
-                if (!File.Exists(dbPath)) // 如果数据库不存在,则复制到持久化目录下
-                    StartCoroutine(CopyDB());
-            }
-
+            //设置帧率
+            Application.targetFrameRate = 30;
+            ssdk = FindObjectOfType<ShareSDK>();
             CharacterCamera = FindObjectOfType<CharacterCamera>().gameObject;
             if (CharacterCamera != null)
                 CharacterCamera.SetActive(false);
@@ -114,23 +97,11 @@ namespace PJW.Book
             uiManager = FindObjectOfType<UIManager>();
             soundManager = GetComponent<SoundManager>();
 
-
             uiManager.Init();
             soundManager.Init();
-        }
-        /// <summary>
-        /// 复制文件到持久化目录
-        /// </summary>
-        /// <returns></returns>
-        private IEnumerator CopyDB()
-        {
-            // 从StreamingAssets目录使用WWW下载data.db
-            WWW www = new WWW(Application.streamingAssetsPath + "/" + dbName);
-            yield return www; // 等待下载完毕
-            Debug.Log("下载完毕");
-            //下载完毕后写到persistentDataPath路径
-            File.WriteAllBytes(dbPath, www.bytes);
-            Debug.Log("写入完毕");
+
+            //进行资源判断，是否需要进行更新
+            FindObjectOfType<CheckIsUpdate>().Init();
         }
         private void LateUpdate()
         {
@@ -163,7 +134,7 @@ namespace PJW.Book
 
             if (Input.GetKey(KeyCode.Escape))
             {
-                Application.Quit();
+                //Application.Quit();
             }
         }
         private void OnGUI()

@@ -17,6 +17,7 @@ public class CreateDontDestoryOnLoad : MonoBehaviour {
             temp.AddComponent<SoundManager>();
             temp.AddComponent<GameCore>();
             temp.AddComponent<AudioSource>();
+            temp.AddComponent<Console>().toggleKey = KeyCode.Escape;
             DontDestroyOnLoad(temp);
             DontDestroyOnLoad(message);
         }

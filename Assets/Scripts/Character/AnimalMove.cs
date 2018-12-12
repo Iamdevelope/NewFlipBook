@@ -44,7 +44,7 @@ namespace PJW.Book
             if (z != 0)
             {
                 Quaternion q = Quaternion.AngleAxis(z, transform.up);
-                transform.rotation *= Quaternion.Lerp(transform.rotation, q, 300 * Time.deltaTime);
+                transform.rotation *= Quaternion.Lerp(transform.rotation, q, rotationSpeed * Time.deltaTime);
                 //transform.Rotate(transform.up, z);
                 characterCamera.CameraRotate(z);
             }

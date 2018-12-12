@@ -21,8 +21,10 @@ namespace PJW.Book.UI
         private void EnterClickHandle()
         {
             FindObjectOfType<GameInit>().SaveSceneData();
-            SceneManager.LoadScene("Bookstore");
+            Globe.nextSceneName = "Bookstore";
+            SceneManager.LoadScene("Loading");
         }
+        
 
         public override void Reset(Vector3 scale, float t,string msg)
         {

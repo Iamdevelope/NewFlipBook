@@ -42,15 +42,6 @@ namespace PJW.Book.UI
             StartCoroutine(CloseSelfWaitTime());
         }
         /// <summary>
-        /// 重置
-        /// </summary>
-        /// <param name="scale"></param>
-        /// <param name="t"></param>
-        public override void Reset(Vector3 scale, float t,string msg="")
-        {
-            base.Reset(scale, t, msg);
-        }
-        /// <summary>
         /// 关闭自身
         /// </summary>
         /// <returns></returns>

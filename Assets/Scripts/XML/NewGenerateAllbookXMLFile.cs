@@ -12,7 +12,7 @@ public class NewGenerateAllbookXMLFile {
     public class Book
     {
         public string Name { get; set; }
-        public string XMLFile { get; set; }
+        public string ConfigFile { get; set; }
         public string BookImage { get; set; }
 
     }
@@ -39,45 +39,68 @@ public class NewGenerateAllbookXMLFile {
     public static void GetBookContentByFile(string bookFile, Action callBack)
     {
         bookTypes.Clear();
-        string[] allBookType = Directory.GetFiles( Application.dataPath +"/Resources/AllBookImage/");
-        if (allBookType.Length > 0)
+        string path = Application.temporaryCachePath + "/Books";
+        //path = path.Replace('/', '\\');
+        Debug.Log(path + "   --- this is android of path       from xmlFile in GetBookContentByFileInWindow");
+        string temp = path + "/AllBookImage";
+        try
         {
-            for (int i = 0; i < allBookType.Length; i++)
+            Debug.Log(temp);
+
+            string[] allBookType = Directory.GetDirectories(temp);
+            Debug.Log(" this is persistentDataPath of children count " + allBookType.Length);
+            if (allBookType.Length > 0)
             {
-                BookType bt = new BookType();
-                bt.BookTypeName = allBookType[i].Split('/')[6].Split('.')[0];
-                bt.ClassTypes = new List<ClassType>();
-                string[] allClassType = Directory.GetFiles(allBookType[i].Split('.')[0] + "/");
-                if (allClassType.Length > 0)
+                if (allBookType.Length > 0)
                 {
-                    for (int j = 0; j < allClassType.Length; j++)
+                    for (int i = 0; i < allBookType.Length; i++)
                     {
-                        ClassType ct = new ClassType();
-                        ct.ClassTypeName = allClassType[j].Split('/')[7].Split('.')[0];
-                        ct.Book = new List<Book>();
-                        Texture[] textures = Resources.LoadAll<Texture>("AllBookImage/" + bt.BookTypeName + "/" + ct.ClassTypeName + "/");
-                        if (textures.Length > 0)
+                        allBookType[i] = allBookType[i].Replace('\\', '/');
+                        BookType bt = new BookType();
+                        bt.BookTypeName = allBookType[i].Split('/')[10].Split('.')[0];
+                        bt.ClassTypes = new List<ClassType>();
+                        Debug.Log(" the booktype of path is  " + temp + "/" + bt.BookTypeName);
+                        string[] allClassType = Directory.GetDirectories(temp + "/" + bt.BookTypeName);
+                        if (allClassType.Length > 0)
                         {
-                            for (int k = 0; k < textures.Length; k++)
+                            for (int j = 0; j < allClassType.Length; j++)
                             {
-                                Book b = new Book();
-                                b.Name = textures[k].name;
-                                b.XMLFile = Application.dataPath + "/XMLFiles/" + b.Name + ".xml";
-                                b.BookImage = "AllBookImage/" + bt.BookTypeName + "/" + ct.ClassTypeName + "/" + b.Name;
-                                ct.Book.Add(b);
+                                allClassType[j] = allClassType[j].Replace('\\', '/');
+                                ClassType ct = new ClassType();
+                                ct.ClassTypeName = allClassType[j].Split('/')[11].Split('.')[0];
+                                ct.Book = new List<Book>();
+                                Debug.Log(" the classtype of path is  " + temp + "/" + bt.BookTypeName + "/" + ct.ClassTypeName);
+                                string[] textNames = Directory.GetFiles(temp + "/" + bt.BookTypeName + "/" + ct.ClassTypeName);
+                                if (textNames.Length > 0)
+                                {
+                                    for (int k = 0; k < textNames.Length; k++)
+                                    {
+                                        if (textNames[k].EndsWith(".meta")) continue;
+                                        textNames[k] = textNames[k].Replace('\\', '/');
+                                        Book b = new Book();
+                                        b.Name = textNames[k].Split('/')[12].Split('.')[0];
+                                        b.ConfigFile = path + "/ConfigFiles/" + b.Name + ".xml";
+                                        b.BookImage = allClassType[j].Split('.')[0] + "/" + b.Name + ".jpg";
+                                        ct.Book.Add(b);
+                                    }
+                                }
+                                bt.ClassTypes.Add(ct);
                             }
                         }
-                        bt.ClassTypes.Add(ct);
+                        bookTypes.Add(bt);
                     }
                 }
-                bookTypes.Add(bt);
             }
-        }
 
-        if (!Directory.Exists(GameCore.Instance.LocalXMLPath))
-            Directory.CreateDirectory(GameCore.Instance.LocalXMLPath);
-        CreateBookXML(bookFile, bookTypes, callBack);
-        
+            if (!Directory.Exists(GameCore.Instance.LocalConfigPath + "/ConfigContent/"))
+                Directory.CreateDirectory(GameCore.Instance.LocalConfigPath + "/ConfigContent/");
+            CreateBookXML(bookFile, bookTypes, callBack);
+
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+        }
     }
 
     /// <summary>  
@@ -111,7 +134,7 @@ public class NewGenerateAllbookXMLFile {
                         {
                             writer.WriteStartElement("book");
                             writer.WriteAttributeString("Name", i2.Name);
-                            writer.WriteElementString("xmlFile", i2.XMLFile);
+                            writer.WriteElementString("configFile", i2.ConfigFile);
                             writer.WriteElementString("bookImagePath", i2.BookImage);
                             writer.WriteEndElement();
                         }

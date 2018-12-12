@@ -151,7 +151,7 @@ public class AssetBundleEdit : Editor
         {
             string objPath = AssetDatabase.GetAssetPath(item);
             DirectoryInfo dirInfo = new DirectoryInfo(objPath);
-            if (dirInfo == null)
+            if (dirInfo.GetFiles().Length == 0)
             {
                 Debug.LogError("******请检查，是否选中了非文件夹对象******");
                 return;

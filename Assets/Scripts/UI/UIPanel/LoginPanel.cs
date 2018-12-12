@@ -3,6 +3,10 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using cn.sharesdk.unity3d;
+using System;
+using System.IO;
+using LitJson;
 
 namespace PJW.Book.UI
 {
@@ -20,6 +24,7 @@ namespace PJW.Book.UI
         private InputField userName;
         private InputField passWord;
         private LoadingPanel loadingPanel;
+        private string fileName;
         public override void Init()
         {
             userName = transform.Find("UserName").GetComponentInChildren<InputField>();
@@ -27,7 +32,7 @@ namespace PJW.Book.UI
             exitBtn = transform.Find("ExitBtn").GetComponent<Button>();
             loginBtn = transform.Find("LoginBtn").GetComponent<Button>();
             registerBtn = transform.Find("RegisterBtn").GetComponent<Button>();
-            //QQBtn = transform.Find("QQBtn").GetComponent<Button>();
+            QQBtn = transform.Find("QQBtn").GetComponent<Button>();
             //weixinBtn = transform.Find("WeiXinBtn").GetComponent<Button>();
             //weiboBtn = transform.Find("WeiBoBtn").GetComponent<Button>();
             loadingPanel = FindObjectOfType<LoadingPanel>();
@@ -37,7 +42,7 @@ namespace PJW.Book.UI
             EnterClickedEvent += LoginButtonHandle;
             registerBtn.onClick.RemoveAllListeners();
             registerBtn.onClick.AddListener(RegisterButtonHandle);
-            //QQBtn.onClick.AddListener(QQButtonHandle);
+            QQBtn.onClick.AddListener(QQButtonHandle);
             //weixinBtn.onClick.AddListener(WeiXinButtonHandle);
             //weiboBtn.onClick.AddListener(WeiBoButtonHandle);
         }
@@ -88,12 +93,7 @@ namespace PJW.Book.UI
             if (!string.IsNullOrEmpty(msg))
             {
                 GameCore.Instance.SendMessageToMessagePanel(msg);
-                //return;
             }
-            //进行数据库数据对比
-            //登录成功切换场景
-            //StartCoroutine(ChangeScene());
-            
         }
         /// <summary>
         /// 退出
@@ -108,14 +108,47 @@ namespace PJW.Book.UI
         /// </summary>
         private void QQButtonHandle()
         {
-
+            fileName = "/qq.json";
+            if (File.Exists(Application.persistentDataPath + fileName))
+            {
+                return;
+            }
+            GameCore.Instance.ssdk.authHandler = AuthHandler;
+            GameCore.Instance.ssdk.Authorize(PlatformType.QQ);
         }
+
+        private void AuthHandler(int reqID, ResponseState state, PlatformType type, Hashtable data)
+        {
+            //如果授权成功
+            if (state == ResponseState.Success)
+            {
+                JsonData userData = JsonMapper.ToObject(JsonMapper.ToJson(data));
+                SaveUserInfo(JsonMapper.ToJson(data));
+                string icon = userData["icon"].ToString();
+                StartCoroutine(DownUserIcon(icon));
+                //text.text += "\n userid : " + userData["userID"] + "\n username : " + userData["nickname"] + "\n icon : " + userData["icon"];
+                //text.text += "\n微信授权成功！！！";
+                userName.text = userData["nickname"].ToString();
+                Debug.Log("授权成功");
+            }
+            else if (state == ResponseState.Fail)
+            {
+                Debug.Log("授权失败！");
+            }
+        }
+
         /// <summary>
         /// 微信登录
         /// </summary>
         private void WeiXinButtonHandle()
         {
-
+            fileName = "/wechat.json";
+            if (File.Exists(Application.persistentDataPath + fileName))
+            {
+                return;
+            }
+            GameCore.Instance.ssdk.authHandler = AuthHandler;
+            GameCore.Instance.ssdk.Authorize(PlatformType.WeChat);
         }
         /// <summary>
         /// 微博登录
@@ -124,27 +157,28 @@ namespace PJW.Book.UI
         {
 
         }
-        private IEnumerator ChangeScene()
+        
+        private IEnumerator DownUserIcon(string icon)
         {
-            if (GameCore.Instance.asset != null)
-            {
-                GameCore.Instance.asset.Unload(true);
-                GameCore.Instance.asset = null;
-            }
-            SceneManager.LoadSceneAsync("Bookstore");
-            //PlayerPrefs.SetString("AssetBundle", "dinosaurchangefoam.dinosaurchangefoam");
-            yield return StartCoroutine(WaitLoadingNextScene("Bookstore"));
+            Debug.Log("开启协程进行资源下载");
+            WWW www = new WWW(icon);
+            yield return www;
+            FileStream stream = File.Create(Application.persistentDataPath + "/icon.jpg");
+            Texture2D texture = new Texture2D(www.texture.width, www.texture.height);
+            www.LoadImageIntoTexture(texture);
+            byte[] bytes = texture.EncodeToJPG();
+            stream.Write(bytes, 0, bytes.Length);
+            stream.Close();
+            stream.Dispose();
         }
-        private IEnumerator WaitLoadingNextScene(string v)
+
+        private void SaveUserInfo(string jsonFile)
         {
-            if (SceneManager.GetActiveScene().name != v)
-            {
-                GameCore.Instance.OpenLoadingPanel(Vector3.one);
-                yield return null;
-            }
-            else
-                GameCore.Instance.OpenLoadingPanel(Vector3.zero);
+            if (File.Exists(Application.persistentDataPath + "/" + fileName))
+                File.Delete(Application.persistentDataPath + "/" + fileName);
+            File.WriteAllText(Application.persistentDataPath + "/" + fileName, jsonFile);
         }
+
         public override void Reset(Vector3 scale, float t,string msg="")
         {
             if (scale == Vector3.one)

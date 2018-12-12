@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,11 @@ namespace PJW.Book.UI
     /// </summary>
     public class ClassTypePanel : BasePanel
     {
+        private const string L = "L";
+        private const string M = "M";
+        private const string S = "S";
+
+        private Dictionary<string, Sprite[]> nameSprite;
         private RectTransform children;
         private float startPos;
         private RectTransform classL;
@@ -20,12 +26,14 @@ namespace PJW.Book.UI
         private Vector3 buttonClickedScale = new Vector3(1.5f, 1.5f, 1.5f);
         private string bookName;
         private bool isButton;
+        public Material material;
         public override void Init()
         {
+            nameSprite = new Dictionary<string, Sprite[]>();
             children = transform.Find("BG").GetComponent<RectTransform>();
-            classL = children.Find("L").GetComponent<RectTransform>();
-            classM = children.Find("M").GetComponent<RectTransform>();
-            classS = children.Find("S").GetComponent<RectTransform>();
+            classL = children.Find(L).GetComponent<RectTransform>();
+            classM = children.Find(M).GetComponent<RectTransform>();
+            classS = children.Find(S).GetComponent<RectTransform>();
             startPos = children.localPosition.x;
 
             classL.GetComponent<Button>().onClick.AddListener(() => ButtonClickedByName(classL.gameObject.name));
@@ -39,27 +47,29 @@ namespace PJW.Book.UI
             {
                 //if (currentClickedButton.name.Equals(name)) return;
                 isButton = true;
+                currentClickedButton.GetComponent<Image>().material = null;
                 currentClickedButton.DOScale(Vector3.one, 0.3f);
             }
             switch (name)
             {
-                case "L":
-                    ClassTypeButton("L");
+                case L:
                     currentClickedButton = classL;
                     break;
-                case "M":
-                    ClassTypeButton("M");
+                case M:
                     currentClickedButton = classM;
                     break;
-                case "S":
-                    ClassTypeButton("S");
+                case S:
                     currentClickedButton = classS;
                     break;
                 default:
                     break;
             }
             if (currentClickedButton != null)
+            {
+                ClassTypeButton(name);
+                currentClickedButton.GetComponent<Image>().material = material;
                 currentClickedButton.DOScale(buttonClickedScale, 0.6f);
+            }
         }
 
         /// <summary>
@@ -91,20 +101,22 @@ namespace PJW.Book.UI
 
             isButton = false;
             bookName = name;
-            Sprite[] temps = Resources.LoadAll<Sprite>("UISprites/Bookstore/ClassType/" + name + "/");
-            for (int i = 0; i < temps.Length; i++)
+            if(!nameSprite.ContainsKey(name))
+                nameSprite[name]= Resources.LoadAll<Sprite>("UISprites/Bookstore/ClassType/" + name + "/");
+            //Sprite[] temps = Resources.LoadAll<Sprite>("UISprites/Bookstore/ClassType/" + name + "/");
+            for (int i = 0; i < nameSprite[name].Length; i++)
             {
-                string n = temps[i].name.Split('_')[2];
+                string n = nameSprite[name][i].name.Split('_')[2];
                 switch (n)
                 {
-                    case "L":
-                        classL.GetComponent<Image>().sprite = temps[i];
+                    case L:
+                        classL.GetComponent<Image>().sprite = nameSprite[name][i];
                         break;
-                    case "M":
-                        classM.GetComponent<Image>().sprite = temps[i];
+                    case M:
+                        classM.GetComponent<Image>().sprite = nameSprite[name][i];
                         break;
-                    case "S":
-                        classS.GetComponent<Image>().sprite = temps[i];
+                    case S:
+                        classS.GetComponent<Image>().sprite = nameSprite[name][i];
                         break;
                 }
             }
@@ -119,7 +131,7 @@ namespace PJW.Book.UI
         }
         public override void OverAnim()
         {
-            children.DOLocalMoveX(startPos, 1f).OnComplete(() => children.DOLocalMoveX(300, 1f));
+            children.DOLocalMoveX(startPos, 1f).OnComplete(() => children.DOMoveX(360, 1f));
         }
     }
 }

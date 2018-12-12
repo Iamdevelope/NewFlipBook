@@ -21,6 +21,7 @@ namespace PJW.Book.UI
         private RectTransform currentClickedButton;
         private Vector3 buttonClickedScale = new Vector3(1.5f, 1.5f, 1.5f);
         private float startPos;
+        public Material material;
         public override void Init()
         {
             children = transform.Find("BG").GetComponent<RectTransform>();
@@ -46,36 +47,41 @@ namespace PJW.Book.UI
         {
             if (currentClickedButton != null)
             {
-                if (currentClickedButton.name.Equals(name)) return;
+                if (name == "shehui" || name == "yuyan" || name == "jiankang")
+                    if (currentClickedButton.name.Equals(name)) return;
+                currentClickedButton.GetComponent<Image>().material = null;
                 currentClickedButton.DOScale(Vector3.one, 0.6f);
             }
             switch (name)
             {
                 case "shehui":
-                    ClassButton(PJW.Book.StartAnim.SHEHUI_CUNZHUANG.Split('_')[0]);
+                    ClassButton(Book.StartAnim.SHEHUI_CUNZHUANG.Split('_')[0]);
                     currentClickedButton = shehui;
                     break;
                 case "yuyan":
-                    ClassButton(PJW.Book.StartAnim.YUYAN_MOGUBAO.Split('_')[0]);
+                    ClassButton(Book.StartAnim.YUYAN_MOGUBAO.Split('_')[0]);
                     currentClickedButton = yuyan;
                     break;
                 case "jiankang":
-                    ClassButton(PJW.Book.StartAnim.JIANKANG_JINGLINGWU.Split('_')[0]);
+                    ClassButton(Book.StartAnim.JIANKANG_JINGLINGWU.Split('_')[0]);
                     currentClickedButton = jiankang;
                     break;
                 case "yishu":
-                    SpeciaButton(PJW.Book.StartAnim.YISHU_HAITAN.Split('_')[0]);
+                    SpeciaButton(Book.StartAnim.YISHU_HAITAN.Split('_')[0]);
                     currentClickedButton = yishu;
                     break;
                 case "kexue":
-                    SpeciaButton(PJW.Book.StartAnim.KEXUE_KEJICHENG.Split('_')[0]);
+                    SpeciaButton(Book.StartAnim.KEXUE_KEJICHENG.Split('_')[0]);
                     currentClickedButton = kexue;
                     break;
                 default:
                     break;
             }
             if (currentClickedButton != null)
+            {
+                currentClickedButton.GetComponent<Image>().material = material;
                 currentClickedButton.DOScale(buttonClickedScale, 0.6f);
+            }
         }
 
         /// <summary>
@@ -84,7 +90,8 @@ namespace PJW.Book.UI
         /// <param name="name"></param>
         public void SpeciaButton(string name)
         {
-            Debug.Log(" TODO " + name);
+            GetComponentInChildren<ChildrenClassPanel>().Reset(Vector3.one,0.3f,name);
+            currentName = name;
         }
 
         /// <summary>
@@ -96,25 +103,24 @@ namespace PJW.Book.UI
             if (name.Equals(currentName)) return;
 
             currentName = name;
-            FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(false);
+            //FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(false);
 
             //FindObjectOfType<LoadAllBookXML>().GenerateAllBook(name);
             FindObjectOfType<TitlePanel>().OverAnim();
             FindObjectOfType<ClassTypePanel>().OverAnim();
             FindObjectOfType<ClassTypePanel>().ChangeClassTypsSprites(name);
-            OverAnim(name);
+            StartCoroutine(NextClass(name));
         }
-
-        public override void OverAnim(string nextName)
-        {
-            StartCoroutine(NextClass(nextName));
-        }
-
+        /// <summary>
+        /// 下一个科目类别
+        /// </summary>
+        /// <param name="nextName"></param>
+        /// <returns></returns>
         private IEnumerator NextClass(string nextName)
         {
             yield return new WaitForSeconds(1f);
             ButtonClickedByName(nextName);
-            FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(true);
+            //FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(true);
             
             FindObjectOfType<TitlePanel>().ChangeTitleSprite(nextName);
         }

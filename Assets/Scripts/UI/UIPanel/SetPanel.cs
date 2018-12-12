@@ -23,9 +23,9 @@ namespace PJW.Book.UI
         {
 
         }
-        public override void Reset(Vector3 scale, float t, string msg = "")
-        {
-            base.Reset(scale, t, msg);
-        }
+        //public override void Reset(Vector3 scale, float t, string msg = "")
+        //{
+        //    base.Reset(scale, t, msg);
+        //}
     }
 }

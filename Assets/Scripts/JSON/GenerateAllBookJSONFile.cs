@@ -14,7 +14,7 @@ namespace PJW.Json
     public class Book
     {
         public string Name { get; set; }
-        public string XMLFile { get; set; }
+        public string ConfigFile { get; set; }
         public string BookImage { get; set; }
 
     }
@@ -40,6 +40,7 @@ namespace PJW.Json
     {
         public static Books books;
         public static List<BookType> bookTypes = new List<BookType>();
+        private static int num;
         /// <summary>
         /// 通过书本文件夹生成对应的JSON文件,通过Resources进行加载
         /// </summary>
@@ -47,49 +48,65 @@ namespace PJW.Json
         /// <param name="callBack">回调函数</param>
         public static void GetBookContentByFile(string bookFile,Action callBack)
         {
+            if (Application.platform == RuntimePlatform.Android && Application.platform != RuntimePlatform.WindowsEditor)
+                num = 10;
+            else if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+                num = 9;
             books = new Books();
             bookTypes.Clear();
-            string[] allBookType = Directory.GetFiles(Application.dataPath + "/Resources/AllBookImage/");
-            if (allBookType.Length > 0)
+            Debug.Log(" the num is " + num);
+            string temp = GameCore.Instance.LocalConfigPath + "/AllBookImage";
+            try
             {
-                for (int i = 0; i < allBookType.Length; i++)
+                string[] allBookType = Directory.GetDirectories(temp);
+                if (allBookType.Length > 0)
                 {
-                    BookType bt = new BookType();
-                    bt.BookTypeName = allBookType[i].Split('/')[6].Split('.')[0];
-                    bt.ClassTypes = new List<ClassType>();
-                    string[] allClassType = Directory.GetFiles(allBookType[i].Split('.')[0] + "/");
-                    if (allClassType.Length > 0)
+                    for (int i = 0; i < allBookType.Length; i++)
                     {
-                        for (int j = 0; j < allClassType.Length; j++)
+                        allBookType[i] = allBookType[i].Replace('\\', '/');
+                        BookType bt = new BookType();
+                        bt.BookTypeName = allBookType[i].Split('/')[num].Split('.')[0];
+                        bt.ClassTypes = new List<ClassType>();
+                        string[] allClassType = Directory.GetDirectories(temp + "/" + bt.BookTypeName);
+                        if (allClassType.Length > 0)
                         {
-                            ClassType ct = new ClassType();
-                            ct.ClassTypeName = allClassType[j].Split('/')[7].Split('.')[0];
-                            ct.Book = new List<Book>();
-                            Texture[] textures = Resources.LoadAll<Texture>("AllBookImage/" + bt.BookTypeName + "/" + ct.ClassTypeName + "/");
-                            if (textures.Length > 0)
+                            for (int j = 0; j < allClassType.Length; j++)
                             {
-                                for (int k = 0; k < textures.Length; k++)
+                                allClassType[j] = allClassType[j].Replace('\\', '/');
+                                ClassType ct = new ClassType();
+                                ct.ClassTypeName = allClassType[j].Split('/')[num+1].Split('.')[0];
+                                ct.Book = new List<Book>();
+                                string[] textNames = Directory.GetFiles(temp + "/" + bt.BookTypeName + "/" + ct.ClassTypeName);
+                                if (textNames.Length > 0)
                                 {
-                                    Book b = new Book();
-                                    b.Name = textures[k].name;
-                                    b.XMLFile = Application.dataPath + "/XMLFiles/" + b.Name + ".json";
-                                    b.BookImage = "AllBookImage/" + bt.BookTypeName + "/" + ct.ClassTypeName + "/" + b.Name;
-                                    ct.Book.Add(b);
+                                    for (int k = 0; k < textNames.Length; k++)
+                                    {
+                                        if (textNames[k].EndsWith(".meta")) continue;
+                                        textNames[k] = textNames[k].Replace('\\', '/');
+                                        Book b = new Book();
+                                        b.Name = textNames[k].Split('/')[num + 2].Split('.')[0];
+                                        b.ConfigFile = GameCore.Instance.LocalConfigPath + "/ConfigFiles/" + b.Name + ".json";
+                                        b.BookImage = textNames[i] + "/" + b.Name + ".jpg";
+                                        ct.Book.Add(b);
+                                    }
                                 }
+                                bt.ClassTypes.Add(ct);
                             }
-                            bt.ClassTypes.Add(ct);
                         }
+                        bookTypes.Add(bt);
+                        books.BookTypes = bookTypes;
                     }
-                    bookTypes.Add(bt);
-                    books.BookTypes = bookTypes;
                 }
+                if (!Directory.Exists(GameCore.Instance.LocalConfigPath + "/ConfigContent/"))
+                    Directory.CreateDirectory(GameCore.Instance.LocalConfigPath + "/ConfigContent/");
+                CreateBookJSON(bookFile, books, callBack);
             }
-            if (!Directory.Exists(GameCore.Instance.LocalXMLPath))
-                Directory.CreateDirectory(GameCore.Instance.LocalXMLPath);
-            CreateBookJSON(bookFile, books,callBack);
+            catch(Exception e)
+            {
+                Debug.Log(e);
+            }
 
         }
-
         /// <summary>  
         /// 创建图书信息XML  
         /// </summary>  

@@ -5,6 +5,7 @@ using System.IO;
 using System;
 using System.Linq;
 using System.Text.RegularExpressions;
+using PJW.Book;
 
 namespace PJW.Common
 {
@@ -186,7 +187,7 @@ namespace PJW.Common
                     bookInfos.Add(bookInfo);
                 }
 
-                string savePath = Application.persistentDataPath + "/Books/XMLContent/";
+                string savePath = GameCore.Instance.LocalConfigPath + "/ConfigContent/";
                 if (!Directory.Exists(savePath))
                     Directory.CreateDirectory(savePath);
                 GenerateXMLHelper.CreateBookXML(savePath + "/" + bookFile, bookInfos, bookFile, callBack);
