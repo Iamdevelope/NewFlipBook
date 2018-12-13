@@ -23,5 +23,14 @@ namespace PJW.MVC
                 return userProxy;
             }
         }
+        private static ResourcesProxy resourcesProxy;
+        protected static ResourcesProxy ResourcesProxy
+        {
+            get
+            {
+                if (resourcesProxy == null) resourcesProxy = ApplicationFacade.Instance.GetProxy(ResourcesProxy.NAME) as ResourcesProxy;
+                return resourcesProxy;
+            }
+        }
     }
 }

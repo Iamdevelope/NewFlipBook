@@ -22,7 +22,15 @@ namespace PJW.Book.UI
             enterBtn = transform.Find("Enter").GetComponent<Button>();
 
             exitBtn.onClick.AddListener(CloseButtonHandle);
+            enterBtn.onClick.AddListener(EnterHandle);
         }
+
+        private void EnterHandle()
+        {
+            SendNotification(NotificationArray.CHECK + NotificationArray.UPDATE);
+            CloseButtonHandle();
+        }
+
         /// <summary>
         /// 关闭面板
         /// </summary>
@@ -34,12 +42,21 @@ namespace PJW.Book.UI
         /// <summary>
         /// 显示信息
         /// </summary>
-        /// <param name="msg"></param>
-        public void ShowMessage(string msg)
+        /// <param name="msg">需要显示的信息</param>
+        /// <param name="showEnterBtn">是否需要显示确认按钮</param>
+        public void ShowMessage(MessageData msg, bool showEnterBtn)
         {
-            message.text = msg;
-            Reset(Vector3.one,0.3f);
-            StartCoroutine(CloseSelfWaitTime());
+            message.text = msg.Message;
+            message.color = msg.Color;
+            Reset(Vector3.one, 0.3f);
+            if (!showEnterBtn)
+            {
+                if(enterBtn.gameObject.activeSelf)
+                    enterBtn.gameObject.SetActive(false);
+                StartCoroutine(CloseSelfWaitTime());
+            }
+            else
+                enterBtn.gameObject.SetActive(true);
         }
         /// <summary>
         /// 关闭自身
@@ -47,7 +64,7 @@ namespace PJW.Book.UI
         /// <returns></returns>
         private IEnumerator CloseSelfWaitTime()
         {
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
             CloseButtonHandle();
         }
     }

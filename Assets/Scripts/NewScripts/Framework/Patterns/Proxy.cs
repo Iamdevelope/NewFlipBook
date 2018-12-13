@@ -16,13 +16,13 @@ namespace PJW.MVC.Patterns
             ProxyName = NAME;
         }
         public string ProxyName { get; set; }
-        
+
         /// <summary>
         /// 发送消息
         /// </summary>
         /// <param name="name"></param>
         /// <param name="data"></param>
-        public void SendNotification(string name, object data)
+        public void SendNotification(string name, object data = null)
         {
             Facade.Instance.SendNotification(name, data);
         }

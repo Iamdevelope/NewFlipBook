@@ -7,6 +7,7 @@ using cn.sharesdk.unity3d;
 using System;
 using System.IO;
 using LitJson;
+using PJW.Datas;
 
 namespace PJW.Book.UI
 {
@@ -27,6 +28,7 @@ namespace PJW.Book.UI
         private string fileName;
         public override void Init()
         {
+            MessageData = new MessageData();
             userName = transform.Find("UserName").GetComponentInChildren<InputField>();
             passWord = transform.Find("PassWord").GetComponentInChildren<InputField>();
             exitBtn = transform.Find("ExitBtn").GetComponent<Button>();
@@ -52,48 +54,25 @@ namespace PJW.Book.UI
         private void RegisterButtonHandle()
         {
             base.PlayClickSound();
-            GameCore.Instance.OpenNextUIPanel(FindObjectOfType<RegisterPanel>().gameObject);
+            SendNotification(NotificationArray.SHOW + NotificationArray.REGISTER, "");
+            //GameCore.Instance.OpenNextUIPanel(FindObjectOfType<RegisterPanel>().gameObject);
         }
         /// <summary>
         /// 登录
         /// </summary>
         private void LoginButtonHandle()
         {
-            OpenDB();
             base.PlayClickSound();
             string username = userName.text;
             string password = passWord.text;
-            string msg = "";
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-                msg = "用户名/密码不能为空！";
-            if (!string.IsNullOrEmpty(msg))
+                MessageData.Message = "用户名/密码不能为空！";
+            if (!string.IsNullOrEmpty(MessageData.Message))
             {
-                GameCore.Instance.SendMessageToMessagePanel(msg);
-                CloseDB();
+                SendNotification(NotificationArray.LOGIN + NotificationArray.FAILURE, MessageData);
                 return;
             }
-            reader = db.SelectWhere("user",
-                new string[] { "Username" },
-                new string[] { "Username", "Password" },
-                new string[] { "=", "=" },
-                new string[] { username, password }
-                );
-            if (reader.HasRows)
-            {
-                PlayerPrefs.SetString("username", username);
-                msg = "登录成功！";
-                //GameCore.Instance.isSuccessLogin = true;
-                GameCore.Instance.OpenNextUIPanel(FindObjectOfType<CharacterSelectPanel>().gameObject);
-                Reset(Vector3.zero, 0.6f);
-            }
-            else
-                msg = "用户名或密码不正确,请重新输入!";
-
-            CloseDB();
-            if (!string.IsNullOrEmpty(msg))
-            {
-                GameCore.Instance.SendMessageToMessagePanel(msg);
-            }
+            SendNotification(NotificationArray.LOGIN, new UserData() { Username = username, Password = password });
         }
         /// <summary>
         /// 退出

@@ -7,8 +7,8 @@ namespace PJW.MVC.Patterns
     /// </summary>
     public class Notification
     {
-        private string name;
-        private object data;
+        public string name;
+        public object data;
         public Notification(string name,object data)
         {
             this.name = name;

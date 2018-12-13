@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.IO;
-using ICSharpCode.SharpZipLib;
 using ICSharpCode.SharpZipLib.Zip;
 using ICSharpCode.SharpZipLib.Checksums;
 
-namespace ZipTest
+namespace PJW.Zip
 {
     /// <summary>   
     /// 适用与ZIP压缩   
@@ -261,7 +257,7 @@ namespace ZipTest
                     if (!string.IsNullOrEmpty(ent.Name))
                     {
                         fileName = Path.Combine(zipedFolder, ent.Name);
-                        fileName = fileName.Replace('/', '\\');//change by Mr.HopeGi   
+                        fileName = fileName.Replace('/', '\\');
 
                         int index = ent.Name.LastIndexOf('/');
                         if (index != -1 || fileName.EndsWith("\\"))

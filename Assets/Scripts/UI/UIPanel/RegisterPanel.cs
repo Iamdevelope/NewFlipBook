@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
+using PJW.Datas;
 
 namespace PJW.Book.UI
 {
@@ -22,6 +20,7 @@ namespace PJW.Book.UI
         /// </summary>
         public override void Init()
         {
+            MessageData = new MessageData();
             exitBtn = transform.Find("ExitBtn").GetComponent<Button>();
             registerBtn = transform.Find("RegisterBtn").GetComponent<Button>();
             userName = transform.Find("UserName").GetComponentInChildren<InputField>();
@@ -37,14 +36,13 @@ namespace PJW.Book.UI
         private void ExitRegisterPanelButtonHandle()
         {
             base.PlayClickSound();
-            GameCore.Instance.OpenNextUIPanel(FindObjectOfType<LoginPanel>().gameObject);
+            SendNotification(NotificationArray.SHOW + NotificationArray.LOGIN,"");
         }
         /// <summary>
         /// 注册事件
         /// </summary>
         private void RegisterButtonHandle()
         {
-            OpenDB();
             base.PlayClickSound();
             string username = userName.text;
             string password = passWord.text;
@@ -56,28 +54,11 @@ namespace PJW.Book.UI
                 msg = "两次输入的密码不相同，请重新输入！";
 
             if (string.IsNullOrEmpty(msg))
-            {
-                reader = db.Select("user", "Username", GetStr(username));
-                if (reader.HasRows)
-                {
-                    msg = "该用户名已经注册过了，不可再注册。";
-                }
-                else
-                {
-                    db.InsertInto("user",
-                        new string[] { GetStr(username), GetStr(password) }
-                        );
-                    msg = "注册成功！";
-                }
-                GameCore.Instance.SendMessageToMessagePanel(msg);
-                CloseDB();
-                return;
-            }
+                SendNotification(NotificationArray.REGISTER, new UserData() { Username = username, Password = password });
             else
             {
-                GameCore.Instance.SendMessageToMessagePanel(msg);
-                CloseDB();
-                return;
+                MessageData.Message = msg;
+                SendNotification(NotificationArray.REGISTER + NotificationArray.FAILURE, MessageData);
             }
         }
         /// <summary>
@@ -94,7 +75,6 @@ namespace PJW.Book.UI
                 EnterClickedEvent += RegisterButtonHandle;
             else
                 EnterClickedEvent -= RegisterButtonHandle;
-            //transform.DOScale(scale, t);
             base.Reset(scale, t, msg);
         }
     }

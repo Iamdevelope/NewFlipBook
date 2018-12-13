@@ -7,7 +7,7 @@ public class CreateDontDestoryOnLoad : MonoBehaviour {
     private static bool isDontDestroyOnLoad;
     private static GameObject temp;
     public GameObject messageObject;
-    private void Start()
+    private void Awake()
     {
         if (!isDontDestroyOnLoad)
         {

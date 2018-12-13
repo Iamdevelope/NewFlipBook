@@ -6,21 +6,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HttpDownTest : MonoBehaviour {
-    private HTTPLoad http;
     private DownLoadPanel loadPanel;
     private string url = @"ftp://192.168.1.110:66/AllBookImage.rar";
     private void Start()
     {
-        http = new HTTPLoad();
         loadPanel = FindObjectOfType<DownLoadPanel>();
-        http.DownLoadByFTP(url, Application.persistentDataPath, "AllBookImage.rar", DownOver);
+        HTTPLoad.DownLoadByFTP(url, Application.persistentDataPath, "AllBookImage.rar", DownOver);
     }
     private void Update()
     {
-        if (http!=null)
+        if (!HTTPLoad.isDone)
         {
             loadPanel.Reset(Vector3.one, 0.3f);
-            loadPanel.slider.value = http.progress;
+            loadPanel.slider.value = HTTPLoad.progress;
         }
     }
     private void DownOver()

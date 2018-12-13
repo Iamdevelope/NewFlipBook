@@ -15,6 +15,7 @@ namespace PJW.MVC.Base
     {
         private string dbName = "flipBook.db";
         protected SqliteDataReader reader;
+        protected MessageData MessageData;
         protected DbAccess db;
         private string dbPath;
         /// <summary>
@@ -35,7 +36,6 @@ namespace PJW.MVC.Base
             }
             db = new DbAccess("URI=file:" + dbPath);
         }
-
         private IEnumerator CopyDB()
         {
             WWW www = new WWW(Application.streamingAssetsPath + "/" + dbName);

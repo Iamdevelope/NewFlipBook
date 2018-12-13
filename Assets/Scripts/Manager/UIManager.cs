@@ -30,10 +30,11 @@ namespace PJW.Book.UI
                         messagePanel = basePanels[i].GetComponent<MessagePanel>();
                     if (basePanels[i].gameObject.name.Equals(LOADINGPANEL))
                         loadingPanel = basePanels[i].GetComponent<LoadingPanel>();
-                    if (basePanels[i].gameObject.name != LOGINPANEL)
-                        basePanels[i].Reset(Vector3.zero, 0);
-                    else
-                        uiPanel.Push(basePanels[i].gameObject);
+                    //if (basePanels[i].gameObject.name != LOGINPANEL)
+                    //    basePanels[i].Reset(Vector3.zero, 0);
+                    //else
+                    //    uiPanel.Push(basePanels[i].gameObject);
+                    basePanels[i].Reset(Vector3.zero, 0);
                 }
             }
             else
@@ -58,9 +59,9 @@ namespace PJW.Book.UI
         /// 给消息提示面板发送消息
         /// </summary>
         /// <param name="msg"></param>
-        public void SendMessageToMessagePanel(string msg)
+        public void SendMessageToMessagePanel(MessageData msg, bool showEnterBtn)
         {
-            messagePanel.ShowMessage(msg);
+            messagePanel.ShowMessage(msg,showEnterBtn);
         }
         /// <summary>
         /// 打开下一个需要显示的UI面板

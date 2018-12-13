@@ -1,6 +1,4 @@
 ﻿using PJW.MVC.Core;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace PJW.MVC
@@ -15,7 +13,7 @@ namespace PJW.MVC
         /// </summary>
         /// <param name="name"></param>
         /// <param name="data"></param>
-        public void SendNotification(string name,object data)
+        public void SendNotification(string name,object data=null)
         {
             Facade.Instance.SendNotification(name, data);
         }

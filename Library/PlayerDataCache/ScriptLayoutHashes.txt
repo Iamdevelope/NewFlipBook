@@ -616,3 +616,4 @@ d2a2bd333db22f480a8589e167314ecc Vuforia.UnityExtensions.dll:Vuforia.UserDefined
 15bea26698002c6c4a3087131232ce5c Vuforia.UnityExtensions.dll:Vuforia.WordBehaviour
 0f3d4bb7128a287827d041c696039525 Assembly-CSharp.dll:UnityStandardAssets.Utility.AutoMobileShaderSwitch
 0ffad600d237cbb8b3d7bfb0512d8316 Assembly-CSharp.dll:.PeriodicShake
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GameController

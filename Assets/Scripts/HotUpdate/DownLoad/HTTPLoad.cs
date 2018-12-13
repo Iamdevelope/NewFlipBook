@@ -14,19 +14,19 @@ namespace PJW.HotUpdate
         /// <summary>
         /// 下载进度
         /// </summary>
-        public float progress { get; private set; }
+        static public float progress { get; private set; }
         /// <summary>
         /// 标识，由于下载采用子线程下载，所以需要控制是否停止
         /// </summary>
-        private bool isStop;
+        static private bool isStop;
         /// <summary>
         /// 是否下载完成
         /// </summary>
-        public bool isDone { get; private set; }
+        public static bool isDone { get; private set; }
         /// <summary>
         /// 用于下载资源的子线程
         /// </summary>
-        private Thread thread;
+        private static Thread thread;
         /// <summary>
         /// 读写时时长等待
         /// </summary>
@@ -43,7 +43,7 @@ namespace PJW.HotUpdate
         /// <param name="fileName">保存的文件名字</param>
         /// <param name="callBack">回调函数</param>
         /// <param name="threadPriority"></param>
-        public void DownLoad(string url, string savePath, string fileName, Action callBack, System.Threading.ThreadPriority threadPriority = System.Threading.ThreadPriority.Normal)
+        public static void DownLoad(string url, string savePath, string fileName, Action callBack, System.Threading.ThreadPriority threadPriority = System.Threading.ThreadPriority.Normal)
         {
             isStop = false;
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
@@ -70,7 +70,7 @@ namespace PJW.HotUpdate
                   {
                       //断点续传核心，设置本地文件流的起始位置
                       fs.Seek(fileLength, SeekOrigin.Begin);
-                      WebRequest request = WebRequest.Create(url);
+                      HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
                       //request.ReadWriteTimeout = ReadWriteTimeOut;
                       request.Timeout = TimeOutWait;
                       //断点续传核心，设置远程访问文件流的起始位置
@@ -119,7 +119,7 @@ namespace PJW.HotUpdate
         /// 得到URL中资源的长度
         /// </summary>
         /// <param name="url"></param>
-        private long GetLength(string url)
+        static private long GetLength(string url)
         {
             WebResponse response = null;
             Debug.Log(url);
@@ -145,7 +145,7 @@ namespace PJW.HotUpdate
         /// <param name="fileName">保存的文件名字</param>
         /// <param name="callBack">回调函数</param>
         /// <param name="threadPriority"></param>
-        public void DownLoadByFTP(string url, string savePath, string fileName, Action callBack, System.Threading.ThreadPriority threadPriority = System.Threading.ThreadPriority.Normal)
+        static public void DownLoadByFTP(string url, string savePath, string fileName, Action callBack, System.Threading.ThreadPriority threadPriority = System.Threading.ThreadPriority.Normal)
         {
             isStop = false;
             System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
@@ -218,7 +218,7 @@ namespace PJW.HotUpdate
             thread.Start();
         }
 
-        private long GetLengthInFTP(string url)
+        static private long GetLengthInFTP(string url)
         {
             FtpWebResponse response = null;
             Debug.Log(url);
@@ -239,7 +239,7 @@ namespace PJW.HotUpdate
         /// <summary>
         /// 程序中途退出，停止下载
         /// </summary>
-        public void Close()
+        static public void Close()
         {
             isStop = true;
         }

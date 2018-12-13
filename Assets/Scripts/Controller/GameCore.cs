@@ -101,7 +101,7 @@ namespace PJW.Book
             soundManager.Init();
 
             //进行资源判断，是否需要进行更新
-            FindObjectOfType<CheckIsUpdate>().Init();
+            //FindObjectOfType<CheckIsUpdate>().Init();
         }
         private void LateUpdate()
         {
@@ -150,9 +150,9 @@ namespace PJW.Book
         /// 给消息提示面板发送消息
         /// </summary>
         /// <param name="msg"></param>
-        public void SendMessageToMessagePanel(string msg)
+        public void SendMessageToMessagePanel(MessageData msg, bool showEnterBtn = false)
         {
-            uiManager.SendMessageToMessagePanel(msg);
+            uiManager.SendMessageToMessagePanel(msg,showEnterBtn);
         }
         /// <summary>
         /// 打开下一个需要显示的UI面板

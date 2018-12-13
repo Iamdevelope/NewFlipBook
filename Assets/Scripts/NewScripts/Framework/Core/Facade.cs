@@ -72,7 +72,7 @@ namespace PJW.MVC.Core
         /// </summary>
         /// <param name="name"></param>
         /// <param name="data"></param>
-        public void SendNotification(string name, object data)
+        public void SendNotification(string name, object data = null)
         {
             NotificationCenter.Instance.SendNotification(name, data);
         }
