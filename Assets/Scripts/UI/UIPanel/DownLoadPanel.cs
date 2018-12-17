@@ -33,7 +33,7 @@ namespace PJW.Book.UI
         {
             if (isDown)
             {
-                if (progressWWW != null && !progressWWW.isDone && progressText != null)
+                if (progressWWW != null && !progressWWW.isDone)
                 {
                     progressText.text = string.Format("下载进度:{0:F}% \n当前正在下载第{1}个资源，共{2}个资源。", progressWWW.progress * 100, index, count);
                     slider.value = progressWWW.progress;
@@ -62,6 +62,7 @@ namespace PJW.Book.UI
             progressWWW = www;
             this.index = index;
             this.count = count;
+            Reset(Vector3.one, 0.3f);
         }
         public void StartDownLoad(WWW www)
         {
@@ -82,10 +83,11 @@ namespace PJW.Book.UI
         {
             Debug.Log(" down over ");
             isDown = false;
-            //progressWWW.Dispose();
+            progressWWW.Dispose();
             text = string.Format("下载进度:{0:F}% \n当前正在下载第{1}个资源，共{2}个资源。", 100, count, count);
             slider.value = 1;
             //Reset(Vector3.zero, 0.6f);
+            progressWWW = null;
             index = 0;
             count = 0;
         }

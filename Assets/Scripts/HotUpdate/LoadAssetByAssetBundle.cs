@@ -167,7 +167,7 @@ namespace PJW.HotUpdate
                 if (Directory.Exists(localUnZipPath + fileName.Substring(0, fileName.IndexOf("."))))
                 {
                     Directory.Delete(localUnZipPath + fileName.Substring(0, fileName.IndexOf(".")), true);//删除文件夹
-                    Debug.Log("@@ 删除文件夹" + fileName.Substring(0, fileName.IndexOf(".")));
+                    Debug.Log("删除文件夹" + fileName.Substring(0, fileName.IndexOf(".")));
                 }
             }
             FileStream fs = null;

@@ -33,6 +33,5 @@ namespace PJW.MVC
             //先进行网络判断
             SendNotification(NotificationArray.CHECK + NotificationArray.NET);
         }
-        
     }
 }

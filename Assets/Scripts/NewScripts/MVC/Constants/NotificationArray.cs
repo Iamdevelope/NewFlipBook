@@ -47,8 +47,17 @@ public class NotificationArray
     /// 资源系统，更新
     /// </summary>
     public const string UPDATE = "Update";
+    /// <summary>
+    /// 开始
+    /// </summary>
     public const string START = "Start";
+    /// <summary>
+    /// 检查
+    /// </summary>
     public const string CHECK = "Check";
+    /// <summary>
+    /// 网络
+    /// </summary>
     public const string NET = "Net";
 
 }

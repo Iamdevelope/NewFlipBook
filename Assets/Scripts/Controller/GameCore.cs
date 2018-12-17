@@ -37,6 +37,7 @@ namespace PJW.Book
         private float timePassed;
         private int m_FrameCount = 0;
         private float m_FPS = 0.0f;
+        private DownLoadPanel loadPanel;
 
         public string SavePath
         {
@@ -54,7 +55,7 @@ namespace PJW.Book
         {
             get
             {
-                return @"ftp://192.168.1.110:66" + "/ABFiles/";
+                return @"ftp://192.168.1.110:66" + "/";
             }
         }
         public GeneratePage GeneratePage { get
@@ -200,6 +201,11 @@ namespace PJW.Book
         public void PlaySoundBySoundName(string name=SoundManager.CLICK_01)
         {
             soundManager.PlayAudioClip(name);
+        }
+        public DownLoadPanel GetDownLoadPanel()
+        {
+            if (loadPanel == null) loadPanel = FindObjectOfType<DownLoadPanel>();
+            return loadPanel;
         }
     }
 }

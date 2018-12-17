@@ -53,6 +53,7 @@ namespace PJW.MVC
                     GameCore.Instance.OpenNextUIPanel(GameCore.FindObjectOfType<LoginPanel>().gameObject);
                     break;
                 case NotificationArray.UPDATE + NotificationArray.CHECK:
+                    //提示是否需要进行更新
                     Debug.Log(notification.data as MessageData);
                     GameCore.Instance.SendMessageToMessagePanel(notification.data as MessageData, true);
                     break;

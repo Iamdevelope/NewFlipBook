@@ -125,7 +125,7 @@ namespace PJW.HotUpdate
             wwwLoad = new WWWLoad();
             loadPanel = FindObjectOfType<DownLoadPanel>();
             //得到文件的MD5
-            //GetAllAssetOfMD5(Application.persistentDataPath + "/AssetBundles", GetOver);
+            GetAllAssetOfMD5(Application.persistentDataPath + "/AssetBundles", GetOver);
             if (Application.platform == RuntimePlatform.WindowsPlayer
                 || Application.platform == RuntimePlatform.WindowsEditor)
             {
@@ -148,7 +148,7 @@ namespace PJW.HotUpdate
 
             //thread = new Thread(ThreadDownLoadAsset);
             //thread.Start();
-            ThreadDownLoadAsset();
+            //ThreadDownLoadAsset();
         }
         /// <summary>
         /// 开启线程进行资源更新
@@ -462,13 +462,14 @@ namespace PJW.HotUpdate
                 text += string.Format("\r\n" + fileNameList[i] + "|" + fileMD5[i]);
             }
             text = text.TrimStart();
-            string temp = JsonMapper.ToJson(filePathAndMD5);
-            Debug.Log(temp);
-            byte[] bytes = Encoding.UTF8.GetBytes(temp);
-            FileStream stream = File.Open(savePath + fileName, FileMode.OpenOrCreate);
-            stream.Write(bytes, 0, bytes.Length);
-            stream.Close();
-            stream.Dispose();
+            File.WriteAllText(savePath + fileName, text);
+            //string temp = JsonMapper.ToJson(filePathAndMD5);
+            //Debug.Log(temp);
+            //byte[] bytes = Encoding.UTF8.GetBytes(text);
+            //FileStream stream = File.Open(savePath + fileName, FileMode.OpenOrCreate);
+            //stream.Write(bytes, 0, bytes.Length);
+            //stream.Close();
+            //stream.Dispose();
         }
         /// <summary>
         /// 复制文件到持久化目录
@@ -515,9 +516,12 @@ namespace PJW.HotUpdate
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = arr[i].Replace('\\', '/');
-                filePathAndMD5[arr[i]] = GetAssetOfMD5(arr[i]);
-                //fileNameList.Add(arr[i]);
-                //fileMD5.Add(GetAssetOfMD5(arr[i]));
+                string md5 = GetAssetOfMD5(arr[i]);
+                arr[i] = arr[i].Replace(Application.persistentDataPath + "/AssetBundles/", "");
+                Debug.Log(arr[i]);
+                filePathAndMD5[arr[i]] = md5;
+                fileNameList.Add(arr[i]);
+                fileMD5.Add(md5);
             }
             if (callBack != null)
                 callBack();

@@ -47,31 +47,70 @@ namespace PJW.MVC
         {
             switch (notification.name)
             {
+                //显示登录界面
                 case NotificationArray.SHOW + NotificationArray.LOGIN:
                     GameCore.Instance.OpenNextUIPanel(GameCore.FindObjectOfType<LoginPanel>().gameObject);
                     break;
+                //登录
                 case NotificationArray.LOGIN:
                     UserProxy.Login(notification.data as UserData);
                     break;
+                //微博登录
+                case NotificationArray.SINAWEIBO + NotificationArray.LOGIN:
+                    UserProxy.SinaWeiboLogin();
+                    break;
+                //QQ登录
+                case NotificationArray.QQ + NotificationArray.LOGIN:
+                    UserProxy.QQLogin();
+                    break;
+                //微信登录
+                case NotificationArray.WECHAT + NotificationArray.LOGIN:
+                    UserProxy.WechatLogin();
+                    break;
+                //登录成功
                 case NotificationArray.LOGIN + NotificationArray.SUCCESS:
                     GameCore.Instance.CloseCurrentUIPanel();
                     break;
+                //微博登录成功
+                case NotificationArray.SINAWEIBO + NotificationArray.LOGIN + NotificationArray.SUCCESS:
+                    break;
+                //QQ登录成功
+                case NotificationArray.QQ + NotificationArray.LOGIN + NotificationArray.SUCCESS:
+                    break;
+                //微信登录成功
+                case NotificationArray.WECHAT + NotificationArray.LOGIN + NotificationArray.SUCCESS:
+                    break;
+                //登录失败
                 case NotificationArray.LOGIN + NotificationArray.FAILURE:
                     GameCore.Instance.SendMessageToMessagePanel(notification.data as MessageData);
                     break;
+                //微博登录失败
+                case NotificationArray.SINAWEIBO + NotificationArray.LOGIN + NotificationArray.FAILURE:
+                    break;
+                //QQ登录失败
+                case NotificationArray.QQ + NotificationArray.LOGIN + NotificationArray.FAILURE:
+                    break;
+                //微信登录失败
+                case NotificationArray.WECHAT + NotificationArray.LOGIN + NotificationArray.FAILURE:
+                    break;
+                //显示注册界面
                 case NotificationArray.SHOW + NotificationArray.REGISTER:
                     GameCore.Instance.OpenNextUIPanel(GameCore.FindObjectOfType<RegisterPanel>().gameObject);
                     break;
+                //注册
                 case NotificationArray.REGISTER:
                     UserProxy.Register(notification.data as UserData);
                     break;
+                //注册成功
                 case NotificationArray.REGISTER + NotificationArray.SUCCESS:
                     GameCore.Instance.SendMessageToMessagePanel(notification.data as MessageData);
                     GameCore.Instance.OpenNextUIPanel(GameCore.FindObjectOfType<LoginPanel>().gameObject);
                     break;
+                //注册失败
                 case NotificationArray.REGISTER + NotificationArray.FAILURE:
                     GameCore.Instance.SendMessageToMessagePanel(notification.data as MessageData);
                     break;
+                //注销
                 case NotificationArray.LOGOUT:
                     GameCore.Instance.OpenNextUIPanel(GameCore.FindObjectOfType<LoginPanel>().gameObject);
                     break;

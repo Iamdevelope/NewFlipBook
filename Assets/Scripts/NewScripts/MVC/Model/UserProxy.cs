@@ -1,4 +1,5 @@
 ﻿
+using System;
 using PJW.Datas;
 using PJW.MVC.Base;
 using UnityEngine;
@@ -55,6 +56,20 @@ namespace PJW.MVC.Model
                 SendNotification(NotificationArray.REGISTER + NotificationArray.SUCCESS, MessageData);
             }
             CloseDB();
+        }
+        public void SinaWeiboLogin()
+        {
+
+        }
+
+        internal void WechatLogin()
+        {
+
+        }
+
+        internal void QQLogin()
+        {
+
         }
     }
 }
