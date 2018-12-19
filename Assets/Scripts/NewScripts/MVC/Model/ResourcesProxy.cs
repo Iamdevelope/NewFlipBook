@@ -134,7 +134,6 @@ namespace PJW.MVC.Model
                 progressWWW.Dispose();
                 progressWWW = null;
                 GameCore.Instance.GetDownLoadPanel().DownOver();
-
                 //需要更新的资源下载完毕,将需要更新的资源列表清空
                 neadUpdateAssetList.Clear();
                 Debug.Log("所有资源更新完毕");

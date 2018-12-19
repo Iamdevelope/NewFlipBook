@@ -57,6 +57,7 @@ namespace PJW.MVC.Model
             }
             CloseDB();
         }
+
         public void SinaWeiboLogin()
         {
 
