@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
 using DG.Tweening;
-using Mono.Data.Sqlite;
-using System.IO;
-using System.Collections;
 using System;
 using PJW.MVC;
 
@@ -40,6 +37,5 @@ namespace PJW.Book.UI
         }
         public virtual void StartAnim() { }
         public virtual void OverAnim() { }
-        public virtual void OverAnim(string nextName) { }
     }
 }

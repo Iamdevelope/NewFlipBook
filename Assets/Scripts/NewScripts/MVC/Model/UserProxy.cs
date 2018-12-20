@@ -1,5 +1,10 @@
 ﻿
 using System;
+using System.Collections;
+using System.IO;
+using cn.sharesdk.unity3d;
+using LitJson;
+using PJW.Book;
 using PJW.Datas;
 using PJW.MVC.Base;
 using UnityEngine;
@@ -12,6 +17,8 @@ namespace PJW.MVC.Model
     public class UserProxy : BaseProxy
     {
         public new const string NAME = "UserProxy";
+        private string fileName;
+
         public UserProxy()
         {
             ProxyName = NAME;
@@ -60,17 +67,87 @@ namespace PJW.MVC.Model
 
         public void SinaWeiboLogin()
         {
-
+            fileName = "/sina.json";
+            if (File.Exists(Application.persistentDataPath + fileName))
+            {
+                return;
+            }
+            GameCore.Instance.ssdk.authHandler = AuthHandler;
+            GameCore.Instance.ssdk.Authorize(PlatformType.SinaWeibo);
         }
 
-        internal void WechatLogin()
+        public void WechatLogin()
         {
-
+            fileName = "/wechat.json";
+            if (File.Exists(Application.persistentDataPath + fileName))
+            {
+                return;
+            }
+            GameCore.Instance.ssdk.authHandler = AuthHandler;
+            GameCore.Instance.ssdk.Authorize(PlatformType.WeChat);
         }
 
-        internal void QQLogin()
+        public void QQLogin()
         {
-
+            fileName = "/qq.json";
+            if (File.Exists(Application.persistentDataPath + fileName))
+            {
+                return;
+            }
+            GameCore.Instance.ssdk.authHandler = AuthHandler;
+            GameCore.Instance.ssdk.Authorize(PlatformType.QQ);
+        }
+        /// <summary>
+        /// 授权回调
+        /// </summary>
+        /// <param name="reqID"></param>
+        /// <param name="state"></param>
+        /// <param name="type"></param>
+        /// <param name="data"></param>
+        private void AuthHandler(int reqID, ResponseState state, PlatformType type, Hashtable data)
+        {
+            //如果授权成功
+            if (state == ResponseState.Success)
+            {
+                JsonData userData = JsonMapper.ToObject(JsonMapper.ToJson(data));
+                SaveUserInfo(JsonMapper.ToJson(data));
+                string icon = userData["icon"].ToString();
+                GameCore.Instance.StartCoroutine(DownUserIcon(icon));
+                Debug.Log("授权成功");
+            }
+            else if (state == ResponseState.Fail)
+            {
+                Debug.Log("授权失败！");
+            }
+        }
+        /// <summary>
+        /// 将用户的头像下载
+        /// </summary>
+        /// <param name="icon"></param>
+        /// <returns></returns>
+        private IEnumerator DownUserIcon(string icon)
+        {
+            if (File.Exists(Application.persistentDataPath + "/icon.jpg"))
+                File.Delete(Application.persistentDataPath + "/icon.jpg");
+            WWW www = new WWW(icon);
+            yield return www;
+            FileStream stream = File.Create(Application.persistentDataPath + "/icon.jpg");
+            Texture2D texture = new Texture2D(www.texture.width, www.texture.height);
+            www.LoadImageIntoTexture(texture);
+            byte[] bytes = texture.EncodeToJPG();
+            stream.Write(bytes, 0, bytes.Length);
+            stream.Close();
+            stream.Dispose();
+        }
+        /// <summary>
+        /// 将得到的用户信息保存
+        /// </summary>
+        /// <param name="jsonFile"></param>
+        private void SaveUserInfo(string jsonFile)
+        {
+            if (File.Exists(Application.persistentDataPath + "/" + fileName))
+                File.Delete(Application.persistentDataPath + "/" + fileName);
+            File.WriteAllText(Application.persistentDataPath + "/" + fileName, jsonFile);
         }
     }
 }

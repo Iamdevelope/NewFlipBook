@@ -9,7 +9,7 @@ namespace PJW.Book
 
         public const string JIANKANG_JINGLINGWU = "jiankang_jinglingwu";
         public const string KEXUE_KEJICHENG = "kexue_kejicheng";
-        public const string YISHU_HAITAN = "yishu_haidaochuan";
+        public const string YISHU_HAITAN = "yishu_haitan";
         public const string YUYAN_MOGUBAO = "yuyan_mogubao";
         public const string SHEHUI_CUNZHUANG = "shehui_cunzhuang";
         public const string HOME = "home";

@@ -159,7 +159,7 @@ public class CameraPathBezierAnimatorEditor : Editor {
 					}
 					cam.transform.position = previewCamPos;
 					cam.transform.rotation = previewCamRot;
-					cam.GetComponent<Camera>().fov = previewCamFOV;
+					cam.GetComponent<Camera>().fieldOfView = previewCamFOV;
 					cam.GetComponent<Camera>().targetTexture = pointPreviewTexture;
 			        cam.GetComponent<Camera>().Render();
 			        cam.GetComponent<Camera>().targetTexture = null;

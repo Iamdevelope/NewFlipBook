@@ -1,12 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using UnityEngine.SceneManagement;
-using System.Collections;
-using cn.sharesdk.unity3d;
-using System;
-using System.IO;
-using LitJson;
 using PJW.Datas;
 
 namespace PJW.Book.UI
@@ -35,8 +28,8 @@ namespace PJW.Book.UI
             loginBtn = transform.Find("LoginBtn").GetComponent<Button>();
             registerBtn = transform.Find("RegisterBtn").GetComponent<Button>();
             QQBtn = transform.Find("QQBtn").GetComponent<Button>();
-            //weixinBtn = transform.Find("WeiXinBtn").GetComponent<Button>();
-            //weiboBtn = transform.Find("WeiBoBtn").GetComponent<Button>();
+            weixinBtn = transform.Find("WeiXinBtn").GetComponent<Button>();
+            weiboBtn = transform.Find("WeiBoBtn").GetComponent<Button>();
             loadingPanel = FindObjectOfType<LoadingPanel>();
 
             exitBtn.onClick.AddListener(ExitButtonHandle);
@@ -45,8 +38,8 @@ namespace PJW.Book.UI
             registerBtn.onClick.RemoveAllListeners();
             registerBtn.onClick.AddListener(RegisterButtonHandle);
             QQBtn.onClick.AddListener(QQButtonHandle);
-            //weixinBtn.onClick.AddListener(WeiXinButtonHandle);
-            //weiboBtn.onClick.AddListener(WeiBoButtonHandle);
+            weixinBtn.onClick.AddListener(WeiXinButtonHandle);
+            weiboBtn.onClick.AddListener(WeiBoButtonHandle);
         }
         /// <summary>
         /// 注册
@@ -55,7 +48,6 @@ namespace PJW.Book.UI
         {
             base.PlayClickSound();
             SendNotification(NotificationArray.SHOW + NotificationArray.REGISTER, "");
-            //GameCore.Instance.OpenNextUIPanel(FindObjectOfType<RegisterPanel>().gameObject);
         }
         /// <summary>
         /// 登录
@@ -67,6 +59,13 @@ namespace PJW.Book.UI
             string password = passWord.text;
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 MessageData.Message = "用户名/密码不能为空！";
+            else if(!StringHelper.IsSafeSqlString(username)||
+                StringHelper.CheckBadWord(username)||
+                !StringHelper.IsSafeSqlString(password)||
+                StringHelper.CheckBadWord(password))
+            {
+                MessageData.Message = "不允许出现非法字符！";
+            }
             if (!string.IsNullOrEmpty(MessageData.Message))
             {
                 SendNotification(NotificationArray.LOGIN + NotificationArray.FAILURE, MessageData);
@@ -79,7 +78,7 @@ namespace PJW.Book.UI
         /// </summary>
         private void ExitButtonHandle()
         {
-            GameCore.Instance.PlaySoundBySoundName();
+            PlayClickSound();
             Application.Quit();
         }
         /// <summary>
@@ -87,77 +86,25 @@ namespace PJW.Book.UI
         /// </summary>
         private void QQButtonHandle()
         {
-            fileName = "/qq.json";
-            if (File.Exists(Application.persistentDataPath + fileName))
-            {
-                return;
-            }
-            GameCore.Instance.ssdk.authHandler = AuthHandler;
-            GameCore.Instance.ssdk.Authorize(PlatformType.QQ);
+            PlayClickSound();
+            SendNotification(NotificationArray.QQ + NotificationArray.LOGIN);
         }
-
-        private void AuthHandler(int reqID, ResponseState state, PlatformType type, Hashtable data)
-        {
-            //如果授权成功
-            if (state == ResponseState.Success)
-            {
-                JsonData userData = JsonMapper.ToObject(JsonMapper.ToJson(data));
-                SaveUserInfo(JsonMapper.ToJson(data));
-                string icon = userData["icon"].ToString();
-                StartCoroutine(DownUserIcon(icon));
-                //text.text += "\n userid : " + userData["userID"] + "\n username : " + userData["nickname"] + "\n icon : " + userData["icon"];
-                //text.text += "\n微信授权成功！！！";
-                userName.text = userData["nickname"].ToString();
-                Debug.Log("授权成功");
-            }
-            else if (state == ResponseState.Fail)
-            {
-                Debug.Log("授权失败！");
-            }
-        }
-
         /// <summary>
         /// 微信登录
         /// </summary>
         private void WeiXinButtonHandle()
         {
-            fileName = "/wechat.json";
-            if (File.Exists(Application.persistentDataPath + fileName))
-            {
-                return;
-            }
-            GameCore.Instance.ssdk.authHandler = AuthHandler;
-            GameCore.Instance.ssdk.Authorize(PlatformType.WeChat);
+            PlayClickSound();
+            SendNotification(NotificationArray.WECHAT + NotificationArray.LOGIN);
         }
         /// <summary>
         /// 微博登录
         /// </summary>
         private void WeiBoButtonHandle()
         {
-
+            PlayClickSound();
+            SendNotification(NotificationArray.SINAWEIBO + NotificationArray.LOGIN);
         }
-        
-        private IEnumerator DownUserIcon(string icon)
-        {
-            Debug.Log("开启协程进行资源下载");
-            WWW www = new WWW(icon);
-            yield return www;
-            FileStream stream = File.Create(Application.persistentDataPath + "/icon.jpg");
-            Texture2D texture = new Texture2D(www.texture.width, www.texture.height);
-            www.LoadImageIntoTexture(texture);
-            byte[] bytes = texture.EncodeToJPG();
-            stream.Write(bytes, 0, bytes.Length);
-            stream.Close();
-            stream.Dispose();
-        }
-
-        private void SaveUserInfo(string jsonFile)
-        {
-            if (File.Exists(Application.persistentDataPath + "/" + fileName))
-                File.Delete(Application.persistentDataPath + "/" + fileName);
-            File.WriteAllText(Application.persistentDataPath + "/" + fileName, jsonFile);
-        }
-
         public override void Reset(Vector3 scale, float t,string msg="")
         {
             if (scale == Vector3.one)
