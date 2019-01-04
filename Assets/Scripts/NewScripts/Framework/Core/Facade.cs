@@ -9,11 +9,14 @@ namespace PJW.MVC.Core
     {
         #region 单例
         protected static Facade instance;
-        public static Facade Instance { get
+        public static Facade Instance
+        {
+            get
             {
                 if (instance == null) instance = new Facade();
                 return instance;
-            } }
+            }
+        }
         #endregion
         /// <summary>
         /// 获取Mediator

@@ -395,6 +395,35 @@
     <Compile Include="Assets\Scripts\JSON\GenerateAllBookJSONFile.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkAction.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkException.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkModule.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Reference\IReference.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePool.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePool.ReferenceCollection.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePoolInfo.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\ITask.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\ITaskAgent.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\TaskPool.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Variable\GenericVariable.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Variable\Variable.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\Constant.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerErrorEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerSuccessEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerUpdateEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadFailureEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadAgent.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadCounter.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadCouter.DownloadCounterNode.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadTask.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadTaskStatus.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadStartEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadSuccessEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadUpdateEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\IDownLoadAgentManager.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\DownLoad\IDownLoadManager.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Framework\Core\Facade.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Framework\Core\Model.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Framework\Core\NotificationCenter.cs" />
@@ -409,6 +438,8 @@
     <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Mediator.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Notification.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Proxy.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\FSM\FsmState.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\FSM\IFsm.cs" />
     <Compile Include="Assets\Scripts\NewScripts\GameController.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\ApplicationFacade.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMediator.cs" />
@@ -416,14 +447,20 @@
     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BasePanel.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseProxy.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Constants\NotificationArray.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\CameraFindPathProxy.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\LanguageData.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\MessageData.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\ResourcesData.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\UserData.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\ResourcesProxy.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\UserProxy.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Views\CameraFindPathMediator.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ClassMediator.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ClassTypeMediator.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ResourcesMediator.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\UserMediator.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.Text.cs" />
     <Compile Include="Assets\Scripts\SQLite\DbAccess.cs" />
     <Compile Include="Assets\Scripts\SQLite\SQLiteHelper.cs" />
     <Compile Include="Assets\Scripts\Test\AnimationCursoTest.cs" />
@@ -548,6 +585,9 @@
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -556,9 +596,6 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

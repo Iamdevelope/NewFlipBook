@@ -50,9 +50,15 @@ namespace PJW.Book.UI
             string msg = "";
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(repassword))
                 msg = "用户名或密码不能为空";
-            if (!password.Equals(repassword))
+            else if (!password.Equals(repassword))
                 msg = "两次输入的密码不相同，请重新输入！";
-
+            else if (!StringHelper.IsSafeSqlString(username) ||
+                StringHelper.CheckBadWord(username) ||
+                !StringHelper.IsSafeSqlString(password) ||
+                StringHelper.CheckBadWord(password))
+            {
+                msg = "不允许出现非法字符！";
+            }
             if (string.IsNullOrEmpty(msg))
                 SendNotification(NotificationArray.REGISTER, new UserData() { Username = username, Password = password });
             else

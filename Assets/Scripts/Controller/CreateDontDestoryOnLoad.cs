@@ -1,6 +1,4 @@
 ﻿using PJW.Book;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateDontDestoryOnLoad : MonoBehaviour {
@@ -14,6 +12,7 @@ public class CreateDontDestoryOnLoad : MonoBehaviour {
             isDontDestroyOnLoad = true;
             temp = new GameObject("GameCore");
             GameObject message = Instantiate(messageObject);
+            temp.AddComponent<GameController>();
             temp.AddComponent<SoundManager>();
             temp.AddComponent<GameCore>();
             temp.AddComponent<AudioSource>();

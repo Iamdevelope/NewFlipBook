@@ -175,7 +175,6 @@ namespace PJW.HotUpdate
             }
             StartCoroutine(CheckUpdate());
         }
-
         /// <summary>
         /// 检查是否需要更新
         /// </summary>
@@ -226,7 +225,6 @@ namespace PJW.HotUpdate
                 UpdateAsset(savePath);
             }));
         }
-
         /// <summary>
         /// 创建AssetBundle资源
         /// </summary>

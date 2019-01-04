@@ -19,6 +19,8 @@ namespace PJW.Book
         private float endX;
         private ClassPanel classPanel;
         private BasePanel[] allPanels;
+        [HideInInspector]
+        public bool canAnim = true;
         private void Start()
         {
             right = FindObjectOfType<Right>().gameObject;
@@ -80,10 +82,11 @@ namespace PJW.Book
         {
             if (isStart)
             {
-                CameraObject.transform.DOLocalMoveY(CameraObject.transform.localPosition.y + 20, 1f);
+                CameraObject.transform.DOLocalMoveY(0, 1f).OnComplete(() => canAnim = true);
             }
             else
             {
+                canAnim = false;
                 CameraObject.transform.DOLocalMoveY(CameraObject.transform.localPosition.y - 20, 1f);
             }
         }

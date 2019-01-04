@@ -33,8 +33,7 @@ namespace PJW.Book.UI
                 string str = "欢迎来到" + msg + "!";
                 GetComponentInChildren<Text>().text = str;
             }
-            //transform.DOScale(scale, t);
-            base.Reset(scale, t, msg);
+            base.Reset(scale, t);
         }
     }
 }

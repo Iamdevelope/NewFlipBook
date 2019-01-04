@@ -1,9 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using System;
 
 namespace PJW.Book.UI
 {
@@ -15,6 +12,7 @@ namespace PJW.Book.UI
         private Text message;
         private Button exitBtn;
         private Button enterBtn;
+        private string msgType;
         public override void Init()
         {
             message = GetComponentInChildren<Text>();
@@ -27,7 +25,8 @@ namespace PJW.Book.UI
 
         private void EnterHandle()
         {
-            SendNotification(NotificationArray.CHECK + NotificationArray.UPDATE);
+            if (msgType != null)
+                SendNotification(msgType);
             CloseButtonHandle();
         }
 
@@ -48,6 +47,7 @@ namespace PJW.Book.UI
         {
             message.text = msg.Message;
             message.color = msg.Color;
+            msgType = msg.Type;
             Reset(Vector3.one, 0.3f);
             if (!showEnterBtn)
             {

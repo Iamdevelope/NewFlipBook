@@ -1,4 +1,4 @@
-﻿using System;
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -27,8 +27,12 @@ namespace PJW.Book.UI
         private string bookName;
         private bool isButton;
         public Material material;
+        private Scene2Back Scene2Back;
+        private LoadAllBookXML LoadAllBookXML;
         public override void Init()
         {
+            LoadAllBookXML = FindObjectOfType<LoadAllBookXML>();
+            Scene2Back = FindObjectOfType<Scene2Back>();
             nameSprite = new Dictionary<string, Sprite[]>();
             children = transform.Find("BG").GetComponent<RectTransform>();
             classL = children.Find(L).GetComponent<RectTransform>();
@@ -78,10 +82,10 @@ namespace PJW.Book.UI
         /// <param name="name"></param>
         private void ClassTypeButton(string name)
         {
-            FindObjectOfType<LoadAllBookXML>().GenerateAllBook(bookName, name);
-            if (isButton)
+            LoadAllBookXML.GenerateAllBook(bookName, name);
+            if (isButton && Scene2Back.canAnim)
             {
-                FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(false);
+                Scene2Back.CameraStartOrOverAnimation(false);
                 StartCoroutine(CameraInScene());
             }
         }
@@ -89,7 +93,7 @@ namespace PJW.Book.UI
         private IEnumerator CameraInScene()
         {
             yield return new WaitForSeconds(1f);
-            FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(true);
+            Scene2Back.CameraStartOrOverAnimation(true);
         }
 
         /// <summary>
@@ -103,7 +107,6 @@ namespace PJW.Book.UI
             bookName = name;
             if(!nameSprite.ContainsKey(name))
                 nameSprite[name]= Resources.LoadAll<Sprite>("UISprites/Bookstore/ClassType/" + name + "/");
-            //Sprite[] temps = Resources.LoadAll<Sprite>("UISprites/Bookstore/ClassType/" + name + "/");
             for (int i = 0; i < nameSprite[name].Length; i++)
             {
                 string n = nameSprite[name][i].name.Split('_')[2];

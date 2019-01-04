@@ -23,8 +23,7 @@ namespace PJW.Book
         public float effectPositionZ = 1;
         [HideInInspector]
         public GameObject TouchEffect;
-        [HideInInspector]
-        public static UIManager uiManager;
+        private static UIManager uiManager;
         [HideInInspector]
         private SoundManager soundManager;
         private GeneratePage generatePage;
@@ -50,6 +49,10 @@ namespace PJW.Book
         public string LocalConfigPath
         {
             get { return Application.persistentDataPath + "/Books"; }
+        }
+        public string BookOfConfig
+        {
+            get { return LocalConfigPath + "/BookOfConfig/"; }
         }
         public string URL
         {
@@ -88,7 +91,10 @@ namespace PJW.Book
         public void Init()
         {
             //设置帧率
-            Application.targetFrameRate = 30;
+            if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer)
+                Application.targetFrameRate = 30;
+            else if (Application.platform == RuntimePlatform.WindowsPlayer)
+                Application.targetFrameRate = 60;
             ssdk = FindObjectOfType<ShareSDK>();
             CharacterCamera = FindObjectOfType<CharacterCamera>().gameObject;
             if (CharacterCamera != null)

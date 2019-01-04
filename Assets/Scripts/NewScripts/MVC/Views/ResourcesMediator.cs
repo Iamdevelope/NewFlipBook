@@ -60,7 +60,7 @@ namespace PJW.MVC
                 case NotificationArray.UPDATE + NotificationArray.FAILURE:
                     Debug.Log(notification.data as MessageData);
                     //更新失败，将失败原因显示
-                    GameCore.Instance.SendMessageToMessagePanel(notification.data as MessageData);
+                    GameCore.Instance.SendMessageToMessagePanel(notification.data as MessageData,true);
                     break;
             }
         }

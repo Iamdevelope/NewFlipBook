@@ -85,8 +85,8 @@ namespace PJW.Json
                                         textNames[k] = textNames[k].Replace('\\', '/');
                                         Book b = new Book();
                                         b.Name = textNames[k].Split('/')[num + 2].Split('.')[0];
-                                        b.ConfigFile = GameCore.Instance.LocalConfigPath + "/ConfigFiles/" + b.Name + ".json";
-                                        b.BookImage = textNames[i] + "/" + b.Name + ".jpg";
+                                        b.ConfigFile = GameCore.Instance.BookOfConfig + b.Name + ".json";
+                                        b.BookImage = textNames[k];
                                         ct.Book.Add(b);
                                     }
                                 }
@@ -97,8 +97,8 @@ namespace PJW.Json
                         books.BookTypes = bookTypes;
                     }
                 }
-                if (!Directory.Exists(GameCore.Instance.LocalConfigPath + "/ConfigContent/"))
-                    Directory.CreateDirectory(GameCore.Instance.LocalConfigPath + "/ConfigContent/");
+                if (!Directory.Exists(GameCore.Instance.BookOfConfig))
+                    Directory.CreateDirectory(GameCore.Instance.BookOfConfig);
                 CreateBookJSON(bookFile, books, callBack);
             }
             catch(Exception e)

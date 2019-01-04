@@ -23,6 +23,7 @@ namespace PJW.Book
     {
         public void Start()
         {
+            Debug.Log(" this is installerName : " + Application.installerName);
             if (GameCore.GameData == null) return;
             Debug.Log(GameCore.GameData.CameraPosition + "\n" + GameCore.GameData.CurrentTargerPointName + "\n" + GameCore.GameData.IsTarget);
             //Camera.main.transform.position = GameCore.GameData.CameraPosition;

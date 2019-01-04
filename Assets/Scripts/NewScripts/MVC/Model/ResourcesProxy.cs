@@ -1,7 +1,5 @@
 ﻿
-using LitJson;
 using PJW.Book;
-using PJW.Book.UI;
 using PJW.Datas;
 using PJW.MVC.Base;
 using System;
@@ -53,14 +51,10 @@ namespace PJW.MVC.Model
                 MessageData.Message = " 没有网络，请连接网络后再重新打开软件。";
                 SendNotification(NotificationArray.UPDATE + NotificationArray.FAILURE, MessageData);
             }
-            else if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork)
+            else
             {
-                MessageData.Color = Color.red;
-                MessageData.Message = " 当前为4G网络，资源较大，会消耗大量流量，确认继续更新? ";
-                SendNotification(NotificationArray.UPDATE + NotificationArray.CHECK, MessageData);
-            }
-            else if (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
                 SendNotification(NotificationArray.CHECK + NotificationArray.UPDATE);
+            }
         }
         /// <summary>
         /// 更新
@@ -75,9 +69,6 @@ namespace PJW.MVC.Model
                     File.Delete(LOCAL_RES_OUT_PATH + item);
             }
             UpdateAsset();
-            //MessageData.Color = Color.red;
-            //MessageData.Message = " 更新失败，发生了不可预知的错误。";
-            //SendNotification(NotificationArray.UPDATE + NotificationArray.FAILURE, MessageData);
         }
         /// <summary>
         /// 检查需要更新的资源
@@ -111,7 +102,18 @@ namespace PJW.MVC.Model
             if (neadUpdateAssetList.Count > 0)
             {
                 Debug.Log("有资源需要更新");
-                SendNotification(NotificationArray.START + NotificationArray.UPDATE);
+                if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork)
+                {
+                    MessageData.Color = Color.red;
+                    MessageData.Message = " 当前为4G网络，更新资源会消耗大量流量，确认继续更新? ";
+                    MessageData.Type = NotificationArray.START + NotificationArray.UPDATE;
+                    SendNotification(NotificationArray.UPDATE + NotificationArray.CHECK, MessageData);
+                }
+                else if (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
+                {
+                    //SendNotification(NotificationArray.CHECK + NotificationArray.UPDATE);
+                    SendNotification(NotificationArray.START + NotificationArray.UPDATE);
+                }
             }
             else
             {
@@ -180,12 +182,9 @@ namespace PJW.MVC.Model
             fs.Write(bytes, 0, bytes.Length);
             //利用文件流进行写数据时，会进行缓存，Flush就是不让它缓存，直接写到文件
             fs.Flush();
-            //关闭流，并将所有资源释放
             fs.Close();
-            //释放流
             fs.Dispose();
             progressWWW.Dispose();
-            //释放www
             if (callBack != null)
                 callBack();
         }

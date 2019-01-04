@@ -5,6 +5,6 @@ public class GameController : MonoBehaviour {
     
 	void Start () {
         PJW.MVC.ApplicationFacade.Instance.StartUP();
+        Destroy(this,1f);
 	}
-	
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Globe
 {
@@ -15,8 +16,6 @@ public class AsyncLoadScene : MonoBehaviour
     public Slider loadingSlider;
 
     public Text loadingText;
-
-    private float loadingSpeed = 1;
 
     private float targetValue;
 
@@ -32,6 +31,7 @@ public class AsyncLoadScene : MonoBehaviour
             StartCoroutine(AsyncLoading());
         }
     }
+    
 
     IEnumerator AsyncLoading()
     {
@@ -55,7 +55,7 @@ public class AsyncLoadScene : MonoBehaviour
         if (targetValue != loadingSlider.value)
         {
             //插值运算
-            loadingSlider.value = Mathf.Lerp(loadingSlider.value, targetValue, Time.deltaTime * loadingSpeed);
+            loadingSlider.value = Mathf.Lerp(loadingSlider.value, targetValue, Time.deltaTime);
             if (Mathf.Abs(loadingSlider.value - targetValue) < 0.01f)
             {
                 loadingSlider.value = targetValue;

@@ -24,7 +24,7 @@ public class StartLoadBookXML : MonoBehaviour {
         //如果是采用Resources进行资源加载
         if (loadAssetIsResources)
         {
-            path = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + bookName;
+            path = GameCore.Instance.BookOfConfig + bookName;
             ////如果需要创建的书本的xml文件不存在，则对其进行创建
             //if (!File.Exists(path))
             //    GenerateXML.GetBookContentByFile(bookName, () => GameCore.Instance.GeneratePage.LoadBook(path));

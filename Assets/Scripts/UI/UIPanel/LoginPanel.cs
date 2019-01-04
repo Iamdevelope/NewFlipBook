@@ -17,8 +17,6 @@ namespace PJW.Book.UI
         private Button weiboBtn;
         private InputField userName;
         private InputField passWord;
-        private LoadingPanel loadingPanel;
-        private string fileName;
         public override void Init()
         {
             MessageData = new MessageData();
@@ -30,7 +28,6 @@ namespace PJW.Book.UI
             QQBtn = transform.Find("QQBtn").GetComponent<Button>();
             weixinBtn = transform.Find("WeiXinBtn").GetComponent<Button>();
             weiboBtn = transform.Find("WeiBoBtn").GetComponent<Button>();
-            loadingPanel = FindObjectOfType<LoadingPanel>();
 
             exitBtn.onClick.AddListener(ExitButtonHandle);
             loginBtn.onClick.AddListener(LoginButtonHandle);
@@ -54,18 +51,13 @@ namespace PJW.Book.UI
         /// </summary>
         private void LoginButtonHandle()
         {
+            MessageData.Message = null;
             base.PlayClickSound();
             string username = userName.text;
             string password = passWord.text;
             if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
                 MessageData.Message = "用户名/密码不能为空！";
-            else if(!StringHelper.IsSafeSqlString(username)||
-                StringHelper.CheckBadWord(username)||
-                !StringHelper.IsSafeSqlString(password)||
-                StringHelper.CheckBadWord(password))
-            {
-                MessageData.Message = "不允许出现非法字符！";
-            }
+            
             if (!string.IsNullOrEmpty(MessageData.Message))
             {
                 SendNotification(NotificationArray.LOGIN + NotificationArray.FAILURE, MessageData);

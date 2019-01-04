@@ -83,7 +83,6 @@ namespace PJW.Book.UI
                 currentClickedButton.DOScale(buttonClickedScale, 0.6f);
             }
         }
-
         /// <summary>
         /// 当按科学和艺术时需要进行不同的操作,先打开选择UI
         /// </summary>
@@ -93,7 +92,6 @@ namespace PJW.Book.UI
             GetComponentInChildren<ChildrenClassPanel>().Reset(Vector3.one,0.3f,name);
             currentName = name;
         }
-
         /// <summary>
         /// 书籍类型按钮点击事件
         /// </summary>
@@ -101,11 +99,7 @@ namespace PJW.Book.UI
         public void ClassButton(string name)
         {
             if (name.Equals(currentName)) return;
-
             currentName = name;
-            //FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(false);
-
-            //FindObjectOfType<LoadAllBookXML>().GenerateAllBook(name);
             FindObjectOfType<TitlePanel>().OverAnim();
             FindObjectOfType<ClassTypePanel>().OverAnim();
             FindObjectOfType<ClassTypePanel>().ChangeClassTypsSprites(name);
@@ -120,8 +114,6 @@ namespace PJW.Book.UI
         {
             yield return new WaitForSeconds(1f);
             ButtonClickedByName(nextName);
-            //FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(true);
-            
             FindObjectOfType<TitlePanel>().ChangeTitleSprite(nextName);
         }
     }

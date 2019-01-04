@@ -24,6 +24,10 @@ namespace PJW.MVC.Model
             ProxyName = NAME;
             MessageData = new MessageData();
         }
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="ud"></param>
         public void Login(UserData ud)
         {
             OpenDB();
@@ -36,7 +40,6 @@ namespace PJW.MVC.Model
             //如果该条数据存在，则登录成功
             if (reader.HasRows)
             {
-                Debug.Log(ud);
                 SendNotification(NotificationArray.LOGIN + NotificationArray.SUCCESS, ud);
             }
             else
@@ -46,6 +49,10 @@ namespace PJW.MVC.Model
             }
             CloseDB();
         }
+        /// <summary>
+        /// 注册
+        /// </summary>
+        /// <param name="ud"></param>
         public void Register(UserData ud)
         {
             OpenDB();
@@ -64,7 +71,9 @@ namespace PJW.MVC.Model
             }
             CloseDB();
         }
-
+        /// <summary>
+        /// 新浪微博第三方登录
+        /// </summary>
         public void SinaWeiboLogin()
         {
             fileName = "/sina.json";
@@ -72,10 +81,11 @@ namespace PJW.MVC.Model
             {
                 return;
             }
-            GameCore.Instance.ssdk.authHandler = AuthHandler;
-            GameCore.Instance.ssdk.Authorize(PlatformType.SinaWeibo);
+            AddAuthHandler(PlatformType.SinaWeibo);
         }
-
+        /// <summary>
+        /// 微信第三方登录
+        /// </summary>
         public void WechatLogin()
         {
             fileName = "/wechat.json";
@@ -83,10 +93,11 @@ namespace PJW.MVC.Model
             {
                 return;
             }
-            GameCore.Instance.ssdk.authHandler = AuthHandler;
-            GameCore.Instance.ssdk.Authorize(PlatformType.WeChat);
+            AddAuthHandler(PlatformType.WeChat);
         }
-
+        /// <summary>
+        /// QQ第三方登录
+        /// </summary>
         public void QQLogin()
         {
             fileName = "/qq.json";
@@ -94,8 +105,17 @@ namespace PJW.MVC.Model
             {
                 return;
             }
-            GameCore.Instance.ssdk.authHandler = AuthHandler;
-            GameCore.Instance.ssdk.Authorize(PlatformType.QQ);
+            AddAuthHandler(PlatformType.QQ);
+        }
+        /// <summary>
+        /// 添加授权事件
+        /// </summary>
+        /// <param name="platform"></param>
+        private void AddAuthHandler(PlatformType platform)
+        {
+            if (GameCore.Instance.ssdk.authHandler == null)
+                GameCore.Instance.ssdk.authHandler = AuthHandler;
+            GameCore.Instance.ssdk.Authorize(platform);
         }
         /// <summary>
         /// 授权回调
@@ -113,10 +133,13 @@ namespace PJW.MVC.Model
                 SaveUserInfo(JsonMapper.ToJson(data));
                 string icon = userData["icon"].ToString();
                 GameCore.Instance.StartCoroutine(DownUserIcon(icon));
+                SendNotification(NotificationArray.LOGIN + NotificationArray.SUCCESS);
                 Debug.Log("授权成功");
             }
             else if (state == ResponseState.Fail)
             {
+                MessageData.Message = "授权失败！";
+                SendNotification(NotificationArray.LOGIN + NotificationArray.FAILURE, MessageData);
                 Debug.Log("授权失败！");
             }
         }

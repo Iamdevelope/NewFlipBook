@@ -1,9 +1,5 @@
 ﻿using PJW.Book;
-using PJW.Common;
-using PJW.HotUpdate;
 using PJW.Json;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -31,7 +27,7 @@ public class LoadAllBookXML : MonoBehaviour {
             {
                 if (isXML)
                 {
-                    path = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + "allBooks.xml";
+                    path = GameCore.Instance.BookOfConfig + "allBooks.xml";
                     if (!File.Exists(path))
                         NewGenerateAllbookXMLFile.GetBookContentByFile(path, () => StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByXML(path, name, classType)));
                     else
@@ -39,7 +35,7 @@ public class LoadAllBookXML : MonoBehaviour {
                 }
                 else
                 {
-                    path = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + "books.json";
+                    path = GameCore.Instance.BookOfConfig + "books.json";
                     if (!File.Exists(path))
                         GenerateAllBookJSONFile.GetBookContentByFile(path, () => StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByJSON(path, name, classType)));
                     else
@@ -50,7 +46,7 @@ public class LoadAllBookXML : MonoBehaviour {
             {
                 if (isXML)
                 {
-                    path = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + "allBooks.xml";
+                    path = GameCore.Instance.BookOfConfig + "allBooks.xml";
                     if (!File.Exists(path))
                         NewGenerateAllbookXMLFile.GetBookContentByFile(path, () => StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByXML(path, name, classType)));
                     else
@@ -58,7 +54,7 @@ public class LoadAllBookXML : MonoBehaviour {
                 }
                 else
                 {
-                    path = GameCore.Instance.LocalConfigPath + "/ConfigContent/" + "books.json";
+                    path = GameCore.Instance.BookOfConfig + "books.json";
                     if (!File.Exists(path))
                         GenerateAllBookJSONFile.GetBookContentByFile(path, () => StartCoroutine(GameCore.Instance.NewGenerateBookstore.LoadAllBookByJSON(path, name, classType)));
                     else

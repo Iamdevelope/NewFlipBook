@@ -28,8 +28,8 @@ public class NewGenerateAllbookXMLFile {
         public string ClassTypeName { get; set; }
         public List<Book> Book { get; set; }
     }
-    
 
+    private static int num;
     public static List<BookType> bookTypes = new List<BookType>();
     /// <summary>
     /// 通过书本文件夹生成对应的XML文件,通过Resources进行加载
@@ -38,11 +38,12 @@ public class NewGenerateAllbookXMLFile {
     /// <param name="callBack">回调函数</param>
     public static void GetBookContentByFile(string bookFile, Action callBack)
     {
+        if (Application.platform == RuntimePlatform.Android && Application.platform != RuntimePlatform.WindowsEditor)
+            num = 10;
+        else if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+            num = 9;
         bookTypes.Clear();
-        string path = Application.temporaryCachePath + "/Books";
-        //path = path.Replace('/', '\\');
-        Debug.Log(path + "   --- this is android of path       from xmlFile in GetBookContentByFileInWindow");
-        string temp = path + "/AllBookImage";
+        string temp = GameCore.Instance.LocalConfigPath + "/AllBookImage";
         try
         {
             Debug.Log(temp);
@@ -57,7 +58,7 @@ public class NewGenerateAllbookXMLFile {
                     {
                         allBookType[i] = allBookType[i].Replace('\\', '/');
                         BookType bt = new BookType();
-                        bt.BookTypeName = allBookType[i].Split('/')[10].Split('.')[0];
+                        bt.BookTypeName = allBookType[i].Split('/')[num].Split('.')[0];
                         bt.ClassTypes = new List<ClassType>();
                         Debug.Log(" the booktype of path is  " + temp + "/" + bt.BookTypeName);
                         string[] allClassType = Directory.GetDirectories(temp + "/" + bt.BookTypeName);
@@ -67,7 +68,7 @@ public class NewGenerateAllbookXMLFile {
                             {
                                 allClassType[j] = allClassType[j].Replace('\\', '/');
                                 ClassType ct = new ClassType();
-                                ct.ClassTypeName = allClassType[j].Split('/')[11].Split('.')[0];
+                                ct.ClassTypeName = allClassType[j].Split('/')[num+1].Split('.')[0];
                                 ct.Book = new List<Book>();
                                 Debug.Log(" the classtype of path is  " + temp + "/" + bt.BookTypeName + "/" + ct.ClassTypeName);
                                 string[] textNames = Directory.GetFiles(temp + "/" + bt.BookTypeName + "/" + ct.ClassTypeName);
@@ -78,9 +79,9 @@ public class NewGenerateAllbookXMLFile {
                                         if (textNames[k].EndsWith(".meta")) continue;
                                         textNames[k] = textNames[k].Replace('\\', '/');
                                         Book b = new Book();
-                                        b.Name = textNames[k].Split('/')[12].Split('.')[0];
-                                        b.ConfigFile = path + "/ConfigFiles/" + b.Name + ".xml";
-                                        b.BookImage = allClassType[j].Split('.')[0] + "/" + b.Name + ".jpg";
+                                        b.Name = textNames[k].Split('/')[num+2].Split('.')[0];
+                                        b.ConfigFile = GameCore.Instance.BookOfConfig + b.Name + ".xml";
+                                        b.BookImage = textNames[k];
                                         ct.Book.Add(b);
                                     }
                                 }
@@ -92,8 +93,8 @@ public class NewGenerateAllbookXMLFile {
                 }
             }
 
-            if (!Directory.Exists(GameCore.Instance.LocalConfigPath + "/ConfigContent/"))
-                Directory.CreateDirectory(GameCore.Instance.LocalConfigPath + "/ConfigContent/");
+            if (!Directory.Exists(GameCore.Instance.BookOfConfig))
+                Directory.CreateDirectory(GameCore.Instance.BookOfConfig);
             CreateBookXML(bookFile, bookTypes, callBack);
 
         }

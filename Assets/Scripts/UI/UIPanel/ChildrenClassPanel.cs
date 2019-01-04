@@ -17,9 +17,14 @@ namespace PJW.Book.UI
         private Image btn1Image;
         private Image btn2Image;
         private string currentName;
-
+        private Scene2Back Scene2Back;
+        private TitlePanel TitlePanel;
+        private ClassTypePanel ClassTypePanel;
         public override void Init()
         {
+            TitlePanel = FindObjectOfType<TitlePanel>();
+            ClassTypePanel = FindObjectOfType<ClassTypePanel>();
+            Scene2Back = FindObjectOfType<Scene2Back>();
             btn1 = transform.Find("btn1").GetComponent<Button>();
             btn2 = transform.Find("btn2").GetComponent<Button>();
             btn1Image = btn1.gameObject.GetComponent<Image>();
@@ -30,7 +35,7 @@ namespace PJW.Book.UI
         {
             if (!string.IsNullOrEmpty(msg))
             {
-                FindObjectOfType<NewGenerateBookstore>().isCanClickBook = false;
+                GameCore.Instance.NewGenerateBookstore.isCanClickBook = false;
                 switch (msg)
                 {
                     case "kexue":
@@ -47,7 +52,7 @@ namespace PJW.Book.UI
             }
             else
             {
-                FindObjectOfType<NewGenerateBookstore>().isCanClickBook = true;
+                GameCore.Instance.NewGenerateBookstore.isCanClickBook = true;
                 btn1.onClick.RemoveAllListeners();
                 btn2.onClick.RemoveAllListeners();
             }
@@ -60,22 +65,23 @@ namespace PJW.Book.UI
             Debug.Log(name);
             currentName = name;
             string temp = name.Split('/')[0];
-            FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(false);
-
-            //FindObjectOfType<LoadAllBookXML>().GenerateAllBook(name);
-            FindObjectOfType<TitlePanel>().OverAnim();
-            FindObjectOfType<ClassTypePanel>().OverAnim();
-            FindObjectOfType<ClassTypePanel>().ChangeClassTypsSprites(name);
-            StartCoroutine(NextClass(temp));
+            if (Scene2Back.canAnim)
+            {
+                TitlePanel.OverAnim();
+                ClassTypePanel.OverAnim();
+                ClassTypePanel.ChangeClassTypsSprites(name);
+                Scene2Back.CameraStartOrOverAnimation(false);
+                StartCoroutine(NextClass(temp));
+            }
         }
 
         private IEnumerator NextClass(string nextName)
         {
             yield return new WaitForSeconds(1f);
-            
-            FindObjectOfType<Scene2Back>().CameraStartOrOverAnimation(true);
 
-            FindObjectOfType<TitlePanel>().ChangeTitleSprite(nextName);
+            Scene2Back.CameraStartOrOverAnimation(true);
+
+            TitlePanel.ChangeTitleSprite(nextName);
         }
 
         private void ButtonHandle(string v)

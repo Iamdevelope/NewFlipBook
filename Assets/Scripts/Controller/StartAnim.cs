@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using UnityEngine;
 using PJW.Book.UI;
+using PJW.MVC;
 
 namespace PJW.Book
 {
-    public class StartAnim : MonoBehaviour
+    public class StartAnim : BaseMonobehiviour
     {
 
         public const string JIANKANG_JINGLINGWU = "jiankang_jinglingwu";

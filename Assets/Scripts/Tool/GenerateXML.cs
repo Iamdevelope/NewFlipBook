@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -187,7 +187,7 @@ namespace PJW.Common
                     bookInfos.Add(bookInfo);
                 }
 
-                string savePath = GameCore.Instance.LocalConfigPath + "/ConfigContent/";
+                string savePath = GameCore.Instance.BookOfConfig;
                 if (!Directory.Exists(savePath))
                     Directory.CreateDirectory(savePath);
                 GenerateXMLHelper.CreateBookXML(savePath + "/" + bookFile, bookInfos, bookFile, callBack);

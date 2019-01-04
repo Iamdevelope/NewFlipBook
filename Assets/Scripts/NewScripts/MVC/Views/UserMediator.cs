@@ -70,28 +70,11 @@ namespace PJW.MVC
                 //登录成功
                 case NotificationArray.LOGIN + NotificationArray.SUCCESS:
                     GameCore.Instance.CloseCurrentUIPanel();
-                    break;
-                //微博登录成功
-                case NotificationArray.SINAWEIBO + NotificationArray.LOGIN + NotificationArray.SUCCESS:
-                    break;
-                //QQ登录成功
-                case NotificationArray.QQ + NotificationArray.LOGIN + NotificationArray.SUCCESS:
-                    break;
-                //微信登录成功
-                case NotificationArray.WECHAT + NotificationArray.LOGIN + NotificationArray.SUCCESS:
+                    GameCore.Instance.OpenNextUIPanel(GameCore.FindObjectOfType<CharacterSelectPanel>().gameObject);
                     break;
                 //登录失败
                 case NotificationArray.LOGIN + NotificationArray.FAILURE:
                     GameCore.Instance.SendMessageToMessagePanel(notification.data as MessageData);
-                    break;
-                //微博登录失败
-                case NotificationArray.SINAWEIBO + NotificationArray.LOGIN + NotificationArray.FAILURE:
-                    break;
-                //QQ登录失败
-                case NotificationArray.QQ + NotificationArray.LOGIN + NotificationArray.FAILURE:
-                    break;
-                //微信登录失败
-                case NotificationArray.WECHAT + NotificationArray.LOGIN + NotificationArray.FAILURE:
                     break;
                 //显示注册界面
                 case NotificationArray.SHOW + NotificationArray.REGISTER:
