@@ -105,7 +105,7 @@ namespace PJW
                     throw new FrameworkException(" Type is invialid ");
                 }
                 string typeName = type.FullName;
-                return string.IsNullOrEmpty(name) ? typeName : Format("{0},{1}", typeName, name);
+                return string.IsNullOrEmpty(name) ? typeName : Format("{0}.{1}", typeName, name);
             }
         }
     }

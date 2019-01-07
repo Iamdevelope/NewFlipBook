@@ -438,8 +438,13 @@
     <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Mediator.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Notification.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Proxy.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\FSM\Fsm.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\FSM\FsmBase.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\FSM\FsmEventHandler.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\FSM\FsmManager.cs" />
     <Compile Include="Assets\Scripts\NewScripts\FSM\FsmState.cs" />
     <Compile Include="Assets\Scripts\NewScripts\FSM\IFsm.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\FSM\IFsmManager.cs" />
     <Compile Include="Assets\Scripts\NewScripts\GameController.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\ApplicationFacade.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMediator.cs" />
@@ -464,6 +469,7 @@
     <Compile Include="Assets\Scripts\SQLite\DbAccess.cs" />
     <Compile Include="Assets\Scripts\SQLite\SQLiteHelper.cs" />
     <Compile Include="Assets\Scripts\Test\AnimationCursoTest.cs" />
+    <Compile Include="Assets\Scripts\Test\FsmTest\FsmTest.cs" />
     <Compile Include="Assets\Scripts\Test\HttpDownTest.cs" />
     <Compile Include="Assets\Scripts\Test\MouseDrag.cs" />
     <Compile Include="Assets\Scripts\Test\ScriptTableTest.cs" />

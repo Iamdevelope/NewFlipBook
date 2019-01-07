@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using MyCommon;
-using System.Xml;
-using System.Threading;
 using System.Linq;
 using System.Xml.Linq;
 using UnityEngine.Video;

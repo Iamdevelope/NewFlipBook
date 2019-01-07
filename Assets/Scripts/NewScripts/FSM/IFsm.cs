@@ -40,7 +40,7 @@ namespace PJW.FSM
         /// <summary>
         /// 获取该状态机是否被销毁了
         /// </summary>
-        bool IsDestory
+        bool IsDestroy
         {
             get;
         }
@@ -62,7 +62,7 @@ namespace PJW.FSM
         /// 开始有限状态机
         /// </summary>
         /// <typeparam name="TState">要开始的有限状态机的类型</typeparam>
-        void Start<TState>() where TState : FsmState<TState>;
+        void Start<TState>() where TState : FsmState<T>;
         /// <summary>
         /// 开始有限状态机
         /// </summary>
@@ -73,7 +73,7 @@ namespace PJW.FSM
         /// </summary>
         /// <typeparam name="TState">要检查的有限状态机的状态类型</typeparam>
         /// <returns></returns>
-        bool HasState<TState>() where TState : FsmState<TState>;
+        bool HasState<TState>() where TState : FsmState<T>;
         /// <summary>
         /// 是否存在有限状态机的状态
         /// </summary>
@@ -85,7 +85,7 @@ namespace PJW.FSM
         /// </summary>
         /// <typeparam name="TState">要获取的有限状态机的状态类型</typeparam>
         /// <returns></returns>
-        TState GetState<TState>() where TState : FsmState<TState>;
+        TState GetState<TState>() where TState : FsmState<T>;
         /// <summary>
         /// 获取有限状态机状态
         /// </summary>
@@ -101,7 +101,7 @@ namespace PJW.FSM
         /// 得到有限状态机的所有状态
         /// </summary>
         /// <param name="results"></param>
-        void GetAllStates(out List<FsmState<T>> results);
+        void GetAllStates(List<FsmState<T>> results);
         /// <summary>
         /// 执行有限状态机事件
         /// </summary>
@@ -119,20 +119,20 @@ namespace PJW.FSM
         /// 判断是否存在指定有限状态机数据
         /// </summary>
         /// <param name="name">有限状态机名称</param>
-        /// <returns></returns>
+        /// <returns>是否存在指定有限状态机数据</returns>
         bool HasData(string name);
         /// <summary>
         /// 获取有限状态机数据
         /// </summary>
         /// <typeparam name="TData">要获取的有限状态机的数据类型</typeparam>
         /// <param name="name">有限状态机名称</param>
-        /// <returns></returns>
+        /// <returns>有限状态机数据</returns>
         TData GetData<TData>(string name) where TData : Variable.Variable;
         /// <summary>
         /// 获取有限状态机数据
         /// </summary>
         /// <param name="name">有限状态机名称</param>
-        /// <returns></returns>
+        /// <returns>有限状态机数据</returns>
         Variable.Variable GetData(string name);
         /// <summary>
         /// 设置有限状态机数据

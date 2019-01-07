@@ -34,7 +34,7 @@ namespace PJW.Download
         /// <summary>
         /// 获取框架模块优先级
         /// </summary>
-        internal override int Priority
+        public override int Priority
         {
             get { return 80; }
         }
@@ -229,7 +229,11 @@ namespace PJW.Download
                 downloadUpdateEventHandler(this, new DownloadUpdateEventAvgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
             }
         }
-
+        /// <summary>
+        /// 下载代理器下载成功
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="lastDownloadLength"></param>
         private void OnDownloadAgentSuccess(DownloadAgent sender, int lastDownloadLength)
         {
             downloadCounter.RecordDownloadLength(lastDownloadLength);
@@ -238,7 +242,11 @@ namespace PJW.Download
                 downloadSuccessEventHandler(this, new DownloadSuccessEventAvgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
             }
         }
-
+        /// <summary>
+        /// 下载失败时调用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="errorMessage"></param>
         private void OnDownloadAgentFailure(DownloadAgent sender, string errorMessage)
         {
             if (downloadFailureEventHandler != null)
@@ -246,7 +254,10 @@ namespace PJW.Download
                 downloadFailureEventHandler(this, new DownloadFailureEventAvgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
             }
         }
-
+        /// <summary>
+        /// 在开始下载时调用
+        /// </summary>
+        /// <param name="sender"></param>
         private void OnDownloadAgentStart(DownloadAgent sender)
         {
             if (downloadStartEventHandler != null)
@@ -273,7 +284,7 @@ namespace PJW.Download
         /// <summary>
         /// 关闭并清理管理器
         /// </summary>
-        internal override void Shutdown()
+        public override void Shutdown()
         {
             taskPool.Shutdown();
             downloadCounter.Shutdown();
@@ -283,7 +294,7 @@ namespace PJW.Download
         /// </summary>
         /// <param name="elapseSeconds"></param>
         /// <param name="realElapseSeconds"></param>
-        internal override void Update(float elapseSeconds, float realElapseSeconds)
+        public override void Update(float elapseSeconds, float realElapseSeconds)
         {
             taskPool.Update(elapseSeconds, realElapseSeconds);
             downloadCounter.Update(elapseSeconds, realElapseSeconds);

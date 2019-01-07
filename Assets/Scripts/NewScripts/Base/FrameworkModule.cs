@@ -3,12 +3,12 @@
     /// <summary>
     /// 框架模块抽象类
     /// </summary>
-    internal abstract class FrameworkModule
+    public abstract class FrameworkModule
     {
         /// <summary>
         /// 模块优先级
         /// </summary>
-        internal virtual int Priority
+        public virtual int Priority
         {
             get { return 0; }
         }
@@ -17,10 +17,10 @@
         /// </summary>
         /// <param name="elapseSeconds"></param>
         /// <param name="realElapseSeconds"></param>
-        internal abstract void Update(float elapseSeconds, float realElapseSeconds);
+        public abstract void Update(float elapseSeconds, float realElapseSeconds);
         /// <summary>
         /// 关闭并清理框架模块
         /// </summary>
-        internal abstract void Shutdown();
+        public abstract void Shutdown();
     }
 }
