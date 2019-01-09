@@ -40,7 +40,7 @@ namespace PJW.Book.UI
                 {
                     case "kexue":
                         btn1.onClick.AddListener(() => ButtonHandle("shuxue"));
-                        btn1Image.sprite = Resources.Load<Sprite>("UISprites/Bookstore/Class/lingyu_icon_shuxue_01");
+                        btn1Image.sprite = UnityEngine.Resources.Load<Sprite>("UISprites/Bookstore/Class/lingyu_icon_shuxue_01");
                         btn2.onClick.AddListener(() => ButtonHandle("tanjiu"));
                         break;
                     case "yishu":

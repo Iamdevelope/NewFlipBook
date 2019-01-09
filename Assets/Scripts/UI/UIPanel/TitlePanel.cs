@@ -30,7 +30,7 @@ namespace PJW.Book.UI
         {
             if (classTypeSprite == null) return;
             if(!titleMap.ContainsKey(titleName))
-                titleMap[titleName]= Resources.Load<Sprite>("UISprites/Bookstore/Title/biaoti_" + titleName);
+                titleMap[titleName]= UnityEngine.Resources.Load<Sprite>("UISprites/Bookstore/Title/biaoti_" + titleName);
 
             classTypeSprite.sprite = titleMap[titleName];
             StartAnim();

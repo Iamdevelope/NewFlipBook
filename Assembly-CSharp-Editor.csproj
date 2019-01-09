@@ -61,6 +61,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\About.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\AmplifyColorEffectEditor.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\AmplifyColorEffectEditorBase.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\AmplifyColorVolumeEditor.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\AmplifyColorVolumeEditorBase.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\BackBufferHandler.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\CameraCollection.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\EncryptDecrypt.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\FileHandler.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\ImageResult.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\LUTEditor.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\LUTResult.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\LUTSettings.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\LUTWriter.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\PhotoshopConnection.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\PhotoshopEncryptDecrypt.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\PhotoshopHandler.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\PhotoshopProtocol.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\PhotoshopTouchHelper.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\ResolutionSettings.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Editor\ToolSettings.cs" />
     <Compile Include="Assets\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
     <Compile Include="Assets\DragonBones\Editor\AssetProcess.cs" />
     <Compile Include="Assets\DragonBones\Editor\DragonBonesIcons.cs" />
@@ -401,6 +422,12 @@
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="AmplifyColor">
+      <HintPath>D:/Test/NewFlipBook/Assets/AmplifyColor/Plugins/AmplifyColor.dll</HintPath>
+    </Reference>
+    <Reference Include="AmplifyColorEditor">
+      <HintPath>D:/Test/NewFlipBook/Assets/AmplifyColor/Plugins/Editor/AmplifyColorEditor.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
       <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>

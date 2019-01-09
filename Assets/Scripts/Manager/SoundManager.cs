@@ -33,7 +33,7 @@ namespace PJW.Book
         }
         public void PlayAudioClip(string name)
         {
-            PlayAudioClip(Resources.Load<AudioClip>("Sounds/" + name));
+            PlayAudioClip(UnityEngine.Resources.Load<AudioClip>("Sounds/" + name));
         }
         private void PlayAudioClip(AudioClip clip)
         {

@@ -295,6 +295,9 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="AmplifyColor">
+      <HintPath>D:/Test/NewFlipBook/Assets/AmplifyColor/Plugins/AmplifyColor.dll</HintPath>
+    </Reference>
     <Reference Include="DemiLib">
       <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>

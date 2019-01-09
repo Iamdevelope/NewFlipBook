@@ -117,7 +117,7 @@ namespace PJW.Book
             GameObject parent = new GameObject("AllBooks");
             foreach (XElement item in xElements)
             {
-                Texture t = Resources.Load<Texture>("AllBookImage/" + bookType + "/" + item.Attribute("classType").Value + "/"+ item.Attribute("Name").Value);
+                Texture t = UnityEngine.Resources.Load<Texture>("AllBookImage/" + bookType + "/" + item.Attribute("classType").Value + "/"+ item.Attribute("Name").Value);
                 temp = Instantiate(bookPrefab, new Vector3(index * bookDistance + bookPrefab.transform.position.x, bookPrefab.transform.position.y, bookPrefab.transform.position.z), Quaternion.identity);
                 temp.name = item.Attribute("Name").Value;
                 temp.transform.parent = parent.transform;

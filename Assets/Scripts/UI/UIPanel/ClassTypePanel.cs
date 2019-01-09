@@ -106,7 +106,7 @@ namespace PJW.Book.UI
             isButton = false;
             bookName = name;
             if(!nameSprite.ContainsKey(name))
-                nameSprite[name]= Resources.LoadAll<Sprite>("UISprites/Bookstore/ClassType/" + name + "/");
+                nameSprite[name]= UnityEngine.Resources.LoadAll<Sprite>("UISprites/Bookstore/ClassType/" + name + "/");
             for (int i = 0; i < nameSprite[name].Length; i++)
             {
                 string n = nameSprite[name][i].name.Split('_')[2];

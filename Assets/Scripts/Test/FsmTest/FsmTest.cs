@@ -18,6 +18,7 @@ public class FsmTest : MonoBehaviour
         stateTest = new FsmStateTest();
         fsm = fsmManager.CreateFsm<FsmBaseTest>("Test", baseTest, new FsmState<FsmBaseTest>[] { fsmIdle, stateTest });
         fsm.Start(typeof(FsmIdle));
+        
         Debug.Log(" the count of baseTest " + fsm.FsmStateCount);
     }
 

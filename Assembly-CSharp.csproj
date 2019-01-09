@@ -61,6 +61,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorBase.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorEffect.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxy.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxy2D.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxyBase.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolume.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolume2D.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolumeBase.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VersionInfo.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffects.cs" />
+    <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffectsFlags.cs" />
     <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
     <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
@@ -395,10 +406,17 @@
     <Compile Include="Assets\Scripts\JSON\GenerateAllBookJSONFile.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\DataStruct\LoadType.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkAction.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkEntry.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkEventAvgs.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkException.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkFunc.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkModule.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkSegment.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Log\FrameworkLog.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Log\ILogHelper.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Log\LogLevel.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Base\Reference\IReference.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePool.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePool.ReferenceCollection.cs" />
@@ -408,6 +426,8 @@
     <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\TaskPool.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Base\Variable\GenericVariable.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Base\Variable\Variable.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Version\Version.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Base\Version\Version.IVersionHelper.cs" />
     <Compile Include="Assets\Scripts\NewScripts\DownLoad\Constant.cs" />
     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerErrorEventAvgs.cs" />
     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerSuccessEventAvgs.cs" />
@@ -446,6 +466,15 @@
     <Compile Include="Assets\Scripts\NewScripts\FSM\IFsm.cs" />
     <Compile Include="Assets\Scripts\NewScripts\FSM\IFsmManager.cs" />
     <Compile Include="Assets\Scripts\NewScripts\GameController.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Localization\ILocalizationHelper.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Localization\ILocalizationManager.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Localization\Language.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionaryDependencyEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionaryFailureEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionarySuccessEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionaryUpdateEventAvgs.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Localization\LocalizationManager.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Localization\LocalizationManager.LoadDictionaryInfo.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\ApplicationFacade.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMediator.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMonoBehaviour.cs" />
@@ -464,11 +493,26 @@
     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ClassTypeMediator.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ResourcesMediator.cs" />
     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\UserMediator.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\IObjectPool.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\IObjectPoolManager.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectBase.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectInfo.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolBase.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolManager.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolManager.Object.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolManager.ObjectPool.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ReleaseObjectFilterCallback.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Resources\IResourcesHelper.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Resources\IResourcesManager.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneCallback.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneFailureCallback.cs" />
+    <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneSuccessCallback.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.cs" />
     <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.Text.cs" />
     <Compile Include="Assets\Scripts\SQLite\DbAccess.cs" />
     <Compile Include="Assets\Scripts\SQLite\SQLiteHelper.cs" />
     <Compile Include="Assets\Scripts\Test\AnimationCursoTest.cs" />
+    <Compile Include="Assets\Scripts\Test\DownloadTest.cs" />
     <Compile Include="Assets\Scripts\Test\FsmTest\FsmTest.cs" />
     <Compile Include="Assets\Scripts\Test\HttpDownTest.cs" />
     <Compile Include="Assets\Scripts\Test\MouseDrag.cs" />
@@ -510,6 +554,7 @@
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
     <None Include="Assets\Demigiant\DemiLib\Core\DemiLib.xml" />
+    <None Include="Assets\AmplifyColor\Resources\MaskBlend.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
     <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
@@ -530,11 +575,16 @@
     <None Include="Assets\Shader\PageTurning.shader" />
     <None Include="Assets\StreamingAssets\Books\XMLContent\allBooks.xml" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
+    <None Include="Assets\AmplifyColor\Resources\Blend.shader" />
+    <None Include="Assets\AmplifyColor\Resources\BlendCache.shader" />
+    <None Include="Assets\AmplifyColor\Resources\Mask.shader" />
     <None Include="Assets\Shader\MyMobile Particle ParticleAdd.shader" />
+    <None Include="Assets\AmplifyColor\Samples\Check out the full LUT Package.txt" />
     <None Include="Assets\Shader\TestForge.shader" />
     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShift.shader" />
+    <None Include="Assets\AmplifyColor\Readme.txt" />
     <None Include="Assets\Shader\ShaderForLight.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
@@ -548,6 +598,7 @@
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\Bright.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
+    <None Include="Assets\AmplifyColor\Resources\ProcessOnly.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
     <None Include="Assets\Demigiant\DOTween\readme.txt" />
@@ -555,9 +606,11 @@
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+    <None Include="Assets\AmplifyColor\Resources\DepthMask.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+    <None Include="Assets\AmplifyColor\Resources\Common.cginc" />
     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
     <None Include="Assets\Evn\Import\xiaoyouyou\Shader\MyMobile Particle ParticleAdd.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
@@ -572,6 +625,8 @@
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
+    <None Include="Assets\AmplifyColor\Resources\DepthMaskBlend.shader" />
+    <None Include="Assets\AmplifyColor\Resources\Base.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
@@ -800,6 +855,9 @@
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+    </Reference>
+    <Reference Include="AmplifyColor">
+      <HintPath>D:/Test/NewFlipBook/Assets/AmplifyColor/Plugins/AmplifyColor.dll</HintPath>
     </Reference>
     <Reference Include="DemiLib">
       <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>

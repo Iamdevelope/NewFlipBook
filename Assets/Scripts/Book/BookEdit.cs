@@ -235,7 +235,7 @@ namespace PJW.Book
                             foreach (XmlNode xmlNode in thisnode.ChildNodes)
                             {
                                 string temp = xmlNode.Attributes["name"].Value;
-                                GameObject go = Resources.Load<GameObject>("Prefabs/Books/" + root3.Attributes["bookName"].Value + "/" + temp);
+                                GameObject go = UnityEngine.Resources.Load<GameObject>("Prefabs/Books/" + root3.Attributes["bookName"].Value + "/" + temp);
                                 GameObject tempGo = Instantiate(go);
                                 tempGo.name = temp;
                                 tempGo.transform.parent = parent.transform;

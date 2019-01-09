@@ -123,7 +123,7 @@ namespace PJW.Book{
                             temp = temp.Split('.')[0];
 
                             //GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Books/Prefabs/Books/" + root3.Attributes["bookName"].Value + "/Object/" + temp);
-                            GameObject go = Resources.Load<GameObject>("Books/" + bookName + "/Object/" + temp);
+                            GameObject go = UnityEngine.Resources.Load<GameObject>("Books/" + bookName + "/Object/" + temp);
                             GameObject tempGo = Instantiate(go);
                             if (tempGo.GetComponent<InterableObject>())
                                 tempGo.GetComponent<InterableObject>().GenerateEvent();
@@ -145,7 +145,7 @@ namespace PJW.Book{
                             string temp = xmlNode.Attribute("spriteName").Value;
                             temp = temp.Split('.')[0];
                             //GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Books/Prefabs/Books/" + root3.Attributes["bookName"].Value + "/Sprites/" + temp);
-                            GameObject go = Resources.Load<GameObject>("Books/" + bookName + "/Sprites/" + temp);
+                            GameObject go = UnityEngine.Resources.Load<GameObject>("Books/" + bookName + "/Sprites/" + temp);
                             GameObject tempGo = Instantiate(go, SpriteParent.transform);
                             if (tempGo.GetComponent<InterableObject>())
                                 tempGo.GetComponent<InterableObject>().GenerateEvent(bookName);
@@ -158,7 +158,7 @@ namespace PJW.Book{
                 //记录下该本书中的所有声音
                 if (!string.IsNullOrEmpty(item.Attribute("sound").Value))
                 {
-                    AudioClip clip = Resources.Load<AudioClip>("Books/" + bookName + "/Sound/" + item.Attribute("sound").Value);
+                    AudioClip clip = UnityEngine.Resources.Load<AudioClip>("Books/" + bookName + "/Sound/" + item.Attribute("sound").Value);
                     clip.name = item.Attribute("sound").Value;
                     bookSoundClip.Add(clip);
                 }
@@ -173,7 +173,7 @@ namespace PJW.Book{
                             string temp = xmlNode.Attribute("videoName").Value;
                             temp = temp.Split('.')[0];
 
-                            VideoClip videoClip = Resources.Load<VideoClip>("Books/" + bookName + "/Video/" + temp);
+                            VideoClip videoClip = UnityEngine.Resources.Load<VideoClip>("Books/" + bookName + "/Video/" + temp);
                             bookVideoClip[int.Parse(item.Attribute("videoCount").Value)].Add(videoClip);
                         }
                     }
@@ -190,7 +190,7 @@ namespace PJW.Book{
                             temp = temp.Split('.')[0];
 
                             //GameObject go = AssetDatabase.LoadAssetAtPath<GameObject>("Books/Prefabs/Books/" + root3.Attributes["bookName"].Value + "/Object/" + temp);
-                            GameObject go = Resources.Load<GameObject>("Books/" + bookName + "/UIButtonSprite/" + temp);
+                            GameObject go = UnityEngine.Resources.Load<GameObject>("Books/" + bookName + "/UIButtonSprite/" + temp);
                             GameObject tempGo = Instantiate(go);
                             tempGo.name = temp;
                             if (tempGo.GetComponent<InterableObject>())
@@ -201,7 +201,7 @@ namespace PJW.Book{
                         }
                     }
                 }
-                Texture t = Resources.Load<Texture>("Books/" + bookName + "/Textures/" + item.Attribute("pageName").Value);
+                Texture t = UnityEngine.Resources.Load<Texture>("Books/" + bookName + "/Textures/" + item.Attribute("pageName").Value);
                 pagestextures[pagesnumber] = t;
                 pagesnumber++;
             }

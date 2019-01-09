@@ -23,7 +23,7 @@ namespace PJW.Book
         public void ClickDragonButton(string name)
         {
             GameCore.Instance.PlaySoundBySoundName(SoundManager.CLICK_02);
-            Texture sprite = Resources.Load("Sprites/" + bookName + "/" + name) as Texture;
+            Texture sprite = UnityEngine.Resources.Load("Sprites/" + bookName + "/" + name) as Texture;
             image.texture = sprite;
             content.SetActive(true);
             content.transform.localScale = Vector3.zero;

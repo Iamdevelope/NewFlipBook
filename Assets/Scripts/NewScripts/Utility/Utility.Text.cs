@@ -17,7 +17,7 @@ namespace PJW
             /// <param name="format">字符串格式</param>
             /// <param name="arg0">字符串参数</param>
             /// <returns>格式化后的字符串</returns>
-            public static string Format(string format,string arg0)
+            public static string Format(string format,object arg0)
             {
                 if (format == null)
                 {
@@ -34,7 +34,7 @@ namespace PJW
             /// <param name="arg0">字符串参数</param>
             /// <param name="arg1">字符串参数</param>
             /// <returns>格式化后的字符串</returns>
-            public static string Format(string format, string arg0, string arg1)
+            public static string Format(string format, object arg0, object arg1)
             {
                 if (format == null)
                 {
@@ -52,7 +52,7 @@ namespace PJW
             /// <param name="arg1">字符串参数</param>
             /// <param name="arg2">字符串参数</param>
             /// <returns>格式化后的字符串</returns>
-            public static string Format(string format, string arg0, string arg1, string arg2)
+            public static string Format(string format, object arg0, object arg1, object arg2)
             {
                 if (format == null)
                 {
@@ -68,7 +68,7 @@ namespace PJW
             /// <param name="format">字符串格式</param>
             /// <param name="args">字符串参数</param>
             /// <returns>格式化后的字符串</returns>
-            public static string Format(string format, string[] args)
+            public static string Format(string format, params object[] args)
             {
                 if (format == null)
                 {

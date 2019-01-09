@@ -99,7 +99,7 @@ namespace PJW.Book
             CharacterCamera = FindObjectOfType<CharacterCamera>().gameObject;
             if (CharacterCamera != null)
                 CharacterCamera.SetActive(false);
-            TouchEffect = Resources.Load<GameObject>("Effect/TouchEffect");
+            TouchEffect = UnityEngine.Resources.Load<GameObject>("Effect/TouchEffect");
 
             uiManager = FindObjectOfType<UIManager>();
             soundManager = GetComponent<SoundManager>();

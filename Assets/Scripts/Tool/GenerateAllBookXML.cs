@@ -19,7 +19,7 @@ namespace PJW.Common
         {
             books.Clear();
 
-            Texture[] jiankang = Resources.LoadAll<Texture>("AllBookImage/" + bookType + "/" + classType + "/");
+            Texture[] jiankang = UnityEngine.Resources.LoadAll<Texture>("AllBookImage/" + bookType + "/" + classType + "/");
 
             if (jiankang != null)
             {

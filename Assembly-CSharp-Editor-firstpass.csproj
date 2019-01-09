@@ -329,6 +329,12 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="AmplifyColor">
+      <HintPath>D:/Test/NewFlipBook/Assets/AmplifyColor/Plugins/AmplifyColor.dll</HintPath>
+    </Reference>
+    <Reference Include="AmplifyColorEditor">
+      <HintPath>D:/Test/NewFlipBook/Assets/AmplifyColor/Plugins/Editor/AmplifyColorEditor.dll</HintPath>
+    </Reference>
     <Reference Include="DemiLib">
       <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
     </Reference>

@@ -26,8 +26,8 @@ namespace PJW.Book.UI
             objects = new Dictionary<string, GameObject>();
             parent = transform.Find("CharacterList");
             enterBtn = transform.Find("EnterBtn").GetComponent<Button>();
-            sprites = Resources.LoadAll<Sprite>("Character/");
-            characterBtn = Resources.Load<GameObject>("characterBtn");
+            sprites = UnityEngine.Resources.LoadAll<Sprite>("Character/");
+            characterBtn = UnityEngine.Resources.Load<GameObject>("characterBtn");
             for (int i = 0; i < sprites.Length; i++)
             {
                 GameObject go = Instantiate(characterBtn, parent);
@@ -61,16 +61,16 @@ namespace PJW.Book.UI
                 currentObject.SetActive(false);
             if (currentEnterButton != null)
             {
-                currentEnterButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("UISprites/click1");
+                currentEnterButton.GetComponent<Image>().sprite = UnityEngine.Resources.Load<Sprite>("UISprites/click1");
             }
             if (allCharacterButton.ContainsKey(name))
             {
                 currentEnterButton = allCharacterButton[name];
-                currentEnterButton.GetComponent<Image>().sprite = Resources.Load<Sprite>("UISprites/clicked");
+                currentEnterButton.GetComponent<Image>().sprite = UnityEngine.Resources.Load<Sprite>("UISprites/clicked");
             }
             if (!objects.ContainsKey(name))
             {
-                GameObject temp = Resources.Load<GameObject>("CharacterPrefabs/" + name);
+                GameObject temp = UnityEngine.Resources.Load<GameObject>("CharacterPrefabs/" + name);
                 if (temp == null) return;
                 objects[name] = Instantiate(temp);
                 objects[name].tag = "Player";
