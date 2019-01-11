@@ -50,7 +50,7 @@ public class DownloadAgentTest : IDownLoadAgentManager
 
     public void Download(string downloadUrl, object userData)
     {
-        throw new NotImplementedException();
+        Debug.Log(" is down load ... ");
     }
 
     public void Download(string downloadUrl, float formPosition, object userData)

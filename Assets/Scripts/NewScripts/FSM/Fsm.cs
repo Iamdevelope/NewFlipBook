@@ -12,7 +12,7 @@ namespace PJW.FSM
     {
         private readonly T _Owner;
         private readonly Dictionary<string, FsmState<T>> _State;
-        private readonly Dictionary<string, Variable.Variable> _Data;
+        private readonly Dictionary<string, Variable> _Data;
         private FsmState<T> _CurrentState;
         private float _CurrentStateTime;
         private bool _IsDestroyed;
@@ -34,7 +34,7 @@ namespace PJW.FSM
             }
             _Owner = owner;
             _State = new Dictionary<string, FsmState<T>>();
-            _Data = new Dictionary<string, Variable.Variable>();
+            _Data = new Dictionary<string, Variable>();
             foreach (FsmState<T> state in states)
             {
                 if (state == null)
@@ -216,7 +216,7 @@ namespace PJW.FSM
         /// <typeparam name="TData">要获取的有限状态机的数据类型</typeparam>
         /// <param name="name">有限状态机名称</param>
         /// <returns>有限状态机数据</returns>
-        public TData GetData<TData>(string name) where TData : Variable.Variable
+        public TData GetData<TData>(string name) where TData : Variable
         {
             return (TData)GetData(name);
         }
@@ -225,13 +225,13 @@ namespace PJW.FSM
         /// </summary>
         /// <param name="name">有限状态机名称</param>
         /// <returns>有限状态机数据</returns>
-        public Variable.Variable GetData(string name)
+        public Variable GetData(string name)
         {
             if (string.IsNullOrEmpty(name))
             {
                 throw new FrameworkException(" Data name is invalid ");
             }
-            Variable.Variable data = null;
+            Variable data = null;
             if(_Data.TryGetValue(name,out data))
             {
                 return data;
@@ -336,7 +336,7 @@ namespace PJW.FSM
         /// <typeparam name="TData">要设置的数据类型</typeparam>
         /// <param name="name">有限状态机名称</param>
         /// <param name="data">有限状态机数据</param>
-        public void SetData<TData>(string name, TData data) where TData : Variable.Variable
+        public void SetData<TData>(string name, TData data) where TData : Variable
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -349,7 +349,7 @@ namespace PJW.FSM
         /// </summary>
         /// <param name="name">有限状态机名称</param>
         /// <param name="data">有限状态机数据</param>
-        public void SetData(string name, Variable.Variable data)
+        public void SetData(string name, Variable data)
         {
             if (string.IsNullOrEmpty(name))
             {

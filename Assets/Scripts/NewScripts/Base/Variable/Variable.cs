@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PJW.Variable
+namespace PJW
 {
     /// <summary>
     /// 变量

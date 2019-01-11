@@ -106,7 +106,7 @@ namespace PJW.ObjectPool
             /// </summary>
             public override float ExpireTime
             {
-                get { throw new NotImplementedException(); }
+                get { return _ExpireTime; }
                 set
                 {
                     if (value < 0)
@@ -167,7 +167,7 @@ namespace PJW.ObjectPool
                 {
                     throw new FrameworkException(" the object is invalid ");
                 }
-                FrameworkLog.Debug(spawned ? " object pool {0} is create and spawn {1} " : " object pool {0} is create {1} ", Utility.Text.GetFullName<T>(GetName), obj.GetName);
+                FrameworkLog.Debug(spawned ? " object pool '{0}' is create and spawn '{1}' " : " object pool '{0}' is create '{1}' ", Utility.Text.GetFullName<T>(GetName), obj.GetName);
                 _Objects.AddLast(new Object<T>(obj, spawned));
                 Release();
             }
@@ -177,22 +177,29 @@ namespace PJW.ObjectPool
             /// <returns></returns>
             public override ObjectInfo[] GetAllObjectInfos()
             {
-                throw new NotImplementedException();
+                int index = 0;
+                ObjectInfo[] objectInfos = new ObjectInfo[_Objects.Count];
+                foreach (var item in _Objects)
+                {
+                    objectInfos[index++] = new ObjectInfo(item.GetName, item.Priority, item.Locked, item.CustomCanReleaseFlag, item.LastUseTime, item.SpawnCount);
+                }
+                return objectInfos;
             }
             /// <summary>
             /// 释放对象池中可释放对象
             /// </summary>
             public override void Release()
             {
-                throw new NotImplementedException();
+                Release(_Objects.Count - _Capacity, DefaultReleaseObjectFilterCallback);
             }
+
             /// <summary>
             /// 释放对象池中可释放对象
             /// </summary>
             /// <param name="releaseCount">尝试释放的个数</param>
             public override void Release(int releaseCount)
             {
-                throw new NotImplementedException();
+                Release(releaseCount, DefaultReleaseObjectFilterCallback);
             }
             /// <summary>
             /// 释放对象池中可释放对象
@@ -200,7 +207,7 @@ namespace PJW.ObjectPool
             /// <param name="releaseObjectFilterCallback">释放对象筛选函数</param>
             public void Release(ReleaseObjectFilterCallback<T> releaseObjectFilterCallback)
             {
-                throw new NotImplementedException();
+                Release(_Objects.Count - _Capacity, releaseObjectFilterCallback);
             }
             /// <summary>
             /// 释放对象池中可释放对象
@@ -209,14 +216,71 @@ namespace PJW.ObjectPool
             /// <param name="releaseObjectFilterCallback">释放对象筛选函数</param>
             public void Release(int releaseCount, ReleaseObjectFilterCallback<T> releaseObjectFilterCallback)
             {
-                throw new NotImplementedException();
+                if (releaseObjectFilterCallback == null)
+                {
+                    throw new FrameworkException(" release object filter call back is invalid ");
+                }
+                FrameworkLog.Debug(" object is released ");
+                _AutoReleaseTime = 0;
+                if (releaseCount < 0)
+                {
+                    releaseCount = 0;
+                }
+                DateTime expireTime = DateTime.MinValue;
+                if (_ExpireTime < float.MaxValue)
+                {
+                    expireTime = DateTime.Now.AddSeconds(-_ExpireTime);
+                }
+                GetCanReleaseObjects(_CachedCanReleaseObjects);
+                List<T> toReleaseObjects = releaseObjectFilterCallback(_CachedCanReleaseObjects, releaseCount, expireTime);
+                if (toReleaseObjects == null || toReleaseObjects.Count <= 0)
+                {
+                    return;
+                }
+                foreach (ObjectBase toReleaseObject in toReleaseObjects)
+                {
+                    if (toReleaseObject == null)
+                    {
+                        throw new FrameworkException(" release object is not found ");
+                    }
+                    bool found = false;
+                    foreach (Object<T> obj in _Objects)
+                    {
+                        if (obj.Peek() != toReleaseObject)
+                        {
+                            continue;
+                        }
+                        _Objects.Remove(obj);
+                        obj.Release(false);
+                        FrameworkLog.Debug(" Object pool '{0}' of object '{1}' release ", GetFullName, obj.GetName);
+                        found = true;
+                        break;
+                    }
+                    if (!found)
+                    {
+                        throw new FrameworkException(" can not release because not found ");
+                    }
+                }
             }
             /// <summary>
             /// 释放所有未被使用的对象
             /// </summary>
             public override void ReleaseAllUnused()
             {
-                throw new NotImplementedException();
+                LinkedListNode<Object<T>> current = _Objects.First;
+                while (current != null)
+                {
+                    if (current.Value.IsUsing || current.Value.Locked || !current.Value.CustomCanReleaseFlag)
+                    {
+                        current = current.Next;
+                        continue;
+                    }
+                    LinkedListNode<Object<T>> next = current.Next;
+                    _Objects.Remove(current);
+                    current.Value.Release(false);
+                    FrameworkLog.Debug(" Object pool '{0}' of object '{1}' release ", Utility.Text.GetFullName<T>(GetName), current.Value.GetName);
+                    current = next;
+                }
             }
             /// <summary>
             /// 设置对象是否加锁
@@ -225,7 +289,11 @@ namespace PJW.ObjectPool
             /// <param name="isLock">是否加锁</param>
             public void SetLock(T obj, bool isLock)
             {
-                throw new NotImplementedException();
+                if (obj == null)
+                {
+                    throw new FrameworkException(" object is invalid ");
+                }
+                SetLock(obj.GetTarget, isLock);
             }
             /// <summary>
             /// 设置对象是否加锁
@@ -234,7 +302,20 @@ namespace PJW.ObjectPool
             /// <param name="isLock">是否加锁</param>
             public void SetLock(object target, bool isLock)
             {
-                throw new NotImplementedException();
+                if (target == null)
+                {
+                    throw new FrameworkException(" The target is invalid in set lock ");
+                }
+                foreach (var item in _Objects)
+                {
+                    if (item.Peek().GetTarget == target)
+                    {
+                        item.Locked = isLock;
+                        FrameworkLog.Debug(" Object pool {0} set lock {1} to {2} ", GetFullName, item.GetName, isLock);
+                        return;
+                    }
+                }
+                throw new FrameworkException(" not found target in object pool " + GetFullName);
             }
             /// <summary>
             /// 设置获取对象优先级
@@ -243,7 +324,11 @@ namespace PJW.ObjectPool
             /// <param name="priority">优先级</param>
             public void SetPriority(T obj, int priority)
             {
-                throw new NotImplementedException();
+                if (obj == null)
+                {
+                    throw new FrameworkException(" object is invalid ");
+                }
+                SetPriority(obj.GetTarget, priority);
             }
             /// <summary>
             /// 设置获取对象优先级
@@ -252,7 +337,20 @@ namespace PJW.ObjectPool
             /// <param name="priority">优先级</param>
             public void SetPriority(object target, int priority)
             {
-                throw new NotImplementedException();
+                if (target == null)
+                {
+                    throw new FrameworkException(" The target is invalid in set priority ");
+                }
+                foreach (var item in _Objects)
+                {
+                    if (item.Peek().GetTarget == target)
+                    {
+                        item.Peek().Priority = priority;
+                        FrameworkLog.Debug(" object pool {0} set priority {1} to {2} ", Utility.Text.GetFullName<T>(GetName), item.GetName, priority.ToString());
+                        return;
+                    }
+                }
+                throw new FrameworkException(Utility.Text.Format(" not found target in object pool {0}", Utility.Text.GetFullName<T>(GetName)));
             }
             /// <summary>
             /// 获取对象
@@ -260,7 +358,7 @@ namespace PJW.ObjectPool
             /// <returns></returns>
             public T Spawn()
             {
-                throw new NotImplementedException();
+                return Spawn(string.Empty);
             }
             /// <summary>
             /// 获取对象
@@ -269,7 +367,19 @@ namespace PJW.ObjectPool
             /// <returns></returns>
             public T Spawn(string name)
             {
-                throw new NotImplementedException();
+                foreach (Object<T> item in _Objects)
+                {
+                    if (item.GetName != name)
+                    {
+                        continue;
+                    }
+                    if (!item.IsUsing || GetAllowMultiSpawn)
+                    {
+                        FrameworkLog.Debug(" object pool '{0}' spawn '{1}' ", Utility.Text.GetFullName<T>(name), item.Peek().GetName);
+                        return item.Spawn();
+                    }
+                }
+                return null;
             }
             /// <summary>
             /// 回收对象
@@ -277,7 +387,11 @@ namespace PJW.ObjectPool
             /// <param name="obj">需要回收的内部对象</param>
             public void Unspawn(T obj)
             {
-                throw new NotImplementedException();
+                if (obj == null)
+                {
+                    throw new FrameworkException(" Object is invalid ");
+                }
+                Unspawn(obj.GetTarget);
             }
             /// <summary>
             /// 回收对象
@@ -285,17 +399,110 @@ namespace PJW.ObjectPool
             /// <param name="target">需要回收的对象</param>
             public void Unspawn(object target)
             {
-                throw new NotImplementedException();
+                if (target == null)
+                {
+                    throw new FrameworkException(" The target is invalid ");
+                }
+                foreach (Object<T> item in _Objects)
+                {
+                    if (item.Peek().GetTarget == target)
+                    {
+                        FrameworkLog.Debug(" Object pool '{0}' Unspawn '{1}' ", Utility.Text.GetFullName<T>(GetName), item.Peek().GetName);
+                        item.Unspawn();
+                        Release();
+                        return;
+                    }
+                }
+                throw new FrameworkException(Utility.Text.Format(" the target '{0} ' can not find in object pool ", target.ToString()));
             }
-
+            /// <summary>
+            /// 关闭并清理对象池
+            /// </summary>
             internal override void Shutdown()
             {
-                throw new NotImplementedException();
+                LinkedListNode<Object<T>> current = _Objects.First;
+                while (current != null)
+                {
+                    LinkedListNode<Object<T>> next = current.Next;
+                    _Objects.Remove(current);
+                    current.Value.Release(true);
+                    FrameworkLog.Debug(" Object pool '{0}' of object '{1}' release ", Utility.Text.GetFullName<T>(GetName), current.Value.GetName);
+                    current = next;
+                }
             }
 
             internal override void Update(float elapseSeconds, float realElapseSeconds)
             {
-                throw new NotImplementedException();
+                _AutoReleaseTime += realElapseSeconds;
+                if (_AutoReleaseTime < _AutoReleaseInterval)
+                {
+                    return;
+                }
+                FrameworkLog.Debug(" Object pool '{0}' auto release start ", Utility.Text.GetFullName<T>(GetName));
+                Release();
+                FrameworkLog.Debug(" Object pool '{0}' auto release complete ", Utility.Text.GetFullName<T>(GetName));
+            }
+
+            /// <summary>
+            /// 获取可以被释放的对象集合
+            /// </summary>
+            /// <param name="results"></param>
+            private void GetCanReleaseObjects(List<T> results)
+            {
+                if (results == null)
+                {
+                    throw new FrameworkException(" the results is invalid ");
+                }
+                results.Clear();
+                foreach (Object<T> item in _Objects)
+                {
+                    if (item.IsUsing || item.Locked || !item.CustomCanReleaseFlag)
+                    {
+                        continue;
+                    }
+                    results.Add(item.Peek());
+                }
+            }
+
+            /// <summary>
+            /// 默认释放对象筛选函数，当没有给定筛选时使用
+            /// </summary>
+            /// <typeparam name="T">对象类型</typeparam>
+            /// <param name="candidateObjects">要筛选的对象集合</param>
+            /// <param name="toReleaseCount">需要释放的对象个数</param>
+            /// <param name="expireTime">对象过期参考时间</param>
+            /// <returns>筛选对象集合</returns>
+            private List<T> DefaultReleaseObjectFilterCallback(List<T> candidateObjects, int toReleaseCount, DateTime expireTime)
+            {
+                _CachedToReleaseObjects.Clear();
+                if (expireTime > DateTime.MinValue)
+                {
+                    for (int i = candidateObjects.Count - 1; i >= 0; i--)
+                    {
+                        if (candidateObjects[i].LastUsedTime < expireTime)
+                        {
+                            _CachedToReleaseObjects.Add(candidateObjects[i]);
+                            candidateObjects.RemoveAt(i);
+                        }
+                    }
+                    toReleaseCount -= _CachedToReleaseObjects.Count;
+                }
+                //如果需要释放的对象个数还大于0，再对需要筛选的集合进行重排序，将优先级越低且越久没有被使用的对象也放置到筛选对象集合中
+                for (int i = 0; toReleaseCount > 0 && i < candidateObjects.Count; i++)
+                {
+                    for (int j = i + 1; j < candidateObjects.Count; j++)
+                    {
+                        if (candidateObjects[i].Priority >= candidateObjects[j].Priority && candidateObjects[i].LastUsedTime > candidateObjects[j].LastUsedTime)
+                        {
+                            T temp = candidateObjects[i];
+                            candidateObjects[i] = candidateObjects[j];
+                            candidateObjects[j] = temp;
+                        }
+                    }
+                    _CachedToReleaseObjects.Add(candidateObjects[i]);
+                    toReleaseCount--;
+                }
+                return _CachedToReleaseObjects;
             }
         }
     }
