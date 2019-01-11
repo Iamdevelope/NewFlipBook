@@ -8,8 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{4A91A661-CF7E-823F-0745-881333DC0068}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -45,13 +44,6 @@
     <ImplicitlyExpandNETStandardFacades>false</ImplicitlyExpandNETStandardFacades>
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
-  <PropertyGroup>
-    <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>Android:13</UnityBuildTarget>
-    <UnityVersion>2018.2.12f1</UnityVersion>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
       <HintPath>D:\Program Files(x86)\Unity2018\Editor\Data\Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -61,909 +53,911 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorBase.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorEffect.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxy.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxy2D.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxyBase.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolume.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolume2D.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolumeBase.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VersionInfo.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffects.cs" />
-    <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffectsFlags.cs" />
-    <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
-    <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
-    <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\AnimationBase.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\AnimationLayer.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\BaseDemo.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\BoneOffset.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\BoundingBox.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\CoreElement.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\DragonBonesEvent.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\HelloDragonBones.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\InverseKinematics.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\LightShader.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\Performance.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceAnimtion.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceSkin.cs" />
-    <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceSlotDisplay.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\3rdParty\MiniJSON.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\animation\Animation.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\animation\AnimationState.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\animation\BaseTimelineState.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\animation\IAnimatable.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\animation\TimelineState.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\animation\WorldClock.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\armature\Armature.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\armature\Bone.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\armature\Constraint.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\armature\DeformVertices.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\armature\IArmatureProxy.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\armature\Slot.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\armature\TransformObject.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\core\BaseObject.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\core\DragonBones.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\event\EventObject.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\event\IEventDispatcher.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\factory\BaseFactory.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\geom\ColorTransform.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\geom\Matrix.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\geom\Point.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\geom\Rectangle.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\geom\Transform.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\AnimationConfig.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\AnimationData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\ArmatureData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\BoundingBoxData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\CanvasData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\ConstraintData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\DisplayData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\DragonBonesData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\SkinData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\TextureAtlasData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\model\UserData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataParser.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataReader.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataWriter.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\parser\DataParser.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\parser\ObjectDataParser.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\MeshBuffer.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\UnityArmatureComponent.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\UnityCombineMeshs.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\UnityDragonBonesData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\UnityEventDispatcher.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\UnityFactory.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\UnitySlot.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\UnityTextureAtlasData.cs" />
-    <Compile Include="Assets\DragonBones\Scripts\unity\UnityUGUIDisplay.cs" />
-    <Compile Include="Assets\Evn\APOLLO Shaders\3_Scripts\APOLLOLightManager.cs" />
-    <Compile Include="Assets\Evn\APOLLO Shaders\3_Scripts\APOLLOReflectionDrop.cs" />
-    <Compile Include="Assets\Evn\APOLLO Shaders\3_Scripts\APOLLOUVTillingEditor.cs" />
-    <Compile Include="Assets\Evn\APOLLO Shaders\Demo Assets\Demo Scene Assets\Scripts\RotateAPOLLO.cs" />
-    <Compile Include="Assets\Evn\APOLLO Shaders\Demo Assets\Demo Scene Assets\Scripts\Scripts for Presentation\TakeScreenShot.cs" />
-    <Compile Include="Assets\Evn\CameraPath2\Scripts\CameraPathBezier.cs" />
-    <Compile Include="Assets\Evn\CameraPath2\Scripts\CameraPathBezierAnimator.cs" />
-    <Compile Include="Assets\Evn\CameraPath2\Scripts\CameraPathBezierControlPoint.cs" />
-    <Compile Include="Assets\Evn\CameraPath2\Scripts\ExternalControlExample.cs" />
-    <Compile Include="Assets\Evn\CameraPath2\Scripts\SimpleEventListener.cs" />
-    <Compile Include="Assets\Evn\CameraPath2\Scripts\SimplePathControl.cs" />
-    <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\AnimationControl.cs" />
-    <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\DeathButtonControl.cs" />
-    <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\KillSwitch.cs" />
-    <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\PanelControll.cs" />
-    <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\PeriodicShake.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\CAnimator.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\CCamera.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\HideCharacter.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\HideMyself.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Interpolate.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CAnimationMechanism.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CBaseMechanism.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CMoveMechanism.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CPrickMechanism.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CTriggerMechanism.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\MeleeWeaponTrail.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\MotionTrail.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\PicaTest.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\RainManage.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\RainTest.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\RenderTexTest.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\ReplaceShader.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\SwooshTest.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\Fps.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\Standard Assets\Camera Scripts\MouseLook.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MBillBObjSC.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MLodObjSC.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MObjSC.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MPartSC.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MPlantObjSC.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Tutorial\Scripts\FlyCam.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Tutorial\Scripts\WaypointCam.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Common.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\CsvStreamReader.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\CsvStreamWriter.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\GeneratePoints.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\DynamicDependenciesHolder.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\FileStreamHolder.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\LightMapAsset.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\SceneConfigHolder.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\SceneDependenciesHolder.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\iTween.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\iTweenPath.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Log.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\HeroController.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\HeroNavMeshMove.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\MobileWaterChangeTexture.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\ProjectorFollowMouse.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\ShowValues.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MyConvert_Convert.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\WorldRotationTween.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\ChaseCam.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\DebugTrigger.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\DieOverTime.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\PoolGui.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\ReferencePools\SuperCubeReferee.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\SuperCube.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\ZoneMessageReceiver.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Boundaries\BoundaryController.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Boundaries\DepthAnchorTypes.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Boundaries\Group.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Boundaries\Segment.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Pooling\Pool.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Pooling\PoolController.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Pooling\PooledItem.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Referees\RefereeBehaviour.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Referees\RefereeController.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Referees\RefereeManager.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\UdtController.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Zones\BoxZone.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Zones\Zone.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Zones\ZoneController.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Environment\VFX\HeightFog\RenderFogPlane.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\outline\renderObj.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\outline\SelectObject.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\Blur.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\GaussianBlurEffect.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\RTTSave.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Console\ConsoleLog.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\CoroutineManager\CoroutineManager.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Effect\FlyEffect.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Event\Controller\UICtrl\XUICtrlManager.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Event\XEventCtrlPool.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Event\XEventDefine.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Event\XEventManager.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\FXMaker\CommonLib\Utility\NcDrawFpsRect.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\FXMaker\CommonLib\Utility\NcDrawFpsText.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\FXMaker\CommonLib\Utility\NcSafeTool.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\FXMaker\CommonLib\Utility\NcTickTimerTool.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\FXMaker\ToolResource\UnityShader\FXMakerGrayscaleEffect.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\FXMaker\ToolResource\UnityShader\FXMakerImageEffectBase.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\GlowEffect.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\Wya\sprite\DelayPlay.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\Wya\sprite\EffectRotate.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\Wya\sprite\ParticleAndAnimation.cs" />
-    <Compile Include="Assets\Evn\Import\xiaoyouyou\Wya\sprite\UVAnimation.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\GeometricEnvironmentArt\ExampleScenes\Scripts\DemoCamera.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\GeometricEnvironmentArt\Scripts\GodRays.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\GeometricEnvironmentArt\Scripts\Rotator.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\ActivateTrigger.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\AutoMoveAndRotate.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\CameraRefocus.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\CurveControlledBob.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\DragRigidbody.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\DynamicShadowSettings.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\FollowTarget.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\ForcedReset.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\FOVKick.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\FPSCounter.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\LerpControlledBob.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\ObjectResetter.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\PlatformSpecificContent.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\SimpleActivatorMenu.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\SimpleMouseRotator.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\SmoothFollow.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\TimedObjectActivator.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\TimedObjectDestructor.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\WaypointCircuit.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\WaypointProgressTracker.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Rocks Pack\Bonus Assets\Scripts\LowPolyRocks_CameraControl.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Rocks Pack\Bonus Assets\Scripts\LowPolyRocks_CloudsControl.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Rocks Pack\Bonus Assets\Scripts\LowPolyRocks_FireLightControl.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Rocks Pack\Bonus Assets\Scripts\LowPolyRocks_SunControl.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\- Scripts\CameraSmooth.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\- Scripts\Move.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\BloomOptimized.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\BlurOptimized.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\CameraMotionBlur.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionCurves.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ContrastEnhance.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ContrastStretch.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Fisheye.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\GlobalFog.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Grayscale.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ImageEffectBase.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ImageEffects.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\MotionBlur.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndGrain.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndScratches.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsHelper.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ScreenOverlay.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\SunShafts.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-    <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MBComplexPage.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MegaBookBendMod.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MegaBookBuilder.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MegaBookControl.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MegaBookDynamicMesh.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MegaBookMatrix.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MegaBookMouseControl.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MegaBookPage.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MegaBookPageAttach.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\MegaBookVisible.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\TextMeshProMesh.cs" />
-    <Compile Include="Assets\MegaBook\Scripts\TypogenicMesh.cs" />
-    <Compile Include="Assets\Scripts\Book\BookAutoAnimation.cs" />
-    <Compile Include="Assets\Scripts\Book\BookEdit.cs" />
-    <Compile Include="Assets\Scripts\Book\Bookstore.cs" />
-    <Compile Include="Assets\Scripts\Book\FlipBook.cs" />
-    <Compile Include="Assets\Scripts\Book\GenerateBookStore.cs" />
-    <Compile Include="Assets\Scripts\Book\GeneratePage.cs" />
-    <Compile Include="Assets\Scripts\Book\LoadAllBookXML.cs" />
-    <Compile Include="Assets\Scripts\Book\PageTurning.cs" />
-    <Compile Include="Assets\Scripts\Character\AnimalMove.cs" />
-    <Compile Include="Assets\Scripts\Character\CharacterCamera.cs" />
-    <Compile Include="Assets\Scripts\Character\CharacterControllerByETC.cs" />
-    <Compile Include="Assets\Scripts\Common\GameController.cs" />
-    <Compile Include="Assets\Scripts\Common\GameObjectPool.cs" />
-    <Compile Include="Assets\Scripts\Common\MonoSingleton.cs" />
-    <Compile Include="Assets\Scripts\Common\XmlSerializeHelper.cs" />
-    <Compile Include="Assets\Scripts\Controller\AsyncLoadScene.cs" />
-    <Compile Include="Assets\Scripts\Controller\CameraMove.cs" />
-    <Compile Include="Assets\Scripts\Controller\CanvasController.cs" />
-    <Compile Include="Assets\Scripts\Controller\ContentController.cs" />
-    <Compile Include="Assets\Scripts\Controller\CreateDontDestoryOnLoad.cs" />
-    <Compile Include="Assets\Scripts\Controller\GameCore.cs" />
-    <Compile Include="Assets\Scripts\Controller\GameInit.cs" />
-    <Compile Include="Assets\Scripts\Controller\GameQuit.cs" />
-    <Compile Include="Assets\Scripts\Controller\LightRangeColor.cs" />
-    <Compile Include="Assets\Scripts\Controller\Scene2Back.cs" />
-    <Compile Include="Assets\Scripts\Controller\SkyboxRotation.cs" />
-    <Compile Include="Assets\Scripts\Controller\StartAnim.cs" />
-    <Compile Include="Assets\Scripts\Controller\StartAnimation.cs" />
-    <Compile Include="Assets\Scripts\Controller\ViewController.cs" />
-    <Compile Include="Assets\Scripts\Debug\Console.cs" />
-    <Compile Include="Assets\Scripts\Debug\LogWriter.cs" />
-    <Compile Include="Assets\Scripts\Debug\TDebug.cs" />
-    <Compile Include="Assets\Scripts\FindPathSystem\FindPathSystem.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\CheckIsUpdate.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\DownLoad\HTTPLoad.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\DownLoad\WWWLoad.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\GenerateAssetBundlePath.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\LoadAssetByAssetBundle.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\Models\ClientVersionInfoBase.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\Models\ConfigFileElement.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\Models\ResourceInfoBase.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\ResourcesSaveToConfig.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\ResourcesUpdate.cs" />
-    <Compile Include="Assets\Scripts\HotUpdate\ResUpdate.cs" />
-    <Compile Include="Assets\Scripts\Interable\DragObjectMove.cs" />
-    <Compile Include="Assets\Scripts\Interable\DragonContent.cs" />
-    <Compile Include="Assets\Scripts\Interable\InterableAnimal.cs" />
-    <Compile Include="Assets\Scripts\Interable\InterableDragonButton.cs" />
-    <Compile Include="Assets\Scripts\Interable\InterableObject.cs" />
-    <Compile Include="Assets\Scripts\Interable\InterablePageButton.cs" />
-    <Compile Include="Assets\Scripts\Interable\InterablePageOfObject.cs" />
-    <Compile Include="Assets\Scripts\Interable\InterableRobot.cs" />
-    <Compile Include="Assets\Scripts\Interable\InterableTest.cs" />
-    <Compile Include="Assets\Scripts\Interable\LeftPage.cs" />
-    <Compile Include="Assets\Scripts\Interable\RightPage.cs" />
-    <Compile Include="Assets\Scripts\Interable\StartPageFlip.cs" />
-    <Compile Include="Assets\Scripts\Interface\ICanReset.cs" />
-    <Compile Include="Assets\Scripts\JSON\GenerateAllBookJSONFile.cs" />
-    <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
-    <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\DataStruct\LoadType.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\EventPool\BaseEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\EventPool\EventPool.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\EventPool\EventPool.Event.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\EventPool\EventPoolMode.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkAction.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkEntry.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkException.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkFunc.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkModule.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkSegment.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Log\FrameworkLog.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Log\ILogHelper.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Log\LogLevel.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Reference\IReference.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePool.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePool.ReferenceCollection.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePoolInfo.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\ITask.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\ITaskAgent.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\TaskPool.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Variable\GenericVariable.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Variable\Variable.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Version\Version.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Base\Version\Version.IVersionHelper.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DataNode\DataNodeManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DataNode\DataNodeManager.DataNode.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DataNode\IDataNode.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DataNode\IDataNodeManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\Constant.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerErrorEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerSuccessEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerUpdateEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadFailureEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadAgent.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadCounter.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadCouter.DownloadCounterNode.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadTask.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadTaskStatus.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadStartEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadSuccessEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadUpdateEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\IDownLoadAgentManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\DownLoad\IDownLoadManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Event\EventManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Event\GameEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Event\IEventManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Core\Facade.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Core\Model.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Core\NotificationCenter.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Core\View.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IFacade.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IMediator.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IModel.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\INotifier.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IObserver.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IProxy.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IView.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Mediator.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Notification.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Proxy.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\FSM\Fsm.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\FSM\FsmBase.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\FSM\FsmEventHandler.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\FSM\FsmManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\FSM\FsmState.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\FSM\IFsm.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\FSM\IFsmManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\GameController.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Localization\ILocalizationHelper.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Localization\ILocalizationManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Localization\Language.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionaryDependencyEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionaryFailureEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionarySuccessEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionaryUpdateEventAvgs.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Localization\LocalizationManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Localization\LocalizationManager.LoadDictionaryInfo.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\ApplicationFacade.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMediator.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMonoBehaviour.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BasePanel.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseProxy.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Constants\NotificationArray.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\CameraFindPathProxy.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\LanguageData.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\MessageData.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\ResourcesData.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\UserData.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\ResourcesProxy.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Model\UserProxy.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Views\CameraFindPathMediator.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ClassMediator.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ClassTypeMediator.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ResourcesMediator.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\MVC\Views\UserMediator.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\IObjectPool.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\IObjectPoolManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectBase.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectInfo.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolBase.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolManager.Object.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolManager.ObjectPool.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ReleaseObjectFilterCallback.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Resources\IResourcesHelper.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Resources\IResourcesManager.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneCallback.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneFailureCallback.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneSuccessCallback.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.cs" />
-    <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.Text.cs" />
-    <Compile Include="Assets\Scripts\SQLite\DbAccess.cs" />
-    <Compile Include="Assets\Scripts\SQLite\SQLiteHelper.cs" />
-    <Compile Include="Assets\Scripts\Test\AnimationCursoTest.cs" />
-    <Compile Include="Assets\Scripts\Test\DownloadTest.cs" />
-    <Compile Include="Assets\Scripts\Test\EventTest.cs" />
-    <Compile Include="Assets\Scripts\Test\FsmTest\FsmTest.cs" />
-    <Compile Include="Assets\Scripts\Test\HttpDownTest.cs" />
-    <Compile Include="Assets\Scripts\Test\LogTest.cs" />
-    <Compile Include="Assets\Scripts\Test\MouseDrag.cs" />
-    <Compile Include="Assets\Scripts\Test\ObjectPoolTest.cs" />
-    <Compile Include="Assets\Scripts\Test\ScriptTableTest.cs" />
-    <Compile Include="Assets\Scripts\Test\SkillInfo.cs" />
-    <Compile Include="Assets\Scripts\Tool\DictionaryHelp.cs" />
-    <Compile Include="Assets\Scripts\Tool\GenerateAllBookXML.cs" />
-    <Compile Include="Assets\Scripts\Tool\GenerateAllBookXMLHelper.cs" />
-    <Compile Include="Assets\Scripts\Tool\GenerateXML.cs" />
-    <Compile Include="Assets\Scripts\Tool\GenerateXMLHelper.cs" />
-    <Compile Include="Assets\Scripts\Tool\StartLoadBookXML.cs" />
-    <Compile Include="Assets\Scripts\Tool\StringHelper.cs" />
-    <Compile Include="Assets\Scripts\Tool\ZipHelper.cs" />
-    <Compile Include="Assets\Scripts\UI\ButtonAnim\Left.cs" />
-    <Compile Include="Assets\Scripts\UI\ButtonAnim\Right.cs" />
-    <Compile Include="Assets\Scripts\UI\DragUIMove.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\CharacterSelectPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\ChildrenClassPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\ClassPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\ClassTypePanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\DownLoadPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\LoadingPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\LoginPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\MessagePanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\RegisterPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\SetPanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\TitlePanel.cs" />
-    <Compile Include="Assets\Scripts\UI\UIPanel\WecomePanel.cs" />
-    <Compile Include="Assets\Scripts\Video\PlayVideoController.cs" />
-    <Compile Include="Assets\Scripts\Video\UIPlayer.cs" />
-    <Compile Include="Assets\Scripts\XML\NewGenerateAllbookXMLFile.cs" />
-    <Compile Include="Assets\Scripts\XML\NewGenerateBookstore.cs" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
-    <None Include="Assets\Demigiant\DOTweenPro\readme.txt" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
-    <None Include="Assets\Demigiant\DemiLib\Core\DemiLib.xml" />
-    <None Include="Assets\AmplifyColor\Resources\MaskBlend.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
-    <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
-    <None Include="Assets\Shader\ShaderForLight1.shader" />
-    <None Include="Assets\StreamingAssets\path.txt" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
-    <None Include="Assets\Shader\PageTurning.shader" />
-    <None Include="Assets\StreamingAssets\Books\XMLContent\allBooks.xml" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
-    <None Include="Assets\AmplifyColor\Resources\Blend.shader" />
-    <None Include="Assets\AmplifyColor\Resources\BlendCache.shader" />
-    <None Include="Assets\AmplifyColor\Resources\Mask.shader" />
-    <None Include="Assets\Shader\MyMobile Particle ParticleAdd.shader" />
-    <None Include="Assets\AmplifyColor\Samples\Check out the full LUT Package.txt" />
-    <None Include="Assets\Shader\TestForge.shader" />
-    <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShift.shader" />
-    <None Include="Assets\AmplifyColor\Readme.txt" />
-    <None Include="Assets\Shader\ShaderForLight.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
-    <None Include="Assets\Scripts\NewScripts\FSM\ReadMe.txt" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
-    <None Include="Assets\Shader\PageLeft.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\Bright.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
-    <None Include="Assets\AmplifyColor\Resources\ProcessOnly.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
-    <None Include="Assets\Demigiant\DOTween\readme.txt" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\GaussianBlur.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
-    <None Include="Assets\AmplifyColor\Resources\DepthMask.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
-    <None Include="Assets\AmplifyColor\Resources\Common.cginc" />
-    <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
-    <None Include="Assets\Evn\Import\xiaoyouyou\Shader\MyMobile Particle ParticleAdd.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
-    <None Include="Assets\Shader\FlipBookShader.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\GrayscaleEffect.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
-    <None Include="Assets\AmplifyColor\Resources\DepthMaskBlend.shader" />
-    <None Include="Assets\AmplifyColor\Resources\Base.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
-    <None Include="Assets\Shader\MyMobile UV Sine_Add.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
-    <None Include="Assets\Shader\MyMobile Particle ParticleBlend.shader" />
-    <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
-    <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AIModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ARModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AccessibilityModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.AudioModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.BaselibModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ClothModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CloudWebServicesModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.CrashReportingModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.FacebookModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.FacebookModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.FileSystemHttpModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.FileSystemHttpModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GameCenterModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GridModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.HotReloadModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ImageConversionModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.JSONSerializeModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.LocalizationModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ParticlesLegacyModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PerformanceReportingModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ProfilerModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.ScreenCaptureModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SharedInternalsModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpatialTrackingModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpriteMaskModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpriteShapeModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StreamingModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StyleSheetsModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SubstanceModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TLSModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TilemapModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TimelineModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIElementsModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UNETModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UmbraModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityAnalyticsModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityConnectModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VRModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VehiclesModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.VideoModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.WindModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.XRModule">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Locator">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/Unity.Locator.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.PerformanceTesting">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/PerformanceTesting/UnityEngine.PerformanceTesting.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Timeline">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.GoogleAudioSpatializer">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.HoloLens">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
-    </Reference>
-    <Reference Include="AmplifyColor">
-      <HintPath>D:/Test/NewFlipBook/Assets/AmplifyColor/Plugins/AmplifyColor.dll</HintPath>
-    </Reference>
-    <Reference Include="DemiLib">
-      <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween43">
-      <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween46">
-      <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween50">
-      <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTweenPro">
-      <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
-    </Reference>
-    <Reference Include="ArtScriptsLib">
-      <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/Plugins/ArtScriptsLib.dll</HintPath>
-    </Reference>
-    <Reference Include="ClientBase">
-      <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/unity_scene_200/Lib/ClientBase.dll</HintPath>
-    </Reference>
-    <Reference Include="ClientNet">
-      <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/unity_scene_200/Lib/ClientNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.ProtocolBuffers">
-      <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/unity_scene_200/Lib/Google.ProtocolBuffers.dll</HintPath>
-    </Reference>
-    <Reference Include="Packets">
-      <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/unity_scene_200/Lib/Packets.dll</HintPath>
-    </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>D:/Test/NewFlipBook/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
-    </Reference>
-    <Reference Include="LitJson">
-      <HintPath>D:/Test/NewFlipBook/Assets/Plugins/LitJson.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.Data.Sqlite">
-      <HintPath>D:/Test/NewFlipBook/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>D:/Test/NewFlipBook/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data">
-      <HintPath>D:/Test/NewFlipBook/Assets/Plugins/System.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="mscorlib">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="System">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Runtime.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Xml.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Xml.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityScript">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/UnityScript.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityScript.Lang">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/UnityScript.Lang.dll</HintPath>
-    </Reference>
-    <Reference Include="Boo.Lang">
-      <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/Boo.Lang.dll</HintPath>
-    </Reference>
+     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorBase.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorEffect.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxy.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxy2D.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorTriggerProxyBase.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolume.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolume2D.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\AmplifyColorVolumeBase.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VersionInfo.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffects.cs" />
+     <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffectsFlags.cs" />
+     <Compile Include="Assets\Book-Page Curl\scripts\AutoFlip.cs" />
+     <Compile Include="Assets\Book-Page Curl\scripts\Book.cs" />
+     <Compile Include="Assets\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\AnimationBase.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\AnimationLayer.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\BaseDemo.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\BoneOffset.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\BoundingBox.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\CoreElement.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\DragonBonesEvent.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\HelloDragonBones.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\InverseKinematics.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\LightShader.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\Performance.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceAnimtion.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceSkin.cs" />
+     <Compile Include="Assets\DragonBones\Demos\Scripts\ReplaceSlotDisplay.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\3rdParty\MiniJSON.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\Animation.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\AnimationState.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\BaseTimelineState.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\IAnimatable.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\TimelineState.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\animation\WorldClock.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\Armature.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\Bone.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\Constraint.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\DeformVertices.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\IArmatureProxy.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\Slot.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\armature\TransformObject.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\core\BaseObject.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\core\DragonBones.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\event\EventObject.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\event\IEventDispatcher.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\factory\BaseFactory.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\ColorTransform.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\Matrix.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\Point.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\Rectangle.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\geom\Transform.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\AnimationConfig.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\AnimationData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\ArmatureData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\BoundingBoxData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\CanvasData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\ConstraintData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\DisplayData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\DragonBonesData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\SkinData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\TextureAtlasData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\model\UserData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataParser.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataReader.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\BinaryDataWriter.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\DataParser.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\parser\ObjectDataParser.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\MeshBuffer.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityArmatureComponent.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityCombineMeshs.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityDragonBonesData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityEventDispatcher.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityFactory.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnitySlot.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityTextureAtlasData.cs" />
+     <Compile Include="Assets\DragonBones\Scripts\unity\UnityUGUIDisplay.cs" />
+     <Compile Include="Assets\Evn\APOLLO Shaders\3_Scripts\APOLLOLightManager.cs" />
+     <Compile Include="Assets\Evn\APOLLO Shaders\3_Scripts\APOLLOReflectionDrop.cs" />
+     <Compile Include="Assets\Evn\APOLLO Shaders\3_Scripts\APOLLOUVTillingEditor.cs" />
+     <Compile Include="Assets\Evn\APOLLO Shaders\Demo Assets\Demo Scene Assets\Scripts\RotateAPOLLO.cs" />
+     <Compile Include="Assets\Evn\APOLLO Shaders\Demo Assets\Demo Scene Assets\Scripts\Scripts for Presentation\TakeScreenShot.cs" />
+     <Compile Include="Assets\Evn\CameraPath2\Scripts\CameraPathBezier.cs" />
+     <Compile Include="Assets\Evn\CameraPath2\Scripts\CameraPathBezierAnimator.cs" />
+     <Compile Include="Assets\Evn\CameraPath2\Scripts\CameraPathBezierControlPoint.cs" />
+     <Compile Include="Assets\Evn\CameraPath2\Scripts\ExternalControlExample.cs" />
+     <Compile Include="Assets\Evn\CameraPath2\Scripts\SimpleEventListener.cs" />
+     <Compile Include="Assets\Evn\CameraPath2\Scripts\SimplePathControl.cs" />
+     <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\AnimationControl.cs" />
+     <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\DeathButtonControl.cs" />
+     <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\KillSwitch.cs" />
+     <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\PanelControll.cs" />
+     <Compile Include="Assets\Evn\Import\Low Poly Animated Animals\- Scripts\PeriodicShake.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\CAnimator.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\CCamera.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\HideCharacter.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\HideMyself.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Interpolate.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CAnimationMechanism.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CBaseMechanism.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CMoveMechanism.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CPrickMechanism.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\Mechanism\CTriggerMechanism.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\MeleeWeaponTrail.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\MotionTrail.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\PicaTest.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\RainManage.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\RainTest.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\RenderTexTest.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\ReplaceShader.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\effect\Scripts\SwooshTest.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\Fps.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\Standard Assets\Camera Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\Standard Assets\Water (Basic)\Sources\Scripts\WaterSimple.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MBillBObjSC.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MLodObjSC.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MObjSC.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MPartSC.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Scripts\T4MPlantObjSC.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Tutorial\Scripts\FlyCam.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\T4M\Tutorial\Scripts\WaypointCam.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Common.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\CsvStreamReader.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\CsvStreamWriter.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\GeneratePoints.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\DynamicDependenciesHolder.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\FileStreamHolder.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\LightMapAsset.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\SceneConfigHolder.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Holder\SceneDependenciesHolder.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\iTween.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\iTweenPath.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\Log.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\HeroController.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\HeroNavMeshMove.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\MobileWaterChangeTexture.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\ProjectorFollowMouse.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MouseClickHeroMove\ShowValues.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\MyConvert_Convert.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\ToolScripts\WorldRotationTween.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\ChaseCam.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\DebugTrigger.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\DieOverTime.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\PoolGui.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\ReferencePools\SuperCubeReferee.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\SuperCube.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Examples\Scripts\ZoneMessageReceiver.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Boundaries\BoundaryController.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Boundaries\DepthAnchorTypes.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Boundaries\Group.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Boundaries\Segment.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Pooling\Pool.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Pooling\PoolController.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Pooling\PooledItem.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Referees\RefereeBehaviour.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Referees\RefereeController.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Referees\RefereeManager.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\UdtController.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Zones\BoxZone.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Zones\Zone.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\UDT\Plugins\Nss.Udt\Zones\ZoneController.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Environment\VFX\HeightFog\RenderFogPlane.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\outline\renderObj.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\outline\SelectObject.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\Blur.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\GaussianBlurEffect.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\RTTSave.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Console\ConsoleLog.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\CoroutineManager\CoroutineManager.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Effect\FlyEffect.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Event\Controller\UICtrl\XUICtrlManager.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Event\XEventCtrlPool.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Event\XEventDefine.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\Event\XEventManager.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\FXMaker\CommonLib\Utility\NcDrawFpsRect.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\FXMaker\CommonLib\Utility\NcDrawFpsText.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\FXMaker\CommonLib\Utility\NcSafeTool.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Scripts\FXMaker\CommonLib\Utility\NcTickTimerTool.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\FXMaker\ToolResource\UnityShader\FXMakerGrayscaleEffect.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\FXMaker\ToolResource\UnityShader\FXMakerImageEffectBase.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\GlowEffect.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\Wya\sprite\DelayPlay.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\Wya\sprite\EffectRotate.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\Wya\sprite\ParticleAndAnimation.cs" />
+     <Compile Include="Assets\Evn\Import\xiaoyouyou\Wya\sprite\UVAnimation.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\GeometricEnvironmentArt\ExampleScenes\Scripts\DemoCamera.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\GeometricEnvironmentArt\Scripts\GodRays.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\GeometricEnvironmentArt\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\AxisTouchButton.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\ButtonHandler.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\CrossPlatformInputManager.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\InputAxisScrollbar.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\Joystick.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\MobileControlRig.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\MobileInput.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\PlatformSpecific\StandaloneInput.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\TiltInput.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\TouchPad.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\CrossPlatformInput\Scripts\VirtualInput.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\Displace.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\GerstnerDisplace.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\MeshContainer.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\PlanarReflection.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\SpecularLighting.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\WaterBase.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Environment\Water\Water\Scripts\WaterTile.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\ActivateTrigger.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\AutoMoveAndRotate.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\CameraRefocus.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\CurveControlledBob.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\DragRigidbody.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\DynamicShadowSettings.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\FollowTarget.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\ForcedReset.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\FOVKick.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\FPSCounter.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\LerpControlledBob.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\ObjectResetter.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\PlatformSpecificContent.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\SimpleActivatorMenu.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\SimpleMouseRotator.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\SmoothFollow.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\TimedObjectActivator.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\TimedObjectDestructor.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\WaypointCircuit.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\GeometricEnvironmentArt\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Rocks Pack\Bonus Assets\Scripts\LowPolyRocks_CameraControl.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Rocks Pack\Bonus Assets\Scripts\LowPolyRocks_CloudsControl.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Rocks Pack\Bonus Assets\Scripts\LowPolyRocks_FireLightControl.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Rocks Pack\Bonus Assets\Scripts\LowPolyRocks_SunControl.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\- Scripts\CameraSmooth.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\- Scripts\Move.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\BloomAndFlares.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\BloomOptimized.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Blur.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\BlurOptimized.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\CameraMotionBlur.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionCurves.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionLookup.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ColorCorrectionRamp.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ContrastEnhance.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ContrastStretch.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\CreaseShading.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\DepthOfField.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\DepthOfFieldDeprecated.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\EdgeDetection.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Fisheye.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\GlobalFog.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Grayscale.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ImageEffectBase.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ImageEffects.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\MotionBlur.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndGrain.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\NoiseAndScratches.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsHelper.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Quads.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ScreenOverlay.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientObscurance.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\ScreenSpaceAmbientOcclusion.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\SepiaTone.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\SunShafts.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\TiltShift.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Tonemapping.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+     <Compile Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MBComplexPage.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MegaBookBendMod.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MegaBookBuilder.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MegaBookControl.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MegaBookDynamicMesh.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MegaBookMatrix.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MegaBookMouseControl.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MegaBookPage.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MegaBookPageAttach.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\MegaBookVisible.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\TextMeshProMesh.cs" />
+     <Compile Include="Assets\MegaBook\Scripts\TypogenicMesh.cs" />
+     <Compile Include="Assets\Scripts\Book\BookAutoAnimation.cs" />
+     <Compile Include="Assets\Scripts\Book\BookEdit.cs" />
+     <Compile Include="Assets\Scripts\Book\Bookstore.cs" />
+     <Compile Include="Assets\Scripts\Book\FlipBook.cs" />
+     <Compile Include="Assets\Scripts\Book\GenerateBookStore.cs" />
+     <Compile Include="Assets\Scripts\Book\GeneratePage.cs" />
+     <Compile Include="Assets\Scripts\Book\LoadAllBookXML.cs" />
+     <Compile Include="Assets\Scripts\Book\PageTurning.cs" />
+     <Compile Include="Assets\Scripts\Character\AnimalMove.cs" />
+     <Compile Include="Assets\Scripts\Character\CharacterCamera.cs" />
+     <Compile Include="Assets\Scripts\Character\CharacterControllerByETC.cs" />
+     <Compile Include="Assets\Scripts\Common\GameController.cs" />
+     <Compile Include="Assets\Scripts\Common\GameObjectPool.cs" />
+     <Compile Include="Assets\Scripts\Common\MonoSingleton.cs" />
+     <Compile Include="Assets\Scripts\Common\XmlSerializeHelper.cs" />
+     <Compile Include="Assets\Scripts\Controller\AsyncLoadScene.cs" />
+     <Compile Include="Assets\Scripts\Controller\CameraMove.cs" />
+     <Compile Include="Assets\Scripts\Controller\CanvasController.cs" />
+     <Compile Include="Assets\Scripts\Controller\ContentController.cs" />
+     <Compile Include="Assets\Scripts\Controller\CreateDontDestoryOnLoad.cs" />
+     <Compile Include="Assets\Scripts\Controller\GameCore.cs" />
+     <Compile Include="Assets\Scripts\Controller\GameInit.cs" />
+     <Compile Include="Assets\Scripts\Controller\GameQuit.cs" />
+     <Compile Include="Assets\Scripts\Controller\LightRangeColor.cs" />
+     <Compile Include="Assets\Scripts\Controller\Scene2Back.cs" />
+     <Compile Include="Assets\Scripts\Controller\SkyboxRotation.cs" />
+     <Compile Include="Assets\Scripts\Controller\StartAnim.cs" />
+     <Compile Include="Assets\Scripts\Controller\StartAnimation.cs" />
+     <Compile Include="Assets\Scripts\Controller\ViewController.cs" />
+     <Compile Include="Assets\Scripts\Debug\Console.cs" />
+     <Compile Include="Assets\Scripts\Debug\LogWriter.cs" />
+     <Compile Include="Assets\Scripts\Debug\TDebug.cs" />
+     <Compile Include="Assets\Scripts\FindPathSystem\FindPathSystem.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\CheckIsUpdate.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\DownLoad\HTTPLoad.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\DownLoad\WWWLoad.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\GenerateAssetBundlePath.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\LoadAssetByAssetBundle.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\Models\ClientVersionInfoBase.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\Models\ConfigFileElement.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\Models\ResourceInfoBase.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\ResourcesSaveToConfig.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\ResourcesUpdate.cs" />
+     <Compile Include="Assets\Scripts\HotUpdate\ResUpdate.cs" />
+     <Compile Include="Assets\Scripts\Interable\DragObjectMove.cs" />
+     <Compile Include="Assets\Scripts\Interable\DragonContent.cs" />
+     <Compile Include="Assets\Scripts\Interable\InterableAnimal.cs" />
+     <Compile Include="Assets\Scripts\Interable\InterableDragonButton.cs" />
+     <Compile Include="Assets\Scripts\Interable\InterableObject.cs" />
+     <Compile Include="Assets\Scripts\Interable\InterablePageButton.cs" />
+     <Compile Include="Assets\Scripts\Interable\InterablePageOfObject.cs" />
+     <Compile Include="Assets\Scripts\Interable\InterableRobot.cs" />
+     <Compile Include="Assets\Scripts\Interable\InterableTest.cs" />
+     <Compile Include="Assets\Scripts\Interable\LeftPage.cs" />
+     <Compile Include="Assets\Scripts\Interable\RightPage.cs" />
+     <Compile Include="Assets\Scripts\Interable\StartPageFlip.cs" />
+     <Compile Include="Assets\Scripts\Interface\ICanReset.cs" />
+     <Compile Include="Assets\Scripts\JSON\GenerateAllBookJSONFile.cs" />
+     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
+     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\DataStruct\LoadType.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\EventPool\BaseEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\EventPool\EventPool.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\EventPool\EventPool.Event.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\EventPool\EventPoolMode.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkAction.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkEntry.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkException.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkFunc.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkModule.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\FrameworkSegment.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Log\FrameworkLog.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Log\ILogHelper.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Log\LogLevel.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Reference\IReference.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePool.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePool.ReferenceCollection.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Reference\ReferencePoolInfo.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\ITask.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\ITaskAgent.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\TaskPool\TaskPool.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Variable\GenericVariable.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Variable\Variable.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Version\Version.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Base\Version\Version.IVersionHelper.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DataNode\DataNodeManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DataNode\DataNodeManager.DataNode.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DataNode\IDataNode.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DataNode\IDataNodeManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Debugger\DebuggerManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Debugger\DebuggerManager.DebuggerWindowGroup.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Debugger\IDebuggerManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Debugger\IDebuggerWindow.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Debugger\IDebuggerWindowGroup.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\Constant.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerErrorEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerSuccessEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadAgentManagerUpdateEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadFailureEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadAgent.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadCounter.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadCouter.DownloadCounterNode.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadTask.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadManager.DownloadTaskStatus.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadStartEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadSuccessEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\DownloadUpdateEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\IDownLoadAgentManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\DownLoad\IDownLoadManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Event\EventManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Event\GameEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Event\IEventManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Core\Facade.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Core\Model.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Core\NotificationCenter.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Core\View.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IFacade.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IMediator.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IModel.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\INotifier.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IObserver.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IProxy.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Interface\IView.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Mediator.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Notification.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Framework\Patterns\Proxy.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\FSM\Fsm.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\FSM\FsmBase.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\FSM\FsmEventHandler.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\FSM\FsmManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\FSM\FsmState.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\FSM\IFsm.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\FSM\IFsmManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Localization\ILocalizationHelper.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Localization\ILocalizationManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Localization\Language.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionaryDependencyEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionaryFailureEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionarySuccessEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Localization\LoadDictionaryUpdateEventAvgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Localization\LocalizationManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Localization\LocalizationManager.LoadDictionaryInfo.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\ApplicationFacade.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMediator.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseMonoBehaviour.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BasePanel.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Base\BaseProxy.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Constants\NotificationArray.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\CameraFindPathProxy.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\LanguageData.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\MessageData.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\ResourcesData.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\Datas\UserData.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\ResourcesProxy.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Model\UserProxy.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\CameraFindPathMediator.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ClassMediator.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ClassTypeMediator.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\ResourcesMediator.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\MVC\Views\UserMediator.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\ObjectPool\IObjectPool.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\ObjectPool\IObjectPoolManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectBase.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectInfo.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolBase.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolManager.Object.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ObjectPoolManager.ObjectPool.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\ObjectPool\ReleaseObjectFilterCallback.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Resources\IResourcesHelper.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Resources\IResourcesManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneCallback.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneFailureCallback.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneSuccessCallback.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.Text.cs" />
+     <Compile Include="Assets\Scripts\SQLite\DbAccess.cs" />
+     <Compile Include="Assets\Scripts\SQLite\SQLiteHelper.cs" />
+     <Compile Include="Assets\Scripts\Test\AnimationCursoTest.cs" />
+     <Compile Include="Assets\Scripts\Test\DownloadTest.cs" />
+     <Compile Include="Assets\Scripts\Test\EventTest.cs" />
+     <Compile Include="Assets\Scripts\Test\FsmTest\FsmTest.cs" />
+     <Compile Include="Assets\Scripts\Test\HttpDownTest.cs" />
+     <Compile Include="Assets\Scripts\Test\LogTest.cs" />
+     <Compile Include="Assets\Scripts\Test\MouseDrag.cs" />
+     <Compile Include="Assets\Scripts\Test\ObjectPoolTest.cs" />
+     <Compile Include="Assets\Scripts\Test\ScriptTableTest.cs" />
+     <Compile Include="Assets\Scripts\Test\SkillInfo.cs" />
+     <Compile Include="Assets\Scripts\Tool\DictionaryHelp.cs" />
+     <Compile Include="Assets\Scripts\Tool\GenerateAllBookXML.cs" />
+     <Compile Include="Assets\Scripts\Tool\GenerateAllBookXMLHelper.cs" />
+     <Compile Include="Assets\Scripts\Tool\GenerateXML.cs" />
+     <Compile Include="Assets\Scripts\Tool\GenerateXMLHelper.cs" />
+     <Compile Include="Assets\Scripts\Tool\StartLoadBookXML.cs" />
+     <Compile Include="Assets\Scripts\Tool\StringHelper.cs" />
+     <Compile Include="Assets\Scripts\Tool\ZipHelper.cs" />
+     <Compile Include="Assets\Scripts\UI\ButtonAnim\Left.cs" />
+     <Compile Include="Assets\Scripts\UI\ButtonAnim\Right.cs" />
+     <Compile Include="Assets\Scripts\UI\DragUIMove.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\CharacterSelectPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\ChildrenClassPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\ClassPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\ClassTypePanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\DownLoadPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\LoadingPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\LoginPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\MessagePanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\RegisterPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\SetPanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\TitlePanel.cs" />
+     <Compile Include="Assets\Scripts\UI\UIPanel\WecomePanel.cs" />
+     <Compile Include="Assets\Scripts\Video\PlayVideoController.cs" />
+     <Compile Include="Assets\Scripts\Video\UIPlayer.cs" />
+     <Compile Include="Assets\Scripts\XML\NewGenerateAllbookXMLFile.cs" />
+     <Compile Include="Assets\Scripts\XML\NewGenerateBookstore.cs" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\Demigiant\DOTweenPro\readme.txt" />
+     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowConeTap.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\Demigiant\DemiLib\Core\DemiLib.xml" />
+     <None Include="Assets\AmplifyColor\Resources\MaskBlend.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+     <None Include="Assets\Demigiant\DOTween\DOTween50.xml" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\Shader\ShaderForLight1.shader" />
+     <None Include="Assets\StreamingAssets\path.txt" />
+     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowCompose.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\Shader\PageTurning.shader" />
+     <None Include="Assets\StreamingAssets\Books\XMLContent\allBooks.xml" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
+     <None Include="Assets\AmplifyColor\Resources\Blend.shader" />
+     <None Include="Assets\AmplifyColor\Resources\BlendCache.shader" />
+     <None Include="Assets\AmplifyColor\Resources\Mask.shader" />
+     <None Include="Assets\Shader\MyMobile Particle ParticleAdd.shader" />
+     <None Include="Assets\AmplifyColor\Samples\Check out the full LUT Package.txt" />
+     <None Include="Assets\Shader\TestForge.shader" />
+     <None Include="Assets\Demigiant\DOTween\DOTween46.xml" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_DepthOfField\TiltShift.shader" />
+     <None Include="Assets\AmplifyColor\Readme.txt" />
+     <None Include="Assets\Shader\ShaderForLight.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\Scripts\NewScripts\FSM\ReadMe.txt" />
+     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\GlowEffectDownsample.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\Shader\PageLeft.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
+     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\Bright.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
+     <None Include="Assets\AmplifyColor\Resources\ProcessOnly.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\Demigiant\DOTween\readme.txt" />
+     <None Include="Assets\Evn\Import\xiaoyouyou\unity_scene_200\RTTTest\GaussianBlur.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\AmplifyColor\Resources\DepthMask.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\AmplifyColor\Resources\Common.cginc" />
+     <None Include="Assets\Demigiant\DOTween\DOTween43.xml" />
+     <None Include="Assets\Evn\Import\xiaoyouyou\Shader\MyMobile Particle ParticleAdd.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\Shader\FlipBookShader.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\GrayscaleEffect.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
+     <None Include="Assets\AmplifyColor\Resources\DepthMaskBlend.shader" />
+     <None Include="Assets\AmplifyColor\Resources\Base.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
+     <None Include="Assets\Shader\MyMobile UV Sine_Add.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
+     <None Include="Assets\Shader\MyMobile Particle ParticleBlend.shader" />
+     <None Include="Assets\Demigiant\readme_DOTweenPro.txt" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\Evn\zhucheng_01\_ziyuan\Low Poly Ultimate Pack\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
+ <Reference Include="UnityEditor.StandardEvents">
+ <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.PackageManagerUI.Editor">
+ <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>D:/Test/NewFlipBook/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AIModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ARModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AccessibilityModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AnimationModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AssetBundleModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.AudioModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.BaselibModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ClothModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CloudWebServicesModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CoreModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.CrashReportingModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.DirectorModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.FacebookModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.FacebookModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.FileSystemHttpModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.FileSystemHttpModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GameCenterModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GridModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HotReloadModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.IMGUIModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ImageConversionModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.InputModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.JSONSerializeModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.LocalizationModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ParticleSystemModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ParticlesLegacyModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PerformanceReportingModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PhysicsModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Physics2DModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ProfilerModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ProfilerModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.ScreenCaptureModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SharedInternalsModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpatialTrackingModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteMaskModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpriteShapeModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StreamingModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StyleSheetsModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SubstanceModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TLSModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TerrainPhysicsModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TextRenderingModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TilemapModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TimelineModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UIElementsModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UNETModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UmbraModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityAnalyticsModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityConnectModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VRModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VehiclesModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.VideoModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.WindModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.XRModule">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Locator">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/Managed/Unity.Locator.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.PerformanceTesting">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/PerformanceTesting/UnityEngine.PerformanceTesting.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.GoogleAudioSpatializer">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.HoloLens">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpatialTracking">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="AmplifyColor">
+ <HintPath>D:/Test/NewFlipBook/Assets/AmplifyColor/Plugins/AmplifyColor.dll</HintPath>
+ </Reference>
+ <Reference Include="DemiLib">
+ <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenPro">
+ <HintPath>D:/Test/NewFlipBook/Assets/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
+ </Reference>
+ <Reference Include="ArtScriptsLib">
+ <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/Plugins/ArtScriptsLib.dll</HintPath>
+ </Reference>
+ <Reference Include="ClientBase">
+ <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/unity_scene_200/Lib/ClientBase.dll</HintPath>
+ </Reference>
+ <Reference Include="ClientNet">
+ <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/unity_scene_200/Lib/ClientNet.dll</HintPath>
+ </Reference>
+ <Reference Include="Google.ProtocolBuffers">
+ <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/unity_scene_200/Lib/Google.ProtocolBuffers.dll</HintPath>
+ </Reference>
+ <Reference Include="Packets">
+ <HintPath>D:/Test/NewFlipBook/Assets/Evn/Import/xiaoyouyou/unity_scene_200/Lib/Packets.dll</HintPath>
+ </Reference>
+ <Reference Include="ICSharpCode.SharpZipLib">
+ <HintPath>D:/Test/NewFlipBook/Assets/Plugins/ICSharpCode.SharpZipLib.dll</HintPath>
+ </Reference>
+ <Reference Include="LitJson">
+ <HintPath>D:/Test/NewFlipBook/Assets/Plugins/LitJson.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Data.Sqlite">
+ <HintPath>D:/Test/NewFlipBook/Assets/Plugins/Mono.Data.Sqlite.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>D:/Test/NewFlipBook/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>D:/Test/NewFlipBook/Assets/Plugins/System.Data.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.StandardEvents">
+ <HintPath>C:/Users/User/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="mscorlib">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
+ </Reference>
+ <Reference Include="System">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Core">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Core.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Runtime.Serialization">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Runtime.Serialization.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Xml.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Xml.Linq">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/System.Xml.Linq.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityScript">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityScript.Lang">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/UnityScript.Lang.dll</HintPath>
+ </Reference>
+ <Reference Include="Boo.Lang">
+ <HintPath>D:/Program Files(x86)/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/Boo.Lang.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{E2AD60E3-3C23-464C-D488-6D6AE27DE1F1}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
+      <Project>{E2AD60E3-3C23-464C-D488-6D6AE27DE1F1}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
@@ -971,4 +965,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  
 </Project>
