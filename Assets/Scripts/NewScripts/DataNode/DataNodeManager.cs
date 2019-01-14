@@ -32,44 +32,111 @@ namespace PJW.DataNode
             _Root.Clear();
         }
 
+        /// <summary>
+        /// 得到数据节点
+        /// </summary>
+        /// <param name="path">节点路径</param>
+        /// <typeparam name="T">数据类型</typeparam>
+        /// <returns>数据节点</returns>
         public T GetData<T>(string path) where T : Variable
         {
-            throw new System.NotImplementedException();
+            return GetData<T>(path,null);
         }
 
+        /// <summary>
+        /// 得到数据节点
+        /// </summary>
+        /// <param name="path">节点路径</param>
+        /// <returns>数据节点</returns>
         public Variable GetData(string path)
         {
-            throw new System.NotImplementedException();
+            return GetData(path,null);
         }
 
+        /// <summary>
+        /// 得到数据节点
+        /// </summary>
+        /// <param name="path">节点路径</param>
+        /// <param name="node">需要开始的节点</param>
+        /// <typeparam name="T">数据类型</typeparam>
+        /// <returns>数据节点</returns>
         public T GetData<T>(string path, IDataNode node) where T : Variable
         {
-            throw new System.NotImplementedException();
+            IDataNode current=GetNode(path,node);
+            if(current==null){
+                throw new FrameworkException(Utility.Text.Format(" Data node is invalid "));
+            }
+            return current.GetData<T>();
         }
 
+        /// <summary>
+        /// 得到数据节点
+        /// </summary>
+        /// <param name="path">节点路径</param>
+        /// <param name="node">需要开始的节点</param>
+        /// <returns>数据节点</returns>
         public Variable GetData(string path, IDataNode node)
         {
-            throw new System.NotImplementedException();
+            IDataNode current=GetNode(path,node);
+            if(current==null){
+                throw new FrameworkException(Utility.Text.Format(" Data node is invalid "));
+            }
+            return current.GetData();
         }
 
+        /// <summary>
+        /// 得到数据节点
+        /// </summary>
+        /// <param name="path">节点路径</param>
+        /// <returns>数据节点</returns>
         public IDataNode GetNode(string path)
         {
-            throw new System.NotImplementedException();
+            return GetNode(path,null);
         }
 
+        /// <summary>
+        /// 得到数据节点
+        /// </summary>
+        /// <param name="path">节点路径</param>
+        /// <param name="node">需要开始的节点</param>
+        /// <returns>数据节点</returns>
         public IDataNode GetNode(string path, IDataNode node)
         {
-            throw new System.NotImplementedException();
+            IDataNode current=node??_Root;
+            string[] splitPath=GetSplitPath(path);
+            foreach(string i in splitPath){
+                current=current.GetChild(i);
+                if(current==null){
+                    return null;
+                }
+            }
+            return current;
         }
 
+        /// <summary>
+        /// 获取或得到数据节点
+        /// </summary>
+        /// <param name="path">节点路径</param>
+        /// <returns>数据节点</returns>
         public IDataNode GetOrAddNode(string path)
         {
-            throw new System.NotImplementedException();
+            return GetOrAddNode(path,null);
         }
 
+        /// <summary>
+        /// 获取或得到数据节点
+        /// </summary>
+        /// <param name="path">节点路径</param>
+        /// <param name="node">需要开始的节点</param>
+        /// <returns>数据节点</returns>
         public IDataNode GetOrAddNode(string path, IDataNode node)
         {
-            throw new System.NotImplementedException();
+            IDataNode current=node??_Root;
+            string[] splitPath=GetSplitPath(path);
+            foreach(string i in splitPath){
+                current=current.GetOrAddChild(i);
+            }
+            return current;
         }
 
         /// <summary>
@@ -103,24 +170,50 @@ namespace PJW.DataNode
             }
         }
 
+        /// <summary>
+         /// 设置节点数据
+         /// </summary>
+         /// <param name="path">相对于node的查找路径</param>
+         /// <param name="data">要设置的数据</param>
+         /// <typeparam name="T">数据类型</typeparam>
         public void SetData<T>(string path, T data) where T : Variable
         {
-            throw new System.NotImplementedException();
+            SetData<T>(path,null,data);
         }
 
+        /// <summary>
+         /// 设置节点数据
+         /// </summary>
+         /// <param name="path">相对于node的查找路径</param>
+         /// <param name="data">要设置的数据</param>
         public void SetData(string path, Variable data)
         {
-            throw new System.NotImplementedException();
+            SetData(path,null,data);
         }
 
-        public void SetData<T>(string path, IDataNode node, T Data) where T : Variable
+        /// <summary>
+         /// 设置节点数据
+         /// </summary>
+         /// <param name="path">相对于node的查找路径</param>
+         /// <param name="node">查找起始结点。</param>
+         /// <param name="data">要设置的数据</param>
+         /// <typeparam name="T">数据类型</typeparam>
+        public void SetData<T>(string path, IDataNode node, T data) where T : Variable
         {
-            throw new System.NotImplementedException();
+            IDataNode current=GetOrAddNode(path,node);
+            current.SetData<T>(data);
         }
 
+        /// <summary>
+         /// 设置节点数据
+         /// </summary>
+         /// <param name="path">相对于node的查找路径</param>
+         /// <param name="node">查找起始结点。</param>
+         /// <param name="data">要设置的数据</param>
         public void SetData(string path, IDataNode node, Variable data)
         {
-            throw new System.NotImplementedException();
+            IDataNode current=GetOrAddNode(path,node);
+            current.SetData(data);
         }
 
         public override void Shutdown()
