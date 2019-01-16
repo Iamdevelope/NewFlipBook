@@ -34,19 +34,19 @@ namespace PJW.Localization
         /// <summary>
         /// 加载字典依赖事件
         /// </summary>
-        event EventHandler<LoadDictionaryDependencyEventAvgs> loadDictionaryDependencyEvent;
+        event EventHandler<LoadDictionaryDependencyEventArgs> loadDictionaryDependencyEvent;
         /// <summary>
         /// 加载字典失败事件
         /// </summary>
-        event EventHandler<LoadDictionaryFailureEventAvgs> loadDictionaryFailureEvent;
+        event EventHandler<LoadDictionaryFailureEventArgs> loadDictionaryFailureEvent;
         /// <summary>
         /// 加载字典成功事件
         /// </summary>
-        event EventHandler<LoadDictionarySuccessEventAvgs> loadDictionarySuccessEvent;
+        event EventHandler<LoadDictionarySuccessEventArgs> loadDictionarySuccessEvent;
         /// <summary>
         /// 加载字典更新事件
         /// </summary>
-        event EventHandler<LoadDictionaryUpdateEventAvgs> loadDictionaryUpdateEvent;
+        event EventHandler<LoadDictionaryUpdateEventArgs> loadDictionaryUpdateEvent;
 
         //void SetResourceManager()
         /// <summary>

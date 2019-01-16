@@ -13,10 +13,10 @@ namespace PJW.Download
         private readonly DownloadCounter downloadCounter;
         private float flushSize;
         private float timeOut;
-        private EventHandler<DownloadStartEventAvgs> downloadStartEventHandler;
-        private EventHandler<DownloadFailureEventAvgs> downloadFailureEventHandler;
-        private EventHandler<DownloadSuccessEventAvgs> downloadSuccessEventHandler;
-        private EventHandler<DownloadUpdateEventAvgs> downloadUpdateEventHandler;
+        private EventHandler<DownloadStartEventArgs> downloadStartEventHandler;
+        private EventHandler<DownloadFailureEventArgs> downloadFailureEventHandler;
+        private EventHandler<DownloadSuccessEventArgs> downloadSuccessEventHandler;
+        private EventHandler<DownloadUpdateEventArgs> downloadUpdateEventHandler;
         /// <summary>
         /// 初始化下载管理器
         /// </summary>
@@ -92,7 +92,7 @@ namespace PJW.Download
         /// <summary>
         /// 下载开始事件
         /// </summary>
-        public event EventHandler<DownloadStartEventAvgs> DownLoadStartHandler
+        public event EventHandler<DownloadStartEventArgs> DownLoadStartHandler
         {
             add
             {
@@ -106,7 +106,7 @@ namespace PJW.Download
         /// <summary>
         /// 下载完成事件
         /// </summary>
-        public event EventHandler<DownloadSuccessEventAvgs> DownLoadSuccessHandler
+        public event EventHandler<DownloadSuccessEventArgs> DownLoadSuccessHandler
         {
             add
             {
@@ -120,7 +120,7 @@ namespace PJW.Download
         /// <summary>
         /// 下载失败事件
         /// </summary>
-        public event EventHandler<DownloadFailureEventAvgs> DownLoadFailureHandler
+        public event EventHandler<DownloadFailureEventArgs> DownLoadFailureHandler
         {
             add
             {
@@ -134,7 +134,7 @@ namespace PJW.Download
         /// <summary>
         /// 下载更新事件
         /// </summary>
-        public event EventHandler<DownloadUpdateEventAvgs> DownLoadUpdateHandler
+        public event EventHandler<DownloadUpdateEventArgs> DownLoadUpdateHandler
         {
             add
             {
@@ -226,7 +226,7 @@ namespace PJW.Download
             downloadCounter.RecordDownloadLength(lastDownloadLength);
             if (downloadUpdateEventHandler != null)
             {
-                downloadUpdateEventHandler(this, new DownloadUpdateEventAvgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
+                downloadUpdateEventHandler(this, new DownloadUpdateEventArgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
             }
         }
         /// <summary>
@@ -239,7 +239,7 @@ namespace PJW.Download
             downloadCounter.RecordDownloadLength(lastDownloadLength);
             if (downloadSuccessEventHandler != null)
             {
-                downloadSuccessEventHandler(this, new DownloadSuccessEventAvgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
+                downloadSuccessEventHandler(this, new DownloadSuccessEventArgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
             }
         }
         /// <summary>
@@ -251,7 +251,7 @@ namespace PJW.Download
         {
             if (downloadFailureEventHandler != null)
             {
-                downloadFailureEventHandler(this, new DownloadFailureEventAvgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
+                downloadFailureEventHandler(this, new DownloadFailureEventArgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, errorMessage, sender.GetTask.GetUserData));
             }
         }
         /// <summary>
@@ -262,7 +262,7 @@ namespace PJW.Download
         {
             if (downloadStartEventHandler != null)
             {
-                downloadStartEventHandler(this, new DownloadStartEventAvgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
+                downloadStartEventHandler(this, new DownloadStartEventArgs(sender.GetTask.GetSerialId, sender.GetTask.GetDownloadPath, sender.GetTask.GetDownloadUrl, sender.GetCurrentLength, sender.GetTask.GetUserData));
             }
         }
 

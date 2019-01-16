@@ -133,7 +133,7 @@ namespace PJW.Download
                 downLoadAgentManager.DownloadAgentSuccessHandler += OnDownloadAgentSuccess;
                 downLoadAgentManager.DownloadAgentUpdateHandler += OnDownloadAgentUpdate;
             }
-            private void OnDownloadAgentUpdate(object sender,DownloadAgentManagerUpdateEventAvgs e)
+            private void OnDownloadAgentUpdate(object sender,DownloadAgentManagerUpdateEventArgs e)
             {
                 waitTime = 0;
                 byte[] bytes = e.GetBytes();
@@ -144,7 +144,7 @@ namespace PJW.Download
                     DownloadAgentUpdate(this, bytes != null ? bytes.Length : 0);
                 }
             }
-            private void OnDownloadAgentSuccess(object sender,DownloadAgentManagerSuccessEventAvgs e)
+            private void OnDownloadAgentSuccess(object sender,DownloadAgentManagerSuccessEventArgs e)
             {
                 waitTime = 0;
                 byte[] bytes = e.GetBytes();
@@ -169,7 +169,7 @@ namespace PJW.Download
                 }
                 task.Done = true;
             }
-            private void OnDownloadAgentError(object sender, DownloadAgentManagerErrorEventAvgs e)
+            private void OnDownloadAgentError(object sender, DownloadAgentManagerErrorEventArgs e)
             {
                 downLoadAgentManager.Reset();
                 if (fileStream != null)
@@ -204,7 +204,7 @@ namespace PJW.Download
                 }
                 catch(Exception e)
                 {
-                    OnDownloadAgentError(this, new DownloadAgentManagerErrorEventAvgs(e.Message));
+                    OnDownloadAgentError(this, new DownloadAgentManagerErrorEventArgs(e.Message));
                 }
             }
             /// <summary>
@@ -282,7 +282,7 @@ namespace PJW.Download
                 }
                 catch(Exception e)
                 {
-                    OnDownloadAgentError(this, new DownloadAgentManagerErrorEventAvgs(e.Message));
+                    OnDownloadAgentError(this, new DownloadAgentManagerErrorEventArgs(e.Message));
                 }
             }
             /// <summary>
@@ -297,7 +297,7 @@ namespace PJW.Download
                     waitTime += realElapseSeconds;
                     if (waitTime >= task.GetTimeOut)
                     {
-                        OnDownloadAgentError(this, new DownloadAgentManagerErrorEventAvgs("TimeOut"));
+                        OnDownloadAgentError(this, new DownloadAgentManagerErrorEventArgs("TimeOut"));
                     }
                 }
             }

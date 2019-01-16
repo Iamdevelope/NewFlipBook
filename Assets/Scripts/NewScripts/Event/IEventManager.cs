@@ -24,40 +24,40 @@ namespace PJW.Event
         /// <param name="id"></param>
         /// <param name="handler"></param>
         /// <returns></returns>
-		bool Check(int id,EventHandler<GameEventAvgs> handler);
+		bool Check(int id,EventHandler<GameEventArgs> handler);
 		
 		/// <summary>
         /// 订阅事件处理函数
         /// </summary>
         /// <param name="id">事件ID</param>
         /// <param name="handler">事件函数</param>
-		void Subscribe(int id,EventHandler<GameEventAvgs> handler);
+		void Subscribe(int id,EventHandler<GameEventArgs> handler);
 
 		/// <summary>
         /// 取消订阅事件处理函数
         /// </summary>
         /// <param name="id">事件ID</param>
         /// <param name="handler">事件处理函数</param>
-		void Unsubscribe(int id,EventHandler<GameEventAvgs> handler);
+		void Unsubscribe(int id,EventHandler<GameEventArgs> handler);
 
 		/// <summary>
         /// 设置默认事件处理函数
         /// </summary>
         /// <param name="handler">要设置的事件处理函数</param>
-		void SetDefaultHandler(EventHandler<GameEventAvgs> handler);
+		void SetDefaultHandler(EventHandler<GameEventArgs> handler);
 
 		/// <summary>
         /// 抛出事件，这个是线程安全的，即使不在主线程中抛出，也可保证在主线程中回调事件处理函数，但事件会在抛出后的下一帧分发。
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="avgs"></param>
-		void Fire(object sender,GameEventAvgs avgs);
+        /// <param name="args"></param>
+		void Fire(object sender,GameEventArgs args);
 
 		/// <summary>
         /// 抛出事件立即模式，这个不是线程安全的，事件会立刻触发
         /// </summary>
         /// <param name="sender">事件源</param>
-        /// <param name="avgs">事件参数</param>
-		void FireNow(object sender,GameEventAvgs avgs);
+        /// <param name="args">事件参数</param>
+		void FireNow(object sender,GameEventArgs args);
 	}
 }

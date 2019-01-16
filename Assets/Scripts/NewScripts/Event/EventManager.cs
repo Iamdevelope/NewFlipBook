@@ -8,11 +8,11 @@ namespace PJW.Event{
 	/// </summary>
     internal sealed class EventManager : FrameworkModule, IEventManager
     {
-		private readonly EventPool<GameEventAvgs> _EventPool;
+		private readonly EventPool<GameEventArgs> _EventPool;
 
 		public EventManager()
 		{
-			_EventPool=new EventPool<GameEventAvgs>(EventPoolMode.AllowNoHandler|EventPoolMode.AllowMultiHandler);
+			_EventPool=new EventPool<GameEventArgs>(EventPoolMode.AllowNoHandler|EventPoolMode.AllowMultiHandler);
 		}
 
         public int EventHandlerCount
@@ -34,7 +34,7 @@ namespace PJW.Event{
         /// <param name="id"></param>
         /// <param name="handler"></param>
         /// <returns></returns>
-        public bool Check(int id, EventHandler<GameEventAvgs> handler)
+        public bool Check(int id, EventHandler<GameEventArgs> handler)
         {
 			return _EventPool.Check(id,handler);
         }
@@ -53,27 +53,27 @@ namespace PJW.Event{
         /// 抛出事件，这个是线程安全的，即使不在主线程中抛出，也可保证在主线程中回调事件处理函数，但事件会在抛出后的下一帧分发。
         /// </summary>
         /// <param name="sender"></param>
-        /// <param name="avgs"></param>
-        public void Fire(object sender, GameEventAvgs avgs)
+        /// <param name="args"></param>
+        public void Fire(object sender, GameEventArgs args)
         {
-			_EventPool.Fire(sender,avgs);
+			_EventPool.Fire(sender,args);
         }
 
 		/// <summary>
         /// 抛出事件立即模式，这个不是线程安全的，事件会立刻触发
         /// </summary>
         /// <param name="sender">事件源</param>
-        /// <param name="avgs">事件参数</param>
-        public void FireNow(object sender, GameEventAvgs avgs)
+        /// <param name="args">事件参数</param>
+        public void FireNow(object sender, GameEventArgs args)
         {
-			_EventPool.FireNow(sender,avgs);
+			_EventPool.FireNow(sender,args);
         }
 
 		/// <summary>
         /// 设置默认事件处理函数
         /// </summary>
         /// <param name="handler">要设置的事件处理函数</param>
-        public void SetDefaultHandler(EventHandler<GameEventAvgs> handler)
+        public void SetDefaultHandler(EventHandler<GameEventArgs> handler)
         {
 			_EventPool.SetDefaultHandler(handler);
         }
@@ -83,7 +83,7 @@ namespace PJW.Event{
         /// </summary>
         /// <param name="id">事件ID</param>
         /// <param name="handler">事件函数</param>
-        public void Subscribe(int id, EventHandler<GameEventAvgs> handler)
+        public void Subscribe(int id, EventHandler<GameEventArgs> handler)
         {
 			_EventPool.Subscribe(id,handler);
         }
@@ -93,7 +93,7 @@ namespace PJW.Event{
         /// </summary>
         /// <param name="id">事件ID</param>
         /// <param name="handler">事件处理函数</param>
-        public void Unsubscribe(int id, EventHandler<GameEventAvgs> handler)
+        public void Unsubscribe(int id, EventHandler<GameEventArgs> handler)
         {
 			_EventPool.Unsubscribe(id,handler);
         }

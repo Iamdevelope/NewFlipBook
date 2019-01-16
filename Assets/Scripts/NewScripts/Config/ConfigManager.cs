@@ -14,10 +14,10 @@ namespace PJW.Config
         private readonly LoadAssetCallbacks _LoadAssetCallbacks;
         private IResourcesManager _ResourcesManager;
         private IConfigHelper _ConfigHelper;
-        private EventHandler<LoadConfigDependencyEventAvgs> _LoadConfigDependencyHandler;
-        private EventHandler<LoadConfigFailureEventAvgs> _LoadConfigFailureHandler;
-        private EventHandler<LoadConfigSuccessEventAvgs> _LoadConfigSuccessHandler;
-        private EventHandler<LoadConfigUpdateEventAvgs> _LoadConfigUpdateHandler;
+        private EventHandler<LoadConfigDependencyEventArgs> _LoadConfigDependencyHandler;
+        private EventHandler<LoadConfigFailureEventArgs> _LoadConfigFailureHandler;
+        private EventHandler<LoadConfigSuccessEventArgs> _LoadConfigSuccessHandler;
+        private EventHandler<LoadConfigUpdateEventArgs> _LoadConfigUpdateHandler;
 
         public ConfigManager(){
             _ConfigDatas=new Dictionary<string, ConfigData>();
@@ -39,7 +39,7 @@ namespace PJW.Config
         /// <summary>
 		/// 配置加载依赖事件
 		/// </summary>
-        public event EventHandler<LoadConfigDependencyEventAvgs> _LoadConfigDependency{
+        public event EventHandler<LoadConfigDependencyEventArgs> _LoadConfigDependency{
             add{
                 _LoadConfigDependencyHandler+=value;
             }
@@ -51,7 +51,7 @@ namespace PJW.Config
         /// <summary>
 		/// 配置加载失败事件
 		/// </summary>
-        public event EventHandler<LoadConfigFailureEventAvgs> _LoadConfigFailure{
+        public event EventHandler<LoadConfigFailureEventArgs> _LoadConfigFailure{
             add{
                 _LoadConfigFailureHandler+=value;
             }
@@ -63,7 +63,7 @@ namespace PJW.Config
         /// <summary>
 		/// 配置加载成功事件
 		/// </summary>
-        public event EventHandler<LoadConfigSuccessEventAvgs> _LoadConfigSuccess{
+        public event EventHandler<LoadConfigSuccessEventArgs> _LoadConfigSuccess{
             add{
                 _LoadConfigSuccessHandler+=value;
             }
@@ -75,7 +75,7 @@ namespace PJW.Config
         /// <summary>
 		/// 配置加载更新事件
 		/// </summary>
-        public event EventHandler<LoadConfigUpdateEventAvgs> _LoadConfigUpdate{
+        public event EventHandler<LoadConfigUpdateEventArgs> _LoadConfigUpdate{
             add{
                 _LoadConfigUpdateHandler+=value;
             }

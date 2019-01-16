@@ -17,22 +17,22 @@ namespace PJW.Config
 		/// <summary>
 		/// 配置加载依赖事件
 		/// </summary>
-		event EventHandler<LoadConfigDependencyEventAvgs> _LoadConfigDependency;
+		event EventHandler<LoadConfigDependencyEventArgs> _LoadConfigDependency;
 		
 		/// <summary>
 		/// 配置加载失败事件
 		/// </summary>
-		event EventHandler<LoadConfigFailureEventAvgs> _LoadConfigFailure;
+		event EventHandler<LoadConfigFailureEventArgs> _LoadConfigFailure;
 		
 		/// <summary>
 		/// 配置加载成功事件
 		/// </summary>
-		event EventHandler<LoadConfigSuccessEventAvgs> _LoadConfigSuccess;
+		event EventHandler<LoadConfigSuccessEventArgs> _LoadConfigSuccess;
 		
 		/// <summary>
 		/// 配置加载更新事件
 		/// </summary>
-		event EventHandler<LoadConfigUpdateEventAvgs> _LoadConfigUpdate;
+		event EventHandler<LoadConfigUpdateEventArgs> _LoadConfigUpdate;
 
 		/// <summary>
 		/// 设置资源管理器

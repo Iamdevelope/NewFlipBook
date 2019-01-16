@@ -10,15 +10,15 @@ namespace PJW.Download
         /// <summary>
         /// 下载代理其器错误事件
         /// </summary>
-        event EventHandler<DownloadAgentManagerErrorEventAvgs> DownloadAgentErrorHandler;
+        event EventHandler<DownloadAgentManagerErrorEventArgs> DownloadAgentErrorHandler;
         /// <summary>
         /// 下载代理器完成事件
         /// </summary>
-        event EventHandler<DownloadAgentManagerSuccessEventAvgs> DownloadAgentSuccessHandler;
+        event EventHandler<DownloadAgentManagerSuccessEventArgs> DownloadAgentSuccessHandler;
         /// <summary>
         /// 下载代理器更新事件
         /// </summary>
-        event EventHandler<DownloadAgentManagerUpdateEventAvgs> DownloadAgentUpdateHandler;
+        event EventHandler<DownloadAgentManagerUpdateEventArgs> DownloadAgentUpdateHandler;
         /// <summary>
         /// 下载指定地址的数据
         /// </summary>

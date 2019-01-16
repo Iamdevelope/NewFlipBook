@@ -13,10 +13,10 @@ namespace PJW.Localization
         private readonly Dictionary<string, string> _Dictionary;
         private ILocalizationHelper _LocalizationHelper;
         private Language _Language;
-        private event EventHandler<LoadDictionaryDependencyEventAvgs> _LoadDictionaryDependencyEvent;
-        private event EventHandler<LoadDictionaryFailureEventAvgs> _LoadDictionaryFailureEvent;
-        private event EventHandler<LoadDictionarySuccessEventAvgs> _LoadDictionarySuccessEvent;
-        private event EventHandler<LoadDictionaryUpdateEventAvgs> _LoadDictionaryUpdateEvent;
+        private event EventHandler<LoadDictionaryDependencyEventArgs> _LoadDictionaryDependencyEvent;
+        private event EventHandler<LoadDictionaryFailureEventArgs> _LoadDictionaryFailureEvent;
+        private event EventHandler<LoadDictionarySuccessEventArgs> _LoadDictionarySuccessEvent;
+        private event EventHandler<LoadDictionaryUpdateEventArgs> _LoadDictionaryUpdateEvent;
 
         public LocalizationManager()
         {
@@ -70,7 +70,7 @@ namespace PJW.Localization
         /// <summary>
         /// 加载字典依赖事件
         /// </summary>
-        public event EventHandler<LoadDictionaryDependencyEventAvgs> loadDictionaryDependencyEvent
+        public event EventHandler<LoadDictionaryDependencyEventArgs> loadDictionaryDependencyEvent
         {
             add { _LoadDictionaryDependencyEvent += value; }
             remove { _LoadDictionaryDependencyEvent -= value; }
@@ -78,7 +78,7 @@ namespace PJW.Localization
         /// <summary>
         /// 加载字典失败事件
         /// </summary>
-        public event EventHandler<LoadDictionaryFailureEventAvgs> loadDictionaryFailureEvent
+        public event EventHandler<LoadDictionaryFailureEventArgs> loadDictionaryFailureEvent
         {
             add { _LoadDictionaryFailureEvent += value; }
             remove { _LoadDictionaryFailureEvent -= value; }
@@ -86,7 +86,7 @@ namespace PJW.Localization
         /// <summary>
         /// 加载字典成功事件
         /// </summary>
-        public event EventHandler<LoadDictionarySuccessEventAvgs> loadDictionarySuccessEvent
+        public event EventHandler<LoadDictionarySuccessEventArgs> loadDictionarySuccessEvent
         {
             add { _LoadDictionarySuccessEvent += value; }
             remove { _LoadDictionarySuccessEvent -= value; }
@@ -94,7 +94,7 @@ namespace PJW.Localization
         /// <summary>
         /// 加载字典更新事件
         /// </summary>
-        public event EventHandler<LoadDictionaryUpdateEventAvgs> loadDictionaryUpdateEvent
+        public event EventHandler<LoadDictionaryUpdateEventArgs> loadDictionaryUpdateEvent
         {
             add { _LoadDictionaryUpdateEvent += value; }
             remove { _LoadDictionaryUpdateEvent -= value; }

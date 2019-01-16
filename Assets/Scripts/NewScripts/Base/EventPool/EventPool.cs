@@ -7,7 +7,7 @@ namespace PJW
     /// 事件池基类
     /// </summary>
     /// <typeparam name="T">事件类型</typeparam>
-    internal sealed partial class EventPool<T> where T : BaseEventAvgs
+    internal sealed partial class EventPool<T> where T : BaseEventArgs
     {
         private readonly Dictionary<int, LinkedList<EventHandler<T>>> _EventHandlers;
         private readonly Queue<Event> _Events;

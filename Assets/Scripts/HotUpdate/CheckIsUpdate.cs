@@ -13,6 +13,7 @@ using System.Threading;
 using System.Net;
 using LitJson;
 using System.IO.Compression;
+using System.Net.Sockets;
 
 namespace PJW.HotUpdate
 {
@@ -75,6 +76,9 @@ namespace PJW.HotUpdate
             if (Input.GetKeyDown(KeyCode.A))
             {
                 UnZipFile(Application.persistentDataPath + "/temp2.zip");
+            }
+            if(Input.GetKeyDown(KeyCode.S)){
+                Test();
             }
         }
 
@@ -523,6 +527,19 @@ namespace PJW.HotUpdate
             }
             if (callBack != null)
                 callBack();
+        }
+
+        private void Test(){
+            Socket socket =new Socket(AddressFamily.Unspecified,SocketType.Stream,ProtocolType.Tcp);
+            IPAddress address=IPAddress.Parse("127.0.0.1");
+            socket.BeginConnect(address,8888,SocketCallback,1);
+        }
+
+        private void SocketCallback(IAsyncResult ar)
+        {
+            if(ar.IsCompleted){
+                Debug.Log("连接到本机的‘8888’端口成功");
+            }
         }
     }
 }

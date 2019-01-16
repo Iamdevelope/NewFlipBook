@@ -10,7 +10,7 @@ public class EventTest : MonoBehaviour {
 	private void Start() {
 		eventManager=new EventManager();
 		eventManager.Subscribe(1,EventHandler);
-		eventManager.Fire(this,new EventAvgsTest());
+		eventManager.Fire(this,new EventArgsTest());
 	}
 	private void Update() {
 		if(Input.GetKeyDown(KeyCode.C)){
@@ -21,12 +21,12 @@ public class EventTest : MonoBehaviour {
 		}
 	}
 
-    private void EventHandler(object sender, GameEventAvgs e)
+    private void EventHandler(object sender, GameEventArgs e)
     {
 		Debug.Log(sender.ToString()+e.Id);
     }
 }
-public class EventAvgsTest : GameEventAvgs
+public class EventArgsTest : GameEventArgs
 {
     public override int Id
     {

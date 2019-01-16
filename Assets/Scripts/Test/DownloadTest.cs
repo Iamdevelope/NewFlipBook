@@ -21,7 +21,7 @@ public class DownloadTest : MonoBehaviour {
         
     }
 
-    private void DownloadSuccess(object sender, DownloadSuccessEventAvgs e)
+    private void DownloadSuccess(object sender, DownloadSuccessEventArgs e)
     {
         Debug.Log(Utility.Text.Format(" the sender is : {0}, the asset of save of path : {1} ", sender.ToString(), e.DownloadPath));
     }
@@ -32,11 +32,11 @@ public class DownloadTest : MonoBehaviour {
     }
 
 
-    private void DownloadUpdate(object sender, DownloadUpdateEventAvgs e)
+    private void DownloadUpdate(object sender, DownloadUpdateEventArgs e)
     {
         Debug.Log(" the download is runing ");
     }
-    private void DownloadStart(object sender, DownloadStartEventAvgs e)
+    private void DownloadStart(object sender, DownloadStartEventArgs e)
     {
         Debug.Log(" the download is start ");
     }
@@ -44,9 +44,9 @@ public class DownloadTest : MonoBehaviour {
 
 public class DownloadAgentTest : IDownLoadAgentManager
 {
-    public event EventHandler<DownloadAgentManagerErrorEventAvgs> DownloadAgentErrorHandler;
-    public event EventHandler<DownloadAgentManagerSuccessEventAvgs> DownloadAgentSuccessHandler;
-    public event EventHandler<DownloadAgentManagerUpdateEventAvgs> DownloadAgentUpdateHandler;
+    public event EventHandler<DownloadAgentManagerErrorEventArgs> DownloadAgentErrorHandler;
+    public event EventHandler<DownloadAgentManagerSuccessEventArgs> DownloadAgentSuccessHandler;
+    public event EventHandler<DownloadAgentManagerUpdateEventArgs> DownloadAgentUpdateHandler;
 
     public void Download(string downloadUrl, object userData)
     {

@@ -60,19 +60,19 @@ namespace PJW.Download
         /// <summary>
         /// 下载开始事件
         /// </summary>
-        event EventHandler<DownloadStartEventAvgs> DownLoadStartHandler;
+        event EventHandler<DownloadStartEventArgs> DownLoadStartHandler;
         /// <summary>
         /// 下载成功事件
         /// </summary>
-        event EventHandler<DownloadSuccessEventAvgs> DownLoadSuccessHandler;
+        event EventHandler<DownloadSuccessEventArgs> DownLoadSuccessHandler;
         /// <summary>
         /// 下载失败事件
         /// </summary>
-        event EventHandler<DownloadFailureEventAvgs> DownLoadFailureHandler;
+        event EventHandler<DownloadFailureEventArgs> DownLoadFailureHandler;
         /// <summary>
         /// 下载更新事件
         /// </summary>
-        event EventHandler<DownloadUpdateEventAvgs> DownLoadUpdateHandler;
+        event EventHandler<DownloadUpdateEventArgs> DownLoadUpdateHandler;
         /// <summary>
         /// 新增下载辅助器
         /// </summary>
