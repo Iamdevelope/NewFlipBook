@@ -40,6 +40,7 @@ namespace PJW.Resources
                 /// <param name="resourcesChildName">资源子资源名</param>
                 /// <param name="dependencyAssetNames">依赖资源集合</param>
                 /// <param name="scatteredDependencyAssetsNames">依赖资源集合</param>
+                /// <param name="userData">用户自定义数据</param>
                 public LoadResourcesTaskBase(string assetName,Type assetType,int priority,ResourcesInfo resourcesInfo,string resourcesChildName,
                 string[] dependencyAssetNames,string[] scatteredDependencyAssetsNames,object userData){
                     _SerialId=_Serial++;

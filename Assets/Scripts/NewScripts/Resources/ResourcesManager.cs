@@ -421,54 +421,114 @@ namespace PJW.Resources
             }
         }
 
+        /// <summary>
+        /// 增加加载资源代理辅助器
+        /// </summary>
+        /// <param name="loadResourcesAgentHelper"></param>
         public void AddResourcesAgentHelper(ILoadResourcesAgentHelper loadResourcesAgentHelper)
         {
-            throw new NotImplementedException();
+            _ResourcesLoader.AddLoadResourcesAgentHelper(loadResourcesAgentHelper,_ResourcesHelper,_ReadOnlyPath,_ReadWritePath,_DecryptResourcesCallback);
         }
 
+        /// <summary>
+        /// 使用可更新模式并检查资源
+        /// </summary>
+        /// <param name="checkResourcesCompleteCallback"></param>
         public void CheckResources(CheckResourcesCompleteCallback checkResourcesCompleteCallback)
         {
-            throw new NotImplementedException();
+            if(checkResourcesCompleteCallback==null){
+                throw new FrameworkException("Resource complete callback is invalid ");
+            }
+            if(_ResourcesMode==ResourcesMode.Unspecified){
+                throw new FrameworkException("You must set resourcesMode first ");
+            }
+            if(_ResourcesMode!=ResourcesMode.Updatable){
+                throw new FrameworkException("Not set other resourcesMode in checkResources ");
+            }
+            if(_ResourcesChecker==null){
+                throw new FrameworkException("You must set resourcesChecker ");
+            }
+            _RefuseSetCurrentVariant=true;
+            _CheckResourcesCompleteCallback=checkResourcesCompleteCallback;
+            _ResourcesChecker.CheckResources(_CurrentVariant);
         }
 
+        /// <summary>
+        /// 检查版本资源列表
+        /// </summary>
+        /// <param name="lastestInternalResourcesVersion">最新的内部资源版本号</param>
+        /// <returns>检查版本资源列表结果</returns>
         public CheckVersionListResult CheckVersionList(int lastestInternalResourcesVersion)
         {
-            throw new NotImplementedException();
+            return _VersionListProcessor.CheckVersionList(lastestInternalResourcesVersion);
         }
 
+        /// <summary>
+        /// 获取资源组准备进度
+        /// </summary>
+        /// <param name="resourcesGroupName">资源组名称</param>
+        /// <returns>准备进度</returns>
         public float GetResourcesGroupProgress(string resourcesGroupName)
         {
-            throw new NotImplementedException();
+            return GetResourcesGroup(resourcesGroupName).Progress;
         }
 
+        /// <summary>
+        /// 获取资源组是否准备好
+        /// </summary>
+        /// <param name="resourcesGroupName">资源组名称</param>
+        /// <returns>资源组是否准备好</returns>
         public bool GetResourcesGroupReady(string resourcesGroupName)
         {
-            throw new NotImplementedException();
+            return GetResourcesGroup(resourcesGroupName).GetReady;
         }
 
+        /// <summary>
+        /// 获取资源组已准备完成的资源数量
+        /// </summary>
+        /// <param name="resourcesGroupName">资源组名称</param>
+        /// <returns>资源组已准备完成的资源数量</returns>
         public int GetResourcesGroupReadyResourceCount(string resourcesGroupName)
         {
-            throw new NotImplementedException();
+            return GetResourcesGroup(resourcesGroupName).GetReadyResourcesCount;
         }
 
+        /// <summary>
+        /// 获取资源组资源数量
+        /// </summary>
+        /// <param name="resourcesGroupName">资源组名称</param>
+        /// <returns>资源组资源数量</returns>
         public int GetResourcesGroupResourceCount(string resourcesGroupName)
         {
-            throw new NotImplementedException();
+            return GetResourcesGroup(resourcesGroupName).GetResourcesCount;
         }
 
+        /// <summary>
+        /// 获取资源组总大小
+        /// </summary>
+        /// <param name="resourcesGroupName">资源组名称</param>
+        /// <returns>资源组总大小</returns>
         public int GetResourcesGroupTotalCount(string resourcesGroupName)
         {
-            throw new NotImplementedException();
+            return GetResourcesGroup(resourcesGroupName).GetTotalLength;
         }
 
+        /// <summary>
+        /// 获取资源组已准备大小
+        /// </summary>
+        /// <param name="resourcesGroupName"></param>
+        /// <returns></returns>
         public int GetResourcesGroupTotalReadyCount(string resourcesGroupName)
         {
-            throw new NotImplementedException();
+            return GetResourcesGroup(resourcesGroupName).GetTotalReadyLength;
         }
 
         public void InitResources(InitResourcesCompleteCallback initResourcesCompleteCallback)
         {
-            throw new NotImplementedException();
+            if(initResourcesCompleteCallback==null){
+                throw new FrameworkException("Init resources complete callback is invalid ");
+            }
+
         }
 
         public bool IsExistAsset(string assetName)
@@ -612,14 +672,28 @@ namespace PJW.Resources
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 设置当前变体
+        /// </summary>
+        /// <param name="currentVariant"></param>
         public void SetCurretVariant(string currentVariant)
         {
-            throw new NotImplementedException();
+            if(_RefuseSetCurrentVariant){
+                throw new FrameworkException("You can not set current variant at this time");
+            }
+            _CurrentVariant=currentVariant;
         }
 
+        /// <summary>
+        /// 设置解密资源回调
+        /// </summary>
+        /// <param name="decryptResourcesCallback"></param>
         public void SetDecryptResourcesCallback(DecryptResourcesCallback decryptResourcesCallback)
         {
-            throw new NotImplementedException();
+            if(_ResourcesLoader.GetLoadAgentTotalCount>0){
+                throw new FrameworkException("You must set decrypt resources callback before add load agent ");
+            }
+            _DecryptResourcesCallback=decryptResourcesCallback;
         }
 
         public void SetDownloadManager(IDownLoadManager downloadManager)
@@ -632,24 +706,86 @@ namespace PJW.Resources
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 设置资源只读路径
+        /// </summary>
+        /// <param name="readOnlyPath"></param>
         public void SetReadOnlyPath(string readOnlyPath)
         {
-            throw new NotImplementedException();
+            if(string.IsNullOrEmpty(readOnlyPath)){
+                throw new FrameworkException("Read only path is invalid ");
+            }
+            if(_ResourcesLoader.GetLoadAgentTotalCount>0){
+                throw new FrameworkException("You must set readonly path before add load resource agent helper ");
+            }
+            _ReadOnlyPath=readOnlyPath;
         }
 
+        /// <summary>
+        /// 设置资源可读写路径
+        /// </summary>
+        /// <param name="readWritePath"></param>
         public void SetReadWritePath(string readWritePath)
         {
-            throw new NotImplementedException();
+            if(string.IsNullOrEmpty(readWritePath)){
+                throw new FrameworkException("Read write path is invalid ");
+            }
+            if(_ResourcesLoader.GetLoadAgentTotalCount>0){
+                throw new FrameworkException("You must set read-write path before add load resource agent helper ");
+            }
+            _ReadWritePath=readWritePath;
         }
 
+        /// <summary>
+        /// 设置资源辅助器
+        /// </summary>
+        /// <param name="resourcesHelper"></param>
         public void SetResourcesHelper(IResourcesHelper resourcesHelper)
         {
-            throw new NotImplementedException();
+            if(resourcesHelper==null){
+                throw new FrameworkException("Resource helper is invalid ");
+            }
+            if(_ResourcesLoader.GetLoadAgentTotalCount>0){
+                throw new FrameworkException("You must set resource helper before add load resource agent helper ");
+            }
+            _ResourcesHelper=resourcesHelper;
         }
 
+        /// <summary>
+        /// 设置资源模式
+        /// </summary>
+        /// <param name="resourcesMode"></param>
         public void SetResourcesMode(ResourcesMode resourcesMode)
         {
-            throw new NotImplementedException();
+            if(resourcesMode==ResourcesMode.Unspecified){
+                throw new FrameworkException("Resources mode is invalid ");
+            }
+            if(_ResourcesMode==ResourcesMode.Unspecified){
+                _ResourcesMode=resourcesMode;
+                if(_ResourcesMode==ResourcesMode.Package){
+                    _ResourcesIniter=new ResourcesIniter(this);
+                    _ResourcesIniter.ResourceInitComplete+=OnResourceInitComplete;
+                }
+                else if(_ResourcesMode==ResourcesMode.Updatable){
+                    _VersionListProcessor=new VersionListProcessor(this);
+                    _VersionListProcessor.VersionListUpdateFailure+=OnVersionListUpdateFailure;
+                    _VersionListProcessor.VersionListUpdateSuccess+=OnVersionListUpdateSuccess;
+                    
+                    _ResourcesChecker=new ResourcesChecker(this);
+                    _ResourcesChecker.ResourcesNeedUpdate+=OnResourcesNeedUpdate;
+                    _ResourcesChecker.ResourcesCheckComplete+=OnResourcesCheckComplete;
+
+                    _ResourcesUpdater=new ResourcesUpdater(this);
+                    _ResourcesUpdater.ResourcesUpdateAllComplete+=OnResourcesUpdateAllComplete;
+                    _ResourcesUpdater.ResourcesUpdateChanged+=OnResourcesUpdateChanged;
+                    _ResourcesUpdater.ResourcesUpdateFailure+=OnResourcesUpdateFailure;
+                    _ResourcesUpdater.ResourcesUpdateStart+=OnResourcesUpdateStart;
+                    _ResourcesUpdater.ResourcesUpdateSuccess+=OnResourcesUpdateSuccess;
+                }
+            }
+            else if(_ResourcesMode!=resourcesMode){
+                throw new FrameworkException("You can not change resource mode at this time ");
+            }
         }
 
         /// <summary>
@@ -684,7 +820,20 @@ namespace PJW.Resources
 
         public void UpdateResources(UpdateResourcesCompleteCallback updateResourcesCompleteCallback)
         {
-            throw new NotImplementedException();
+            if(updateResourcesCompleteCallback==null){
+                throw new FrameworkException("Resource complete callback is invalid ");
+            }
+            if(_ResourcesMode==ResourcesMode.Unspecified){
+                throw new FrameworkException("You must set resourcesMode first ");
+            }
+            if(_ResourcesMode!=ResourcesMode.Updatable){
+                throw new FrameworkException("Not set other resourcesMode in checkResources ");
+            }
+            if(_ResourcesUpdater==null){
+                throw new FrameworkException("You must set ResourcesUpdater ");
+            }
+            _UpdateResourcesCompleteCallback=updateResourcesCompleteCallback;
+            _ResourcesUpdater.UpdateResources();
         }
 
         public void UpdateVersionList(int versionListLength, int versionListHashCode, int versionListZipLength, int versionListZipHashCode, UpdateVersionListCallbacks updateVersionListCallbacks)
@@ -697,8 +846,41 @@ namespace PJW.Resources
         /// </summary>
         public override void Shutdown()
         {
-            throw new System.NotImplementedException();
+            if(_ResourcesIniter!=null){
+                _ResourcesIniter.Shutdown();
+                _ResourcesIniter=null;
+            }
+            if(_VersionListProcessor!=null){
+                _VersionListProcessor.VersionListUpdateFailure-=OnVersionListUpdateFailure;
+                _VersionListProcessor.VersionListUpdateSuccess-=OnVersionListUpdateSuccess;
+                _VersionListProcessor.Shutdown();
+                _VersionListProcessor=null;
+            }
+            if(_ResourcesChecker!=null){
+                _ResourcesChecker.ResourcesCheckComplete-=OnResourcesCheckComplete;
+                _ResourcesChecker.ResourcesNeedUpdate-=OnResourcesNeedUpdate;
+                _ResourcesChecker.Shutdown();
+                _ResourcesChecker=null;
+            }
+            if(_ResourcesUpdater!=null){
+                _ResourcesUpdater.ResourcesUpdateSuccess-=OnResourcesUpdateSuccess;
+                _ResourcesUpdater.ResourcesUpdateStart-=OnResourcesUpdateStart;
+                _ResourcesUpdater.ResourcesUpdateFailure-=OnResourcesUpdateFailure;
+                _ResourcesUpdater.ResourcesUpdateChanged-=OnResourcesUpdateChanged;
+                _ResourcesUpdater.ResourcesUpdateAllComplete-=OnResourcesUpdateAllComplete;
+                _ResourcesUpdater.Shutdown();
+            }
+            if(_ResourcesLoader!=null){
+                _ResourcesLoader.Shutdown();
+                _ResourcesLoader=null;
+            }
+            _AssetInfos.Clear();
+            _AssetDependencyInfos.Clear();
+            _ResourcesInfos.Clear();
+            _ResourcesGroups.Clear();
+            _ReadWriteResourcesInfos.Clear();
         }
+
 
         /// <summary>
         /// 资源管理器轮询
@@ -707,7 +889,10 @@ namespace PJW.Resources
         /// <param name="realElapseSeconds"></param>
         public override void Update(float elapseSeconds, float realElapseSeconds)
         {
-            throw new System.NotImplementedException();
+            if(_ResourcesUpdater!=null){
+                _ResourcesUpdater.Update(elapseSeconds,realElapseSeconds);
+            }
+            _ResourcesLoader.Update(elapseSeconds,realElapseSeconds);
         }
 
         private AssetInfo? GetAssetInfo(string assetName)
@@ -716,14 +901,154 @@ namespace PJW.Resources
             {
                 throw new FrameworkException("Asset name is invalid.");
             }
-
-            AssetInfo assetInfo = default(AssetInfo);
-            if (_AssetInfos.TryGetValue(assetName, out assetInfo))
-            {
-                return assetInfo;
+            if(!_AssetInfos.ContainsKey(assetName)){
+                throw new FrameworkException("The asset info is invalid ");
             }
+            return _AssetInfos[assetName];
+        }
+        private ResourcesInfo? GetResourcesInfo(ResourcesName resourcesName)
+        {
+            if(resourcesName==null){
+                throw new FrameworkException("ResourcesName is invalid ");
+            }
+            if(!_ResourcesInfos.ContainsKey(resourcesName)){
+                throw new FrameworkException("The resourcesInfo is invalid ");
+            }
+            return _ResourcesInfos[resourcesName];
+        }
+        private AssetDependencyInfo? GetAssetDependencyInfo(string assetName){
+            if (string.IsNullOrEmpty(assetName))
+            {
+                throw new FrameworkException("Asset name is invalid.");
+            }
+            if(!_AssetDependencyInfos.ContainsKey(assetName)){
+                throw new FrameworkException("The asset dependency info is invalid ");
+            }
+            return _AssetDependencyInfos[assetName];
+        }
+        private ResourcesGroup GetResourcesGroup(string resourcesGroupName)
+        {
+            if(resourcesGroupName==null){
+                throw new FrameworkException(" Resources group name is invalid ");
+            }
+            if(!_ResourcesGroups.ContainsKey(resourcesGroupName)){
+                throw new FrameworkException("The resources group not exist ");
+            }
+            return _ResourcesGroups[resourcesGroupName];
+        }
+        
+        /// <summary>
+        /// 资源初始化完成事件
+        /// </summary>
+        private void OnResourceInitComplete()
+        {
+            throw new NotImplementedException();
+        }
+        /// <summary>
+        /// 更新资源成功事件
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="t3"></param>
+        /// <param name="t4"></param>
+        /// <param name="t5"></param>
+        private void OnResourcesUpdateSuccess(ResourcesName t1, string t2, string t3, int t4, int t5)
+        {
+            throw new NotImplementedException();
+        }
 
-            return null;
+        /// <summary>
+        /// 更新资源开始事件
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="t3"></param>
+        /// <param name="t4"></param>
+        /// <param name="t5"></param>
+        /// <param name="t6"></param>
+        private void OnResourcesUpdateStart(ResourcesName t1, string t2, string t3, int t4, int t5, int t6)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 更新资源失败事件
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="t3"></param>
+        /// <param name="t4"></param>
+        /// <param name="t5"></param>
+        private void OnResourcesUpdateFailure(ResourcesName t1, string t2, int t3, int t4, string t5)
+        {
+            throw new NotImplementedException();
+        }
+        
+        /// <summary>
+        /// 更新资源发生变化事件
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="t3"></param>
+        /// <param name="t4"></param>
+        /// <param name="t5"></param>
+        private void OnResourcesUpdateChanged(ResourcesName t1, string t2, string t3, int t4, int t5)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 更新资源全部完成事件
+        /// </summary>
+        private void OnResourcesUpdateAllComplete()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 检查资源完成事件
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="t3"></param>
+        /// <param name="t4"></param>
+        private void OnResourcesCheckComplete(int t1, int t2, int t3, int t4)
+        {
+            throw new NotImplementedException();
+        }
+        
+        /// <summary>
+        /// 资源需要更新事件
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="t3"></param>
+        /// <param name="t4"></param>
+        /// <param name="t5"></param>
+        /// <param name="t6"></param>
+        private void OnResourcesNeedUpdate(ResourcesName t1, LoadType t2, int t3, int t4, int t5, int t6)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 版本列表更新成功事件
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        private void OnVersionListUpdateSuccess(string t1, string t2)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// 版本列表更新失败事件
+        /// </summary>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        private void OnVersionListUpdateFailure(string t1, string t2)
+        {
+            throw new NotImplementedException();
         }
     }
 }
