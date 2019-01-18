@@ -570,6 +570,14 @@
      <Compile Include="Assets\Scripts\NewScripts\Resources\UnloadSceneCallbacks.cs" />
      <Compile Include="Assets\Scripts\NewScripts\Resources\UpdateResourcesCompleteCallback.cs" />
      <Compile Include="Assets\Scripts\NewScripts\Resources\UpdateVersionListCallbacks.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Scene\ISceneManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Scene\LoadSceneDependencyAssetEventArgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Scene\LoadSceneFailureEventArgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Scene\LoadSceneSuccessEventArgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Scene\LoadSceneUpdateEventArgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Scene\SceneManager.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Scene\UnloadSceneFailureEventArgs.cs" />
+     <Compile Include="Assets\Scripts\NewScripts\Scene\UnloadSceneSuccessEventArgs.cs" />
      <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.Converter.cs" />
      <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.cs" />
      <Compile Include="Assets\Scripts\NewScripts\Utility\Utility.Encryption.cs" />

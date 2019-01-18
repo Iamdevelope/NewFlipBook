@@ -4,7 +4,7 @@ namespace PJW.Config
         /// <summary>
         /// 配置文件数据
         /// </summary>
-        public class ConfigData
+        public struct ConfigData
         {
             private readonly bool _Bool;
             private readonly int _Int;

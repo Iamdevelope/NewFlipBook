@@ -21,7 +21,13 @@ namespace PJW.Config
 
         public ConfigManager(){
             _ConfigDatas=new Dictionary<string, ConfigData>();
-            
+            _LoadAssetCallbacks=new LoadAssetCallbacks(OnLoadAssetSuccessCallback,OnLoadAssetDependencyCallback,OnLoadAssetFailureCallback,OnLoadAssetUpdateCallback);
+            _ResourcesManager=null;
+            _ConfigHelper=null;
+            _LoadConfigDependencyHandler=null;
+            _LoadConfigFailureHandler=null;
+            _LoadConfigSuccessHandler=null;
+            _LoadConfigUpdateHandler=null;
         }
 
         /// <summary>
@@ -90,7 +96,10 @@ namespace PJW.Config
 		/// <param name="resourcesManager">资源管理器</param>
         public void SetResourceManager(IResourcesManager resourcesManager)
         {
-            throw new NotImplementedException();
+            if(resourcesManager==null){
+                throw new FrameworkException("Resource manager is invalid ");
+            }
+            _ResourcesManager=resourcesManager;
         }
         
         /// <summary>
@@ -99,7 +108,10 @@ namespace PJW.Config
 		/// <param name="configHelper">配置辅助器</param>
         public void SetConfigHelper(IConfigHelper configHelper)
         {
-            throw new NotImplementedException();
+            if(configHelper==null){
+                throw new FrameworkException("Config helper is invalid ");
+            }
+            _ConfigHelper=configHelper;
         }
 
         /// <summary>
@@ -109,17 +121,17 @@ namespace PJW.Config
 		/// <returns>是否存在指定配置</returns>
         public bool IsExitConfig(string configName)
         {
-            throw new NotImplementedException();
+            return GetConfigData(configName).HasValue;
         }
 
         /// <summary>
-		/// 加载配置
-		/// </summary>
-		/// <param name="configAssetName">配置资源名</param>
-		/// <param name="loadType">加载类型</param>
+        /// 加载配置
+        /// </summary>
+        /// <param name="configAssetName">配置资源名</param>
+        /// <param name="loadType">加载类型</param>
         public void LoadConfig(string configAssetName, LoadType loadType)
         {
-            throw new NotImplementedException();
+            LoadConfig(configAssetName,loadType,Constant.DefaultPriority,null);
         }
 
         /// <summary>
@@ -130,7 +142,7 @@ namespace PJW.Config
 		/// <param name="priority">加载优先级</param>
         public void LoadConfig(string configAssetName, LoadType loadType, int priority)
         {
-            throw new NotImplementedException();
+            LoadConfig(configAssetName,loadType,priority,null);
         }
 
         /// <summary>
@@ -141,7 +153,7 @@ namespace PJW.Config
 		/// <param name="userData">用户自定义数据</param>
         public void LoadConfig(string configAssetName, LoadType loadType, object userData)
         {
-            throw new NotImplementedException();
+            LoadConfig(configAssetName,loadType,Constant.DefaultPriority,userData);
         }
 
         /// <summary>
@@ -153,17 +165,23 @@ namespace PJW.Config
 		/// <param name="userData">用户自定义数据</param>
         public void LoadConfig(string configAssetName, LoadType loadType, int priority, object userData)
         {
-            throw new NotImplementedException();
+            if(configAssetName==null){
+                throw new FrameworkException("Config asset name is invalid ");
+            }
+            if(_ResourcesManager==null){
+                throw new FrameworkException("You must set resources manager first ");
+            }
+            _ResourcesManager.LoadAsset(configAssetName,priority,new LoadConfigInfo(loadType,userData),_LoadAssetCallbacks);
         }
 
         /// <summary>
-		/// 解析配置
-		/// </summary>
-		/// <param name="text">配置文本</param>
-		/// <returns>是否解析成功</returns>
+        /// 解析配置
+        /// </summary>
+        /// <param name="text">配置文本</param>
+        /// <returns>是否解析成功</returns>
         public bool ParseConfig(string text)
         {
-            throw new NotImplementedException();
+            return ParseConfig(text,null);
         }
 
         /// <summary>
@@ -174,7 +192,18 @@ namespace PJW.Config
 		/// <returns>是否解析成功</returns>
         public bool ParseConfig(string text, object userData)
         {
-            throw new NotImplementedException();
+            if(_ConfigHelper==null){
+                throw new FrameworkException("You must set config helper first ");
+            }
+            try{
+                return _ConfigHelper.ParseConfig(text,userData);
+            }
+            catch(Exception e){
+                if(e is FrameworkException){
+                    throw ;
+                }
+                throw new FrameworkException(Utility.Text.Format("Can not parse config error is : {0} ",e.Message),e);
+            }
         }
 
         /// <summary>
@@ -184,7 +213,7 @@ namespace PJW.Config
 		/// <returns>是否解析成功</returns>
         public bool ParseConfig(byte[] bytes)
         {
-            throw new NotImplementedException();
+            return ParseConfig(bytes,null);
         }
 
         /// <summary>
@@ -195,7 +224,18 @@ namespace PJW.Config
 		/// <returns>是否解析成功</returns>
         public bool ParseConfig(byte[] bytes, object userData)
         {
-            throw new NotImplementedException();
+            if(_ConfigHelper==null){
+                throw new FrameworkException("You must set config helper first ");
+            }
+            try{
+                return _ConfigHelper.ParseConfig(bytes,userData);
+            }
+            catch(Exception e){
+                if(e is FrameworkException){
+                    throw ;
+                }
+                throw new FrameworkException(Utility.Text.Format("Can not parse config error is : {0} ",e.Message),e);
+            }
         }
 
         /// <summary>
@@ -205,7 +245,7 @@ namespace PJW.Config
 		/// <returns>是否解析成功</returns>
         public bool ParseConfig(Stream stream)
         {
-            throw new NotImplementedException();
+            return ParseConfig(stream,null);
         }
 
         /// <summary>
@@ -216,7 +256,18 @@ namespace PJW.Config
 		/// <returns>是否解析成功</returns>
         public bool ParseConfig(Stream stream, object userData)
         {
-            throw new NotImplementedException();
+            if(_ConfigHelper==null){
+                throw new FrameworkException("You must set config helper first ");
+            }
+            try{
+                return _ConfigHelper.ParseConfig(stream,userData);
+            }
+            catch(Exception e){
+                if(e is FrameworkException){
+                    throw ;
+                }
+                throw new FrameworkException(Utility.Text.Format("Can not parse config error is : {0} ",e.Message),e);
+            }
         }
 
         /// <summary>
@@ -230,7 +281,11 @@ namespace PJW.Config
 		/// <returns>是否添加成功</returns>
         public bool AddConfig(string configName, bool boolValue, int intValue, float floatValue, string stringValue)
         {
-            throw new NotImplementedException();
+            if(IsExitConfig(configName)){
+                return false;
+            }
+            _ConfigDatas.Add(configName,new ConfigData(boolValue,intValue,floatValue,stringValue));
+            return true;
         }
 
         /// <summary>
@@ -239,7 +294,7 @@ namespace PJW.Config
 		/// <param name="configName">需要移除的配置名</param>
         public void RemoveConfig(string configName)
         {
-            throw new NotImplementedException();
+            _ConfigDatas.Remove(configName);
         }
 
         /// <summary>
@@ -247,7 +302,7 @@ namespace PJW.Config
 		/// </summary>
         public void RemoveAllConfig()
         {
-            throw new NotImplementedException();
+            _ConfigDatas.Clear();
         }
 
         /// <summary>
@@ -257,7 +312,11 @@ namespace PJW.Config
 		/// <returns>返回的布尔值</returns>
         public bool GetBool(string configName)
         {
-            throw new NotImplementedException();
+            ConfigData? configData=GetConfigData(configName);
+            if(configData==null){
+                throw new FrameworkException(Utility.Text.Format("Config {0} not exist "+configName));
+            }
+            return configData.Value.GetBool;
         }
 
         /// <summary>
@@ -268,7 +327,8 @@ namespace PJW.Config
 		/// <returns>返回的布尔值</returns>
         public bool GetBool(string configName, bool defaultValue)
         {
-            throw new NotImplementedException();
+            ConfigData? configData=GetConfigData(configName);
+            return configData==null?defaultValue:configData.Value.GetBool;
         }
 
         /// <summary>
@@ -278,7 +338,11 @@ namespace PJW.Config
 		/// <returns>返回的整数值</returns>
         public int GetInt(string configName)
         {
-            throw new NotImplementedException();
+            ConfigData? configData=GetConfigData(configName);
+            if(configData==null){
+                throw new FrameworkException(Utility.Text.Format("Config {0} not exist "+configName));
+            }
+            return configData.Value.GetInt;
         }
 
         /// <summary>
@@ -289,7 +353,8 @@ namespace PJW.Config
 		/// <returns>返回的整数值</returns>
         public int GetInt(string configName, int defaultValue)
         {
-            throw new NotImplementedException();
+            ConfigData? configData=GetConfigData(configName);
+            return configData==null?defaultValue:configData.Value.GetInt;
         }
 
         /// <summary>
@@ -299,7 +364,11 @@ namespace PJW.Config
 		/// <returns>返回的浮点值</returns>
         public float GetFloat(string configName)
         {
-            throw new NotImplementedException();
+            ConfigData? configData=GetConfigData(configName);
+            if(configData==null){
+                throw new FrameworkException(Utility.Text.Format("Config {0} not exist "+configName));
+            }
+            return configData.Value.GetFloat;
         }
 
         /// <summary>
@@ -310,7 +379,8 @@ namespace PJW.Config
 		/// <returns>返回的浮点值</returns>
         public float GetFloat(string configName, float defaultValue)
         {
-            throw new NotImplementedException();
+            ConfigData? configData=GetConfigData(configName);
+            return configData==null?defaultValue:configData.Value.GetFloat;
         }
 
         /// <summary>
@@ -320,7 +390,11 @@ namespace PJW.Config
 		/// <returns>返回的字符值</returns>
         public string GetString(string configName)
         {
-            throw new NotImplementedException();
+            ConfigData? configData=GetConfigData(configName);
+            if(configData==null){
+                throw new FrameworkException(Utility.Text.Format("Config {0} not exist "+configName));
+            }
+            return configData.Value.GetString;
         }
 
         /// <summary>
@@ -331,7 +405,8 @@ namespace PJW.Config
 		/// <returns>返回的字符值</returns>
         public string GetString(string configName, string defaultValue)
         {
-            throw new NotImplementedException();
+            ConfigData? configData=GetConfigData(configName);
+            return configData==null?defaultValue:configData.Value.GetString;
         }
 
         /// <summary>
@@ -350,6 +425,107 @@ namespace PJW.Config
         public override void Shutdown()
         {
 
+        }
+        private ConfigData? GetConfigData(string configName)
+        {
+            if(configName==null){
+                throw new FrameworkException("Config name is invalid ");
+            }
+            ConfigData configData=default(ConfigData);
+            if(_ConfigDatas.TryGetValue(configName,out configData)){
+                return configData;
+            }
+            return null;
+        }
+        
+        /// <summary>
+        /// 加载资源更新
+        /// </summary>
+        /// <param name="assetName">资源名</param>
+        /// <param name="progress">更新进度</param>
+        /// <param name="userData">用户自定义数据</param>
+        private void OnLoadAssetUpdateCallback(string assetName, float progress, object userData)
+        {
+            LoadConfigInfo loadConfigInfo=default(LoadConfigInfo);
+            if(loadConfigInfo==null){
+                throw new FrameworkException("Load config info is invalid ");
+            }
+            if(_LoadConfigUpdateHandler!=null){
+                _LoadConfigUpdateHandler(this,new LoadConfigUpdateEventArgs(assetName,progress,loadConfigInfo.GetUserData));
+            }
+        }
+
+        /// <summary>
+        /// 加载失败
+        /// </summary>
+        /// <param name="assetName">资源名</param>
+        /// <param name="loadResourceStatus">资源状态</param>
+        /// <param name="errorMessage">错误原因</param>
+        /// <param name="userData">用户自定义数据</param>
+        private void OnLoadAssetFailureCallback(string assetName, LoadResourceStatus loadResourceStatus, string errorMessage, object userData)
+        {
+            LoadConfigInfo loadConfigInfo=default(LoadConfigInfo);
+            if(loadConfigInfo==null){
+                throw new FrameworkException("Load config info is invalid ");
+            }
+            string error=Utility.Text.Format("Load config failure, asset name {0} ,load resourcesStatus {1} , error message {2} ",assetName,loadResourceStatus.ToString(),errorMessage);
+            if(_LoadConfigFailureHandler!=null){
+                _LoadConfigFailureHandler(this,new LoadConfigFailureEventArgs(assetName,error,loadConfigInfo.GetUserData));
+                return;
+            }
+            throw new FrameworkException(error);
+        }
+
+        /// <summary>
+        /// 加载资源时加载依赖资源回调函数。
+        /// </summary>
+        /// <param name="assetName">要加载的资源名称。</param>
+        /// <param name="dependencyName">被加载的依赖资源名称。</param>
+        /// <param name="loadedCount">当前已加载依赖资源数量。</param>
+        /// <param name="totalCount">总共加载依赖资源数量。</param>
+        /// <param name="userData">用户自定义数据。</param>
+        private void OnLoadAssetDependencyCallback(string assetName, string dependencyName, int loadedCount, int totalCount, object userData)
+        {
+            LoadConfigInfo loadConfigInfo=default(LoadConfigInfo);
+            if(loadConfigInfo==null){
+                throw new FrameworkException("Load config info is invalid ");
+            }
+            if(_LoadConfigDependencyHandler!=null){
+                _LoadConfigDependencyHandler(this,new LoadConfigDependencyEventArgs(assetName,dependencyName,loadedCount,totalCount,loadConfigInfo.GetUserData));
+            }
+        }
+
+        /// <summary>
+        /// 加载资源成功
+        /// </summary>
+        /// <param name="assetName">资源名</param>
+        /// <param name="loadedAsset">已加载资源</param>
+        /// <param name="duration">加载所用时长</param>
+        /// <param name="userData">用户自定义</param>
+        private void OnLoadAssetSuccessCallback(string assetName, object loadedAsset, float duration, object userData)
+        {
+            LoadConfigInfo loadConfigInfo=default(LoadConfigInfo);
+            if(loadConfigInfo==null){
+                throw new FrameworkException("Load config info is invalid ");
+            }
+            try{
+                if(!_ConfigHelper.LoadConfig(loadedAsset,loadConfigInfo.GetLoadType,loadConfigInfo.GetUserData)){
+                    throw new FrameworkException(Utility.Text.Format("Load config failure in helper , asset name {0} ",assetName));
+                }
+            }
+            catch(Exception e){
+                if(_LoadConfigFailureHandler!=null){
+                    _LoadConfigFailureHandler(this,new LoadConfigFailureEventArgs(assetName,e.Message,loadConfigInfo.GetUserData));
+                    return;
+                }
+                throw;
+            }
+            finally{
+                _ConfigHelper.ReleaseConfigAsset(assetName);
+            }
+            if(_LoadConfigSuccessHandler!=null){
+                _LoadConfigSuccessHandler(this,new LoadConfigSuccessEventArgs(assetName ,duration,loadConfigInfo.GetUserData));
+            }
         }
     }
 }
