@@ -460,6 +460,15 @@ namespace PJW.Resources
         /// <returns>检查版本资源列表结果</returns>
         public CheckVersionListResult CheckVersionList(int lastestInternalResourcesVersion)
         {
+            if(_ResourcesMode==ResourcesMode.Unspecified){
+                throw new FrameworkException("You must set resourcesMode first ");
+            }
+            if(_ResourcesMode!=ResourcesMode.Updatable){
+                throw new FrameworkException("Not set other resourcesMode in checkResources ");
+            }
+            if(_VersionListProcessor==null){
+                throw new FrameworkException("You can not use CheckVersionList at this time ");
+            }
             return _VersionListProcessor.CheckVersionList(lastestInternalResourcesVersion);
         }
 
@@ -523,64 +532,84 @@ namespace PJW.Resources
             return GetResourcesGroup(resourcesGroupName).GetTotalReadyLength;
         }
 
+        /// <summary>
+        /// 初始化资源
+        /// </summary>
+        /// <param name="initResourcesCompleteCallback"></param>
         public void InitResources(InitResourcesCompleteCallback initResourcesCompleteCallback)
         {
             if(initResourcesCompleteCallback==null){
                 throw new FrameworkException("Init resources complete callback is invalid ");
             }
-
-        }
-
-        public bool IsExistAsset(string assetName)
-        {
-            throw new NotImplementedException();
+            if(_ResourcesMode==ResourcesMode.Unspecified){
+                throw new FrameworkException("You must set resourcesMode first ");
+            }
+            if(_ResourcesMode!=ResourcesMode.Package){
+                throw new FrameworkException("Not set other resourcesMode in checkResources without package resourcesMode ");
+            }
+            if(_ResourcesIniter==null){
+                throw new FrameworkException("You can not use initResources at this time ");
+            }
+            _RefuseSetCurrentVariant=true;
+            _InitResourcesCompleteCallback=initResourcesCompleteCallback;
+            _ResourcesIniter.InitResources(_CurrentVariant);
         }
 
         /// <summary>
-        /// 加载资源
+        /// 判断资源是否存在
+        /// </summary>
+        /// <param name="assetName"></param>
+        /// <returns></returns>
+        public bool IsExistAsset(string assetName)
+        {
+            return _ResourcesLoader.IsExistAsset(assetName);
+        }
+
+        /// <summary>
+        /// 异步加载资源
         /// </summary>
         /// <param name="assetName">资源名称</param>
         /// <param name="loadAssetCallbacks">加载资源回调函数</param>
         public void LoadAsset(string assetName, LoadAssetCallbacks loadAssetCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadAsset(assetName,null,Constant.DefaultPriority,null,loadAssetCallbacks);
         }
 
         /// <summary>
-        /// 加载资源
+        /// 异步加载资源
         /// </summary>
         /// <param name="assetName">资源名称</param>
         /// <param name="assetType">资源类型</param>
         /// <param name="loadAssetCallbacks">加载资源回调函数</param>
         public void LoadAsset(string assetName, Type assetType, LoadAssetCallbacks loadAssetCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadAsset(assetName,assetType,Constant.DefaultPriority,null,loadAssetCallbacks);
         }
 
         /// <summary>
-        /// 加载资源
+        /// 异步加载资源
         /// </summary>
         /// <param name="assetName">资源名称</param>
         /// <param name="priority">资源优先级</param>
         /// <param name="loadAssetCallbacks">加载资源回调函数</param>
         public void LoadAsset(string assetName, int priority, LoadAssetCallbacks loadAssetCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadAsset(assetName,null,priority,null,loadAssetCallbacks);
         }
 
         /// <summary>
-        /// 加载资源
+        /// 异步加载资源
         /// </summary>
         /// <param name="assetName">资源名称</param>
         /// <param name="userData">用户自定义数据</param>
         /// <param name="loadAssetCallbacks">加载资源回调函数</param>
         public void LoadAsset(string assetName, object userData, LoadAssetCallbacks loadAssetCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadAsset(assetName,null,Constant.DefaultPriority,userData,loadAssetCallbacks);
         }
 
         /// <summary>
-        /// 加载资源
+        /// 异步加载资源
         /// </summary>
         /// <param name="assetName">资源名称</param>
         /// <param name="assetType">资源类型</param>
@@ -588,11 +617,11 @@ namespace PJW.Resources
         /// <param name="loadAssetCallbacks">加载资源回调函数</param>
         public void LoadAsset(string assetName, Type assetType, int priority, LoadAssetCallbacks loadAssetCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadAsset(assetName,assetType,priority,null,loadAssetCallbacks);
         }
 
         /// <summary>
-        /// 加载资源
+        /// 异步加载资源
         /// </summary>
         /// <param name="assetName">资源名称</param>
         /// <param name="assetType">资源类型</param>
@@ -600,11 +629,11 @@ namespace PJW.Resources
         /// <param name="loadAssetCallbacks">加载资源回调函数</param>
         public void LoadAsset(string assetName, Type assetType, object userData, LoadAssetCallbacks loadAssetCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadAsset(assetName,assetType,Constant.DefaultPriority,userData,loadAssetCallbacks);
         }
 
         /// <summary>
-        /// 加载资源
+        /// 异步加载资源
         /// </summary>
         /// <param name="assetName">资源名称</param>
         /// <param name="priority">资源优先级</param>
@@ -612,11 +641,11 @@ namespace PJW.Resources
         /// <param name="loadAssetCallbacks">加载资源回调函数</param>
         public void LoadAsset(string assetName, int priority, object userData, LoadAssetCallbacks loadAssetCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadAsset(assetName,null,priority,userData,loadAssetCallbacks);
         }
 
         /// <summary>
-        /// 加载资源
+        /// 异步加载资源
         /// </summary>
         /// <param name="assetName">资源名称</param>
         /// <param name="assetType">资源类型</param>
@@ -625,11 +654,11 @@ namespace PJW.Resources
         /// <param name="loadAssetCallbacks">加载资源回调函数</param>
         public void LoadAsset(string assetName, Type assetType, int priority, object userData, LoadAssetCallbacks loadAssetCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadAsset(assetName,assetType,priority,userData,loadAssetCallbacks);
         }
 
         /// <summary>
-        /// 加载场景
+        /// 异步加载场景
         /// </summary>
         /// <param name="sceneName">场景名称</param>
         /// <param name="priority">场景优先级</param>
@@ -637,39 +666,39 @@ namespace PJW.Resources
         /// <param name="loadSceneCallbacks">加载场景回调</param>
         public void LoadScene(string sceneName, int priority, object userData, LoadSceneCallbacks loadSceneCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadScene(sceneName,priority,userData,loadSceneCallbacks);
         }
 
         /// <summary>
-        /// 加载场景
+        /// 异步加载场景
         /// </summary>
         /// <param name="sceneName">场景名称</param>
         /// <param name="userData">用户自定义数据</param>
         /// <param name="loadSceneCallbacks">加载场景回调</param>
         public void LoadScene(string sceneName, object userData, LoadSceneCallbacks loadSceneCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadScene(sceneName,Constant.DefaultPriority,userData,loadSceneCallbacks);
         }
 
         /// <summary>
-        /// 加载场景
+        /// 异步加载场景
         /// </summary>
         /// <param name="sceneName">场景名称</param>
         /// <param name="priority">场景优先级</param>
         /// <param name="loadSceneCallbacks">加载场景回调</param>
         public void LoadScene(string sceneName, int priority, LoadSceneCallbacks loadSceneCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadScene(sceneName,priority,null,loadSceneCallbacks);
         }
 
         /// <summary>
-        /// 加载场景
+        /// 异步加载场景
         /// </summary>
         /// <param name="sceneName">场景名称</param>
         /// <param name="loadSceneCallbacks">加载场景回调</param>
         public void LoadScene(string sceneName, LoadSceneCallbacks loadSceneCallbacks)
         {
-            throw new NotImplementedException();
+            InternalLoadScene(sceneName,Constant.DefaultPriority,null,loadSceneCallbacks);
         }
 
         /// <summary>
@@ -696,14 +725,25 @@ namespace PJW.Resources
             _DecryptResourcesCallback=decryptResourcesCallback;
         }
 
+        /// <summary>
+        /// 设置下载管理器
+        /// </summary>
+        /// <param name="downloadManager"></param>
         public void SetDownloadManager(IDownLoadManager downloadManager)
         {
-            throw new NotImplementedException();
+            _ResourcesUpdater.SetDownloadManager(downloadManager);
         }
 
+        /// <summary>
+        /// 设置对象池管理器
+        /// </summary>
+        /// <param name="objectPoolManager">对象池管理器</param>
         public void SetObjectPoolManager(IObjectPoolManager objectPoolManager)
         {
-            throw new NotImplementedException();
+            if(objectPoolManager==null){
+                throw new FrameworkException("Object pool manager is invalid ");
+            }
+            _ResourcesLoader.SetObjectPoolManager(objectPoolManager);
         }
 
         /// <summary>
@@ -794,30 +834,37 @@ namespace PJW.Resources
         /// <param name="asset">需要卸载的资源</param>
         public void UnloadAsset(object asset)
         {
-            throw new NotImplementedException();
+            if(asset==null){
+                throw new FrameworkException("The asset is invalid ");
+            }
+            _ResourcesLoader.UnloadAsset(asset);
         }
 
         /// <summary>
-        /// 卸载场景
+        /// 异步卸载场景
         /// </summary>
         /// <param name="sceneName">需要卸载的场景名</param>
         /// <param name="unloadSceneCallbacks">卸载场景回调</param>
         /// <param name="userData">用户自定义数据</param>
         public void UnloadScene(string sceneName, UnloadSceneCallbacks unloadSceneCallbacks, object userData)
         {
-            throw new NotImplementedException();
+            InternalUnLoadScene(sceneName,unloadSceneCallbacks,userData);
         }
 
         /// <summary>
-        /// 卸载场景
+        /// 异步卸载场景
         /// </summary>
         /// <param name="sceneName">需要卸载的场景名</param>
         /// <param name="unloadSceneCallbacks">卸载场景回调</param>
         public void UnloadScene(string sceneName, UnloadSceneCallbacks unloadSceneCallbacks)
         {
-            throw new NotImplementedException();
+            InternalUnLoadScene(sceneName,unloadSceneCallbacks,null);
         }
 
+        /// <summary>
+        /// 更新资源
+        /// </summary>
+        /// <param name="updateResourcesCompleteCallback"></param>
         public void UpdateResources(UpdateResourcesCompleteCallback updateResourcesCompleteCallback)
         {
             if(updateResourcesCompleteCallback==null){
@@ -836,9 +883,30 @@ namespace PJW.Resources
             _ResourcesUpdater.UpdateResources();
         }
 
+        /// <summary>
+        /// 使用可更新模式进行版本资源列表更新
+        /// </summary>
+        /// <param name="versionListLength">版本资源列表大小</param>
+        /// <param name="versionListHashCode">版本资源列表哈希值</param>
+        /// <param name="versionListZipLength">版本资源列表压缩后大小</param>
+        /// <param name="versionListZipHashCode">版本资源列表压缩后哈希值</param>
+        /// <param name="updateVersionListCallbacks">版本资源列表更新回调</param>
         public void UpdateVersionList(int versionListLength, int versionListHashCode, int versionListZipLength, int versionListZipHashCode, UpdateVersionListCallbacks updateVersionListCallbacks)
         {
-            throw new NotImplementedException();
+            if(updateVersionListCallbacks==null){
+                throw new FrameworkException("update version list callback is invalid ");
+            }
+            if(_ResourcesMode==ResourcesMode.Unspecified){
+                throw new FrameworkException("You must set resourcesMode first ");
+            }
+            if(_ResourcesMode!=ResourcesMode.Updatable){
+                throw new FrameworkException("Not set other resourcesMode in checkResources ");
+            }
+            if(_VersionListProcessor==null){
+                throw new FrameworkException("You must set VersionListProcessor ");
+            }
+            _UpdateVersionListCallbacks=updateVersionListCallbacks;
+            _VersionListProcessor.UpdateVersionList(versionListLength,versionListHashCode,versionListZipLength,versionListZipHashCode);
         }
 
         /// <summary>
@@ -897,34 +965,27 @@ namespace PJW.Resources
 
         private AssetInfo? GetAssetInfo(string assetName)
         {
-            if (string.IsNullOrEmpty(assetName))
-            {
-                throw new FrameworkException("Asset name is invalid.");
+            AssetInfo assetInfo=default(AssetInfo);
+            if(_AssetInfos.TryGetValue(assetName,out assetInfo)){
+                return assetInfo;
             }
-            if(!_AssetInfos.ContainsKey(assetName)){
-                throw new FrameworkException("The asset info is invalid ");
-            }
-            return _AssetInfos[assetName];
+            return null;
         }
         private ResourcesInfo? GetResourcesInfo(ResourcesName resourcesName)
         {
-            if(resourcesName==null){
-                throw new FrameworkException("ResourcesName is invalid ");
+            ResourcesInfo resourcesInfo=default(ResourcesInfo);
+            if(_ResourcesInfos.TryGetValue(resourcesName,out resourcesInfo)){
+                return resourcesInfo;
             }
-            if(!_ResourcesInfos.ContainsKey(resourcesName)){
-                throw new FrameworkException("The resourcesInfo is invalid ");
-            }
-            return _ResourcesInfos[resourcesName];
+            return null;
         }
-        private AssetDependencyInfo? GetAssetDependencyInfo(string assetName){
-            if (string.IsNullOrEmpty(assetName))
-            {
-                throw new FrameworkException("Asset name is invalid.");
+        private AssetDependencyInfo? GetAssetDependencyInfo(string assetName)
+        {
+            AssetDependencyInfo assetDependencyInfo=default(AssetDependencyInfo);
+            if(_AssetDependencyInfos.TryGetValue(assetName,out assetDependencyInfo)){
+                return assetDependencyInfo;
             }
-            if(!_AssetDependencyInfos.ContainsKey(assetName)){
-                throw new FrameworkException("The asset dependency info is invalid ");
-            }
-            return _AssetDependencyInfos[assetName];
+            return null;
         }
         private ResourcesGroup GetResourcesGroup(string resourcesGroupName)
         {
@@ -932,7 +993,7 @@ namespace PJW.Resources
                 throw new FrameworkException(" Resources group name is invalid ");
             }
             if(!_ResourcesGroups.ContainsKey(resourcesGroupName)){
-                throw new FrameworkException("The resources group not exist ");
+                _ResourcesGroups.Add(resourcesGroupName,new ResourcesGroup(_ResourcesInfos));
             }
             return _ResourcesGroups[resourcesGroupName];
         }
@@ -942,59 +1003,71 @@ namespace PJW.Resources
         /// </summary>
         private void OnResourceInitComplete()
         {
-            throw new NotImplementedException();
+            _ResourcesIniter.ResourceInitComplete-=OnResourceInitComplete;
+            _ResourcesIniter.Shutdown();
+            _ResourcesIniter=null;
+            _InitResourcesCompleteCallback();
+            _InitResourcesCompleteCallback=null;
         }
         /// <summary>
         /// 更新资源成功事件
         /// </summary>
-        /// <param name="t1"></param>
-        /// <param name="t2"></param>
-        /// <param name="t3"></param>
-        /// <param name="t4"></param>
-        /// <param name="t5"></param>
-        private void OnResourcesUpdateSuccess(ResourcesName t1, string t2, string t3, int t4, int t5)
+        /// <param name="name"></param>
+        /// <param name="savePath"></param>
+        /// <param name="downloadUrl"></param>
+        /// <param name="length"></param>
+        /// <param name="zipLength"></param>
+        private void OnResourcesUpdateSuccess(ResourcesName name, string savePath, string downloadUrl, int length, int zipLength)
         {
-            throw new NotImplementedException();
+            if(_ResourcesUpdateSuccessEventHandler!=null){
+                _ResourcesUpdateSuccessEventHandler(this,new ResourcesUpdateSuccessEventArgs(name.GetName,savePath,downloadUrl,length,zipLength));
+            }
         }
 
         /// <summary>
         /// 更新资源开始事件
         /// </summary>
-        /// <param name="t1"></param>
-        /// <param name="t2"></param>
-        /// <param name="t3"></param>
-        /// <param name="t4"></param>
-        /// <param name="t5"></param>
-        /// <param name="t6"></param>
-        private void OnResourcesUpdateStart(ResourcesName t1, string t2, string t3, int t4, int t5, int t6)
+        /// <param name="name"></param>
+        /// <param name="savePath"></param>
+        /// <param name="downloadUrl"></param>
+        /// <param name="currentLength"></param>
+        /// <param name="zipLength"></param>
+        /// <param name="retryCount"></param>
+        private void OnResourcesUpdateStart(ResourcesName name, string savePath, string downloadUrl, int currentLength, int zipLength, int retryCount)
         {
-            throw new NotImplementedException();
+            if(_ResourcesUpdateStartEventHandler!=null){
+                _ResourcesUpdateStartEventHandler(this,new Resources.ResourcesUpdateStartEventArgs(name.GetName,savePath,downloadUrl,currentLength,zipLength,retryCount));
+            }
         }
 
         /// <summary>
         /// 更新资源失败事件
         /// </summary>
-        /// <param name="t1"></param>
-        /// <param name="t2"></param>
-        /// <param name="t3"></param>
-        /// <param name="t4"></param>
-        /// <param name="t5"></param>
-        private void OnResourcesUpdateFailure(ResourcesName t1, string t2, int t3, int t4, string t5)
+        /// <param name="name"></param>
+        /// <param name="downloadUrl"></param>
+        /// <param name="retryCount"></param>
+        /// <param name="totalRetryCount"></param>
+        /// <param name="errorMessage"></param>
+        private void OnResourcesUpdateFailure(ResourcesName name, string downloadUrl, int retryCount, int totalRetryCount, string errorMessage)
         {
-            throw new NotImplementedException();
+            if(_ResourcesUpdateFailureEventHandler!=null){
+                _ResourcesUpdateFailureEventHandler(this,new Resources.ResourcesUpdateFailureEventArgs(name.GetName,downloadUrl,retryCount,totalRetryCount,errorMessage));
+            }
         }
         
         /// <summary>
         /// 更新资源发生变化事件
         /// </summary>
-        /// <param name="t1"></param>
-        /// <param name="t2"></param>
-        /// <param name="t3"></param>
-        /// <param name="t4"></param>
-        /// <param name="t5"></param>
-        private void OnResourcesUpdateChanged(ResourcesName t1, string t2, string t3, int t4, int t5)
+        /// <param name="name"></param>
+        /// <param name="savedPath"></param>
+        /// <param name="downloadUrl"></param>
+        /// <param name="currentLength"></param>
+        /// <param name="zipLength"></param>
+        private void OnResourcesUpdateChanged(ResourcesName name, string savedPath, string downloadUrl, int currentLength, int zipLength)
         {
-            throw new NotImplementedException();
+            if(_ResourcesUpdateChangeEventHandler!=null){
+                _ResourcesUpdateChangeEventHandler(this,new Resources.ResourcesUpdateChangeEventArgs(name.GetName,savedPath,downloadUrl,currentLength,zipLength));
+            }
         }
 
         /// <summary>
@@ -1002,53 +1075,139 @@ namespace PJW.Resources
         /// </summary>
         private void OnResourcesUpdateAllComplete()
         {
-            throw new NotImplementedException();
+            _ResourcesUpdater.ResourcesUpdateChanged-=OnResourcesUpdateChanged;
+            _ResourcesUpdater.ResourcesUpdateFailure-=OnResourcesUpdateFailure;
+            _ResourcesUpdater.ResourcesUpdateStart-=OnResourcesUpdateStart;
+            _ResourcesUpdater.ResourcesUpdateSuccess-=OnResourcesUpdateSuccess;
+            _ResourcesUpdater.ResourcesUpdateAllComplete-=OnResourcesUpdateAllComplete;
+            _ResourcesUpdater.Shutdown();
+            _ResourcesUpdater=null;
+
+            _UpdateResourcesCompleteCallback();
+            _UpdateResourcesCompleteCallback=null;
         }
 
         /// <summary>
         /// 检查资源完成事件
         /// </summary>
-        /// <param name="t1"></param>
-        /// <param name="t2"></param>
-        /// <param name="t3"></param>
-        /// <param name="t4"></param>
-        private void OnResourcesCheckComplete(int t1, int t2, int t3, int t4)
+        /// <param name="removeCount">已移除资源数量</param>
+        /// <param name="updateCount">需要更新资源数量</param>
+        /// <param name="updateTotalLength">需要更新的总资源数量</param>
+        /// <param name="updateTotalZipLength">需要更新的总压缩包大小</param>
+        private void OnResourcesCheckComplete(int removeCount, int updateCount, int updateTotalLength, int updateTotalZipLength)
         {
-            throw new NotImplementedException();
+            _VersionListProcessor.VersionListUpdateFailure-=OnVersionListUpdateFailure;
+            _VersionListProcessor.VersionListUpdateSuccess-=OnVersionListUpdateSuccess;
+            _VersionListProcessor.Shutdown();
+            _VersionListProcessor=null;
+            _UpdateVersionListCallbacks=null;
+
+            _ResourcesChecker.ResourcesCheckComplete-=OnResourcesCheckComplete;
+            _ResourcesChecker.ResourcesNeedUpdate-=OnResourcesNeedUpdate;
+            _ResourcesChecker.Shutdown();
+            _ResourcesChecker=null;
+
+            if(updateCount<=0){
+                _ResourcesUpdater.ResourcesUpdateChanged-=OnResourcesUpdateChanged;
+                _ResourcesUpdater.ResourcesUpdateFailure-=OnResourcesUpdateFailure;
+                _ResourcesUpdater.ResourcesUpdateStart-=OnResourcesUpdateStart;
+                _ResourcesUpdater.ResourcesUpdateSuccess-=OnResourcesUpdateSuccess;
+                _ResourcesUpdater.ResourcesUpdateAllComplete-=OnResourcesUpdateAllComplete;
+                _ResourcesUpdater.Shutdown();
+                _ResourcesUpdater=null;
+            }
+            _CheckResourcesCompleteCallback(updateCount>0,removeCount,updateCount,updateTotalLength,updateTotalZipLength);
+            _CheckResourcesCompleteCallback=null;
         }
         
         /// <summary>
         /// 资源需要更新事件
         /// </summary>
-        /// <param name="t1"></param>
-        /// <param name="t2"></param>
-        /// <param name="t3"></param>
-        /// <param name="t4"></param>
-        /// <param name="t5"></param>
-        /// <param name="t6"></param>
-        private void OnResourcesNeedUpdate(ResourcesName t1, LoadType t2, int t3, int t4, int t5, int t6)
+        /// <param name="resourcesName"></param>
+        /// <param name="loadType"></param>
+        /// <param name="length"></param>
+        /// <param name="hashCode"></param>
+        /// <param name="zipLength"></param>
+        /// <param name="zipHashCode"></param>
+        private void OnResourcesNeedUpdate(ResourcesName resourcesName, LoadType loadType, int length, int hashCode, int zipLength, int zipHashCode)
         {
-            throw new NotImplementedException();
+            _ResourcesUpdater.AddResourcesUpdate(resourcesName,loadType,length,hashCode,zipLength,zipHashCode,Utility.Path.GetCombinePath(_ReadWritePath,Utility.Path.GetResourceNameWithSuffix(resourcesName.FullName)),Utility.Path.GetRemotePath(_UpdatePrefixUrl,Utility.Path.GetResourceNameWithCrc32AndSuffix(resourcesName.FullName,hashCode)),0);
         }
 
         /// <summary>
         /// 版本列表更新成功事件
         /// </summary>
-        /// <param name="t1"></param>
-        /// <param name="t2"></param>
-        private void OnVersionListUpdateSuccess(string t1, string t2)
+        /// <param name="downloadUrl"></param>
+        /// <param name="errorMessage"></param>
+        private void OnVersionListUpdateSuccess(string downloadUrl, string errorMessage)
         {
-            throw new NotImplementedException();
+            if(_VersionListProcessor.VersionListUpdateSuccess!=null){
+                _VersionListProcessor.VersionListUpdateSuccess(downloadUrl,errorMessage);
+            }
         }
 
         /// <summary>
         /// 版本列表更新失败事件
         /// </summary>
-        /// <param name="t1"></param>
-        /// <param name="t2"></param>
-        private void OnVersionListUpdateFailure(string t1, string t2)
+        /// <param name="downloadUrl"></param>
+        /// <param name="errorMessage"></param>
+        private void OnVersionListUpdateFailure(string downloadUrl, string errorMessage)
         {
-            throw new NotImplementedException();
+            if(_VersionListProcessor.VersionListUpdateFailure!=null){
+                _VersionListProcessor.VersionListUpdateFailure(downloadUrl,errorMessage);
+            }
+        }
+
+        /// <summary>
+        /// 加载资源
+        /// </summary>
+        /// <param name="assetName">资源名称</param>
+        /// <param name="assetType">资源类型</param>
+        /// <param name="priority">资源优先级</param>
+        /// <param name="userData">用户自定义数据</param>
+        /// <param name="loadAssetCallbacks">加载资源回调函数</param>
+        private void InternalLoadAsset(string assetName,Type assetType,int priority,object userData,LoadAssetCallbacks loadAssetCallbacks)
+        {
+            if(string.IsNullOrEmpty(assetName)){
+                throw new FrameworkException(" Asset name is invalid ");
+            }
+            if(loadAssetCallbacks==null){
+                throw new FrameworkException("Load asset callbacks is invalid ");
+            }
+            _ResourcesLoader.LoadAsset(assetName,assetType,priority,userData,loadAssetCallbacks);
+        }
+
+        /// <summary>
+        /// 加载场景
+        /// </summary>
+        /// <param name="sceneName">场景名称</param>
+        /// <param name="priority">场景优先级</param>
+        /// <param name="userData">用户自定义数据</param>
+        /// <param name="loadSceneCallbacks">加载场景回调</param>
+        private void InternalLoadScene(string sceneName,int priority,object userData,LoadSceneCallbacks loadSceneCallbacks){
+            if(string.IsNullOrEmpty(sceneName)){
+                throw new FrameworkException("Scene name is invalid ");
+            }
+            if(loadSceneCallbacks==null){
+                throw new FrameworkException("Load scene callbacks is invalid ");
+            }
+            _ResourcesLoader.LoadScene(sceneName,priority,userData,loadSceneCallbacks);
+        }
+
+        /// <summary>
+        /// 卸载场景
+        /// </summary>
+        /// <param name="sceneName">需要卸载的场景名</param>
+        /// <param name="unloadSceneCallbacks">卸载场景回调</param>
+        /// <param name="userData">用户自定义数据</param>
+        private void InternalUnLoadScene(string sceneName,UnloadSceneCallbacks unloadSceneCallbacks,object userData){
+            if(sceneName==null){
+                throw new FrameworkException("Scene name is invalid ");
+            }
+            if(unloadSceneCallbacks==null){
+                throw new FrameworkException("Unload scene callbacks is invalid ");
+            }
+            _ResourcesLoader.UnloadScene(sceneName,unloadSceneCallbacks,userData);
         }
     }
 }
